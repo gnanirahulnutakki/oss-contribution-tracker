@@ -19,6 +19,7 @@ from pathlib import Path
 from typing import Any
 
 API_ROOT = "https://api.github.com"
+USER_AGENT = "oss-contribution-tracker"
 START_MARKER = "<!-- TRACKER:START -->"
 END_MARKER = "<!-- TRACKER:END -->"
 PASSING_CONCLUSIONS = {"success", "neutral", "skipped"}
@@ -68,7 +69,7 @@ class GitHubAPI:
 
         headers = {
             "Accept": "application/vnd.github+json",
-            "User-Agent": "gnanirahulnutakki-oss-contribution-tracker",
+            "User-Agent": USER_AGENT,
             "X-GitHub-Api-Version": "2022-11-28",
         }
         if self.token:

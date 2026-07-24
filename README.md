@@ -84,6 +84,16 @@ on authored pull requests, and surfaces only direct human mentions, replies to
 the contributor's own review threads, or trusted linked-issue responses after
 the contribution began. It never posts upstream comments.
 
+## Reuse this tracker
+
+This repository is designed to work as a GitHub template. Configuration lives
+in `data/contributions.json`; the update engine and workflows do not depend on
+the original repository owner.
+
+Follow the [setup guide](docs/SETUP.md) to configure a reporting window, add
+reviewed contributions, enable the scheduled refresh, and verify that unchanged
+public state produces no synthetic commit.
+
 Run it locally:
 
 ```bash

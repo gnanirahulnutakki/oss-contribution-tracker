@@ -17,6 +17,26 @@ SPEC.loader.exec_module(tracker)
 
 
 class TrackerTests(unittest.TestCase):
+    def test_api_uses_owner_neutral_user_agent(self) -> None:
+        class Response(io.BytesIO):
+            def __enter__(self):
+                return self
+
+            def __exit__(self, *_args: object) -> None:
+                self.close()
+
+        api = tracker.GitHubAPI()
+        with mock.patch.object(
+            tracker.urllib.request,
+            "urlopen",
+            return_value=Response(b'{"ok": true}'),
+        ) as urlopen:
+            result = api.get_json("/rate_limit")
+
+        request = urlopen.call_args.args[0]
+        self.assertEqual(result, {"ok": True})
+        self.assertEqual(request.get_header("User-agent"), "oss-contribution-tracker")
+
     def test_api_retries_a_transient_transport_failure(self) -> None:
         class Response(io.BytesIO):
             def __enter__(self):
