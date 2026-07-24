@@ -125,7 +125,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214",
-      "next_action": "Maintainer communication preference acknowledged: use only specific actionable inline findings here, with no general review-summary comments; re-review only after a head update."
+      "next_action": "Head e6b93288 has three unresolved, specific automated findings; do not duplicate them or post a general summary. Re-review only after the author updates the head or asks a concrete question."
     },
     {
       "id": "google-adk-python-6459-review",
@@ -319,6 +319,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105",
       "next_action": "Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality."
+    },
+    {
+      "id": "arize-ai-openinference-3429-review",
+      "kind": "review",
+      "repository": "Arize-ai/openinference",
+      "number": 3429,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779",
+      "next_action": "Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added."
     }
   ]
 }
