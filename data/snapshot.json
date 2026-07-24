@@ -309,19 +309,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch for maintainer feedback or another head update; the handoff and resumed-continuation cancellation gap is verified fixed on 81aa66bc.",
+      "next_action": "Watch the confirmed public-result agent-state finding on the current head; re-review after the ordinary and resumed handoff paths are updated.",
       "number": 3933,
-      "own_review_count": 3,
+      "own_review_count": 4,
       "own_review_on_head": true,
       "repository": "openai/openai-agents-python",
-      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4771052538",
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#discussion_r3643680270",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-07-24T07:21:45Z",
+      "updated_at": "2026-07-24T07:27:59Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -454,5 +454,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T07:23:18+00:00"
+  "state_changed_at": "2026-07-24T07:29:14+00:00"
 }

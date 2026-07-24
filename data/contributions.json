@@ -124,8 +124,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4771052538",
-      "next_action": "Watch for maintainer feedback or another head update; the handoff and resumed-continuation cancellation gap is verified fixed on 81aa66bc."
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#discussion_r3643680270",
+      "next_action": "Watch the confirmed public-result agent-state finding on the current head; re-review after the ordinary and resumed handoff paths are updated."
     },
     {
       "id": "google-adk-python-6459-review",
