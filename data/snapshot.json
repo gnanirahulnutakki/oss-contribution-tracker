@@ -319,19 +319,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The handoff cancellation and public-result state findings are resolved; monitor remaining maintainer and automated review threads without duplicating them.",
+      "next_action": "The cancellation and public-result state findings are verified resolved on head 085f9391; wait for maintainer action or another author head update.",
       "number": 3933,
-      "own_review_count": 4,
-      "own_review_on_head": false,
+      "own_review_count": 5,
+      "own_review_on_head": true,
       "repository": "openai/openai-agents-python",
-      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#discussion_r3643680270",
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-07-24T15:59:12Z",
+      "updated_at": "2026-07-24T21:06:27Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -877,5 +877,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T20:53:13+00:00"
+  "state_changed_at": "2026-07-24T21:08:38+00:00"
 }

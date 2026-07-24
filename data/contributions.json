@@ -124,8 +124,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#discussion_r3643680270",
-      "next_action": "The handoff cancellation and public-result state findings are resolved; monitor remaining maintainer and automated review threads without duplicating them."
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214",
+      "next_action": "The cancellation and public-result state findings are verified resolved on head 085f9391; wait for maintainer action or another author head update."
     },
     {
       "id": "google-adk-python-6459-review",
