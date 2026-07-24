@@ -184,9 +184,13 @@ def merge_commit_statuses(
     return merged
 
 
-def summarize_workflows(runs: list[dict[str, Any]]) -> dict[str, int]:
+def summarize_workflows(
+    runs: list[dict[str, Any]], expected_failures: set[str] | None = None
+) -> dict[str, int]:
+    expected_failures = expected_failures or set()
     summary = {
         "action_required": 0,
+        "expected_gates": 0,
         "pending": 0,
         "success": 0,
         "failure": 0,
@@ -198,6 +202,11 @@ def summarize_workflows(runs: list[dict[str, Any]]) -> dict[str, int]:
             summary["action_required"] += 1
         elif run.get("conclusion") == "success":
             summary["success"] += 1
+        elif (
+            run.get("conclusion") == "failure"
+            and str(run.get("name", "")) in expected_failures
+        ):
+            summary["expected_gates"] += 1
         elif run.get("conclusion") not in {"skipped", "neutral"}:
             summary["failure"] += 1
     return summary
@@ -294,7 +303,10 @@ def fetch_contribution(
     )
     if not isinstance(workflow_response, dict):
         raise RuntimeError(f"Unexpected workflow response for {repository}#{number}")
-    workflows = summarize_workflows(workflow_response.get("workflow_runs", []))
+    workflows = summarize_workflows(
+        workflow_response.get("workflow_runs", []),
+        set(entry.get("expected_workflow_failures", [])),
+    )
 
     linked_issue: dict[str, Any] | None = None
     if entry.get("linked_issue"):
@@ -519,8 +531,8 @@ def render_signals(item: dict[str, Any]) -> str:
         signals.append(f"{checks['passing']} checks passed")
     if checks["pending"] or workflows["pending"]:
         signals.append(f"{checks['pending'] + workflows['pending']} pending")
-    if checks["expected_gates"]:
-        signals.append(f"{len(checks['expected_gates'])} expected gate")
+    if checks["expected_gates"] or workflows.get("expected_gates"):
+        signals.append("expected CI gate")
     if checks["unexpected_failures"] or workflows["failure"]:
         count = len(checks["unexpected_failures"]) + workflows["failure"]
         signals.append(f"{count} failing")

@@ -239,6 +239,39 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4772078666",
       "next_action": "Watch the unbounded sandbox brace-expansion finding and re-review after expansion is capped with regression coverage."
+    },
+    {
+      "id": "sgl-project-sglang-32344-review",
+      "kind": "review",
+      "repository": "sgl-project/sglang",
+      "number": 32344,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/sgl-project/sglang/pull/32344#pullrequestreview-4776140668",
+      "expected_check_failures": [
+        "call-gate / pr-gate",
+        "pr-gate / pr-gate",
+        "pr-test-finish",
+        "pr-test-extra-finish",
+        "pr-test-mlx-finish",
+        "pr-test-musa-finish",
+        "pr-test-amd-finish",
+        "pr-test-amd-extra-finish"
+      ],
+      "expected_workflow_failures": [
+        "PR #32344 - [Bugfix] Emit cached token metric before first cache hit",
+        "PR Test (AMD)",
+        "PR Test (Arm64)",
+        "PR Test (MLX)",
+        "PR Test (MUSA)",
+        "PR Test (NPU)",
+        "PR Test (Xeon)",
+        "PR Test (XPU)",
+        "PR Test Extra",
+        "PR Test Extra (AMD)"
+      ],
+      "next_action": "Watch the PromQL label-set mismatch finding on head 94b638a4; re-review after the metric schema or query and regression coverage are corrected."
     }
   ]
 }

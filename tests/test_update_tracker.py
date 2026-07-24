@@ -72,6 +72,26 @@ class TrackerTests(unittest.TestCase):
         self.assertEqual(summary["expected_gates"], ["EasyCLA"])
         self.assertEqual(summary["unexpected_failures"], [])
 
+    def test_workflow_authorization_failure_is_an_expected_gate(self) -> None:
+        workflows = [
+            {
+                "name": "PR Test",
+                "status": "completed",
+                "conclusion": "failure",
+            },
+            {
+                "name": "Lint",
+                "status": "completed",
+                "conclusion": "success",
+            },
+        ]
+
+        summary = tracker.summarize_workflows(workflows, {"PR Test"})
+
+        self.assertEqual(summary["expected_gates"], 1)
+        self.assertEqual(summary["failure"], 0)
+        self.assertEqual(summary["success"], 1)
+
     def test_assignment_gate_is_not_reported_as_rejection(self) -> None:
         entry = {"kind": "pull_request", "gate": "assignment"}
         stage = tracker.derive_stage(
