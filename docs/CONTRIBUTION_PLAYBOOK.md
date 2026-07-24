@@ -19,13 +19,26 @@ scorecard.
 These are directional operating targets, not a reason to split changes
 artificially or create low-value activity.
 
+## Portfolio focus
+
+Prefer new and emerging AI open-source projects when they offer clear
+maintainer intent, a current unclaimed issue, and a locally verifiable scope.
+AI infrastructure, agents, evaluation, inference, observability, and developer
+tooling are priority areas, while established cloud-native projects remain
+useful anchors for durable maintainer relationships.
+
+Project novelty never weakens the intake gate below. Do not chase activity in
+an AI repository solely because it is popular or new.
+
 ## Daily loop
 
 1. Refresh every tracked pull request, review thread, issue assignment, and CI
    gate.
 2. Address maintainer feedback before beginning new implementation work.
-3. If capacity remains, select one current issue with clear maintainer intent,
-   no assignee, no competing pull request, and a locally testable scope.
+3. If capacity remains, prefer one current issue in an emerging AI project
+   with clear maintainer intent, no assignee, no competing pull request, and a
+   locally testable scope. Use a cloud-native anchor when no equally strong AI
+   lane is available.
 4. Reproduce the problem, implement the smallest complete fix, run the
    repository's actual gates, and self-review the diff.
 5. Publish one focused pull request with a linked issue, evidence, and required
