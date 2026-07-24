@@ -81,7 +81,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 8773,
-      "next_action": "Wait for Netlify and maintainer approval of GitHub Actions; respond to concrete review feedback, then mark the draft ready when repository checks allow."
+      "next_action": "Wait for maintainer approval of GitHub Actions; respond to concrete review feedback, then mark the draft ready after required CI and review gates complete."
     },
     {
       "id": "prometheus-operator-8695-review",

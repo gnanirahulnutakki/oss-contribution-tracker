@@ -169,7 +169,7 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Wait for Netlify and maintainer approval of GitHub Actions; respond to concrete review feedback, then mark the draft ready when repository checks allow.",
+      "next_action": "Wait for maintainer approval of GitHub Actions; respond to concrete review feedback, then mark the draft ready after required CI and review gates complete.",
       "number": 9574,
       "own_review_count": 0,
       "repository": "envoyproxy/gateway",
@@ -308,5 +308,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T05:16:54+00:00"
+  "state_changed_at": "2026-07-24T05:19:47+00:00"
 }
