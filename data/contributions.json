@@ -188,6 +188,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4771362474",
       "next_action": "Watch the reserved callbacks filtering and TypedDict test-typing findings; re-review after the author updates the pull request."
+    },
+    {
+      "id": "crewaiinc-crewai-6625-review",
+      "kind": "review",
+      "repository": "crewAIInc/crewAI",
+      "number": 6625,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/crewAIInc/crewAI/pull/6625#pullrequestreview-4771496651",
+      "next_action": "Watch the semantic readiness-marker finding and re-review after the author updates head d2c0b593."
     }
   ]
 }
