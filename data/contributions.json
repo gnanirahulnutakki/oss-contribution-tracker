@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "username": "gnanirahulnutakki",
+    "program_start": "2026-07-23",
+    "window_days": 90,
+    "excluded_owners": [
+      "gnanirahulnutakki",
+      "ArdurAI",
+      "radiantlogic-saas",
+      "radiantlogic-devops"
+    ],
+    "goals": {
+      "merged_pull_requests": 24,
+      "landing_rate_percent": 70,
+      "external_reviews": 12,
+      "max_open_pull_requests": 4
+    }
+  },
+  "contributions": [
+    {
+      "id": "prometheus-alertmanager-5402",
+      "kind": "pull_request",
+      "repository": "prometheus/alertmanager",
+      "number": 5402,
+      "role": "author",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "linked_issue": 3539,
+      "next_action": "Wait for maintainer workflow approval; do not ping prematurely."
+    },
+    {
+      "id": "prefecthq-fastmcp-4625",
+      "kind": "pull_request",
+      "repository": "PrefectHQ/fastmcp",
+      "number": 4625,
+      "role": "author",
+      "tier": "stretch",
+      "started_at": "2026-07-24",
+      "linked_issue": 4616,
+      "gate": "assignment",
+      "exclude_from_landing_rate": true,
+      "expected_check_failures": [
+        "check-issue-link"
+      ],
+      "next_action": "Wait for issue assignment; the existing pull request will reopen automatically."
+    },
+    {
+      "id": "prometheus-operator-8695-review",
+      "kind": "review",
+      "repository": "prometheus-operator/prometheus-operator",
+      "number": 8695,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444",
+      "next_action": "Watch the unresolved TLS compatibility finding and respond if the author follows up."
+    }
+  ]
+}
