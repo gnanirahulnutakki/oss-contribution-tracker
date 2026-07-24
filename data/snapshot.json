@@ -781,13 +781,48 @@
         "pending": 0,
         "success": 3
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [],
+        "passing": 16,
+        "pending": 0,
+        "total": 16,
+        "unexpected_failures": []
+      },
+      "exclude_from_landing_rate": false,
+      "id": "modelcontextprotocol-typescript-sdk-2544-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the unresolved REDIRECT lifecycle finding on head a740d28c; re-review after the triggering request stays pending through finishAuth and retry with regression coverage.",
+      "number": 2544,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "modelcontextprotocol/typescript-sdk",
+      "review_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "Fix tests timing out during interactive OAuth flow (#2510)",
+      "updated_at": "2026-07-24T20:05:54Z",
+      "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 4
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 16,
+    "external_reviews": 17,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -802,5 +837,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T19:53:34+00:00"
+  "state_changed_at": "2026-07-24T20:08:05+00:00"
 }

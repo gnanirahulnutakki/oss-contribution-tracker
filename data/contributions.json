@@ -283,6 +283,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/browser-use/browser-use/pull/5300#pullrequestreview-4776211914",
       "next_action": "Watch for author or maintainer follow-up and re-review only if the head changes or a concrete timeout-safety question is raised."
+    },
+    {
+      "id": "modelcontextprotocol-typescript-sdk-2544-review",
+      "kind": "review",
+      "repository": "modelcontextprotocol/typescript-sdk",
+      "number": 2544,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162",
+      "next_action": "Watch the unresolved REDIRECT lifecycle finding on head a740d28c; re-review after the triggering request stays pending through finishAuth and retry with regression coverage."
     }
   ]
 }
