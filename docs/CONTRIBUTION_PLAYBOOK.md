@@ -76,6 +76,9 @@ If any item fails, the lane is dropped without contacting maintainers.
   until the linked issue is assigned.
 - **Review submitted**: a substantive review was posted on another
   contributor's pull request.
+- **Review update available**: the pull request head changed after the most
+  recent review, so the new diff needs a focused re-check before the review is
+  considered current.
 - **Merged**: GitHub reports the pull request as merged.
 
 The landing-rate denominator excludes explicitly identified administrative

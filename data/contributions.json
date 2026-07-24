@@ -81,7 +81,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 8773,
-      "next_action": "Wait for maintainer approval of GitHub Actions; respond to concrete review feedback, then mark the draft ready after required CI and review gates complete."
+      "next_action": "CI is green; wait for maintainer assignment or direction on #8773, then mark the draft ready if requested."
     },
     {
       "id": "prometheus-operator-8695-review",
@@ -137,6 +137,20 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4770473009",
       "next_action": "Watch the mTLS endpoint-selection finding and re-review after the author updates the pull request."
+    },
+    {
+      "id": "google-adk-python-6460-review",
+      "kind": "review",
+      "repository": "google/adk-python",
+      "number": 6460,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4770729500",
+      "expected_check_failures": [
+        "cla/google"
+      ],
+      "next_action": "Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request."
     }
   ]
 }

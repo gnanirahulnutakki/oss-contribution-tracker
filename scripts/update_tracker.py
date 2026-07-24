@@ -211,16 +211,19 @@ def derive_stage(
     linked_issue: dict[str, Any] | None,
     own_review_count: int,
     username: str,
+    own_review_on_head: bool = False,
 ) -> str:
     if pull_request.get("merged_at"):
         return "Review landed" if entry["kind"] == "review" else "Merged"
 
     if entry["kind"] == "review":
         if own_review_count:
+            if pull_request.get("state") != "open":
+                return "Review complete"
             return (
                 "Review submitted"
-                if pull_request.get("state") == "open"
-                else "Review complete"
+                if own_review_on_head
+                else "Review update available"
             )
         return "Review not found"
 
@@ -302,17 +305,22 @@ def fetch_contribution(
             linked_issue = issue_response
 
     own_review_count = 0
+    own_review_on_head = False
     if entry["kind"] == "review":
         reviews = api.get_json(
             f"/repos/{repository}/pulls/{number}/reviews", {"per_page": 100}
         )
         if not isinstance(reviews, list):
             raise RuntimeError(f"Unexpected reviews response for {repository}#{number}")
-        own_review_count = sum(
-            1
+        own_reviews = [
+            review
             for review in reviews
             if review.get("user", {}).get("login") == username
             and review.get("state") != "PENDING"
+        ]
+        own_review_count = len(own_reviews)
+        own_review_on_head = any(
+            review.get("commit_id") == head_sha for review in own_reviews
         )
 
     stage = derive_stage(
@@ -323,6 +331,7 @@ def fetch_contribution(
         linked_issue,
         own_review_count,
         username,
+        own_review_on_head,
     )
     return {
         "id": entry["id"],
@@ -354,6 +363,7 @@ def fetch_contribution(
         ),
         "review_url": entry.get("review_url"),
         "own_review_count": own_review_count,
+        "own_review_on_head": own_review_on_head,
         "next_action": entry["next_action"],
         "exclude_from_landing_rate": bool(
             entry.get("exclude_from_landing_rate", False)

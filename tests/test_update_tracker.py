@@ -127,6 +127,44 @@ class TrackerTests(unittest.TestCase):
 
         self.assertEqual(stage, "Awaiting CI approval")
 
+    def test_review_on_current_head_is_submitted(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "review"},
+            pull_request={"state": "open", "merged_at": None},
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue=None,
+            own_review_count=1,
+            username="gnanirahulnutakki",
+            own_review_on_head=True,
+        )
+
+        self.assertEqual(stage, "Review submitted")
+
+    def test_review_on_old_head_requests_recheck(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "review"},
+            pull_request={"state": "open", "merged_at": None},
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue=None,
+            own_review_count=1,
+            username="gnanirahulnutakki",
+            own_review_on_head=False,
+        )
+
+        self.assertEqual(stage, "Review update available")
+
     def test_stable_snapshot_preserves_timestamp_on_noop(self) -> None:
         current = {"profile": {"merged": 1}, "contributions": []}
         previous = {
