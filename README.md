@@ -16,7 +16,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 7 | 12 | 58% |
+| External pull requests reviewed | 8 | 12 | 67% |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
@@ -37,8 +37,9 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [google/adk-python#6459](https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656)<br>fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity | reviewer | **Review submitted** | 8 checks passed · workflow approval needed | Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee. |
 | [google/adk-python#6460](https://github.com/google/adk-python/pull/6460#pullrequestreview-4770729500)<br>fix(litellm): strip embedded thought_signature from tool call id | reviewer | **Review submitted** | 7 checks passed · 1 expected gate · workflow approval needed | Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request. |
 | [pydantic/pydantic-ai#6706](https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242)<br>Validate native tool ids per capability layer instead of flattened | reviewer | **Review submitted** | 81 checks passed | Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated. |
+| [microsoft/agent-framework#7292](https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4771214920)<br>Python: [Feature]: Support OpenAI instructions in Responses API | reviewer | **Review submitted** | 40 checks passed · 2 expected gate · 1 failing | Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf. |
 
-Last public state change recorded: **2026-07-24T07:29:14+00:00**.
+Last public state change recorded: **2026-07-24T07:50:11+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

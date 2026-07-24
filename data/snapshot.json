@@ -433,13 +433,50 @@
         "pending": 0,
         "success": 4
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [
+          "Test Typing Checks (3.11)",
+          "merge-gatekeeper"
+        ],
+        "passing": 40,
+        "pending": 0,
+        "total": 42,
+        "unexpected_failures": []
+      },
+      "exclude_from_landing_rate": false,
+      "id": "microsoft-agent-framework-7292-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf.",
+      "number": 7292,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "microsoft/agent-framework",
+      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4771214920",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "Python: [Feature]: Support OpenAI instructions in Responses API",
+      "updated_at": "2026-07-24T07:44:44Z",
+      "url": "https://github.com/microsoft/agent-framework/pull/7292",
+      "workflows": {
+        "action_required": 0,
+        "failure": 1,
+        "pending": 0,
+        "success": 5
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 7,
+    "external_reviews": 8,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -454,5 +491,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T07:29:14+00:00"
+  "state_changed_at": "2026-07-24T07:50:11+00:00"
 }

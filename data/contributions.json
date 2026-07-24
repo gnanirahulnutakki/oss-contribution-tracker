@@ -162,6 +162,21 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242",
       "next_action": "Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated."
+    },
+    {
+      "id": "microsoft-agent-framework-7292-review",
+      "kind": "review",
+      "repository": "microsoft/agent-framework",
+      "number": 7292,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4771214920",
+      "expected_check_failures": [
+        "Test Typing Checks (3.11)",
+        "merge-gatekeeper"
+      ],
+      "next_action": "Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf."
     }
   ]
 }
