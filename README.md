@@ -16,7 +16,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 1 | 12 | 8% |
+| External pull requests reviewed | 2 | 12 | 17% |
 | Simultaneous open authored PRs | 1 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **2**. Administrative gates excluded from landing-rate decisions: **1**.
@@ -28,8 +28,9 @@ Authored external PRs opened in this window: **2**. Administrative gates exclude
 | [prometheus/alertmanager#5402](https://github.com/prometheus/alertmanager/pull/5402)<br>victorops: use Splunk On-Call branding | author | **Awaiting CI approval** | 1 checks passed · workflow approval needed | Wait for maintainer workflow approval; do not ping prematurely. |
 | [PrefectHQ/fastmcp#4625](https://github.com/PrefectHQ/fastmcp/pull/4625)<br>fix: use Python field name for structured task results | author | **Awaiting assignment** | 10 checks passed · 1 expected gate | Wait for issue assignment; the existing pull request will reopen automatically. |
 | [prometheus-operator/prometheus-operator#8695](https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444)<br>alertmanager: preserve top-level event_recorder configuration | reviewer | **Review submitted** | 22 checks passed | Watch the unresolved TLS compatibility finding and respond if the author follows up. |
+| [prometheus/client_golang#2062](https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408)<br>api: return HTTP status on non-JSON API error bodies | reviewer | **Review submitted** | 15 checks passed | Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request. |
 
-Last public state change recorded: **2026-07-24T03:09:58+00:00**.
+Last public state change recorded: **2026-07-24T03:26:14+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

@@ -55,6 +55,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444",
       "next_action": "Watch the unresolved TLS compatibility finding and respond if the author follows up."
+    },
+    {
+      "id": "prometheus-client-golang-2062-review",
+      "kind": "review",
+      "repository": "prometheus/client_golang",
+      "number": 2062,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408",
+      "next_action": "Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request."
     }
   ]
 }

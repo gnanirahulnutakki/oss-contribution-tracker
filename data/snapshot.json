@@ -28,7 +28,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "victorops: use Splunk On-Call branding",
-      "updated_at": "2026-07-24T02:51:15Z",
+      "updated_at": "2026-07-24T03:18:04Z",
       "url": "https://github.com/prometheus/alertmanager/pull/5402",
       "workflows": {
         "action_required": 1,
@@ -108,13 +108,46 @@
         "pending": 0,
         "success": 5
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [],
+        "passing": 15,
+        "pending": 0,
+        "total": 15,
+        "unexpected_failures": []
+      },
+      "exclude_from_landing_rate": false,
+      "id": "prometheus-client-golang-2062-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request.",
+      "number": 2062,
+      "own_review_count": 1,
+      "repository": "prometheus/client_golang",
+      "review_url": "https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "api: return HTTP status on non-JSON API error bodies",
+      "updated_at": "2026-07-24T03:25:05Z",
+      "url": "https://github.com/prometheus/client_golang/pull/2062",
+      "workflows": {
+        "action_required": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 4
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 2,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 1,
+    "external_reviews": 2,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -129,5 +162,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T03:09:58+00:00"
+  "state_changed_at": "2026-07-24T03:26:14+00:00"
 }
