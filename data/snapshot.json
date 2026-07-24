@@ -6,7 +6,9 @@
         "latest_own_activity_at": null,
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -55,7 +57,9 @@
         "latest_own_activity_at": null,
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -104,7 +108,9 @@
         "latest_own_activity_at": null,
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -155,7 +161,9 @@
         "latest_own_activity_at": "2026-07-24T19:06:21Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": "2026-07-24T04:28:48Z",
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -208,7 +216,9 @@
         "latest_own_activity_at": null,
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": "2026-07-24T05:01:14Z",
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -257,7 +267,9 @@
         "latest_own_activity_at": "2026-07-24T02:08:09Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -302,7 +314,9 @@
         "latest_own_activity_at": "2026-07-24T03:25:04Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -347,7 +361,9 @@
         "latest_own_activity_at": "2026-07-24T04:14:01Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -389,10 +405,12 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-24T21:06:26Z",
+        "latest_own_activity_at": "2026-07-24T21:53:48Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -409,7 +427,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The cancellation and public-result state findings are verified resolved on head 085f9391; wait for maintainer action or another author head update.",
+      "next_action": "Maintainer communication preference acknowledged: use only specific actionable inline findings here, with no general review-summary comments; re-review only after a head update.",
       "number": 3933,
       "own_review_count": 5,
       "own_review_on_head": true,
@@ -421,7 +439,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-07-24T21:06:27Z",
+      "updated_at": "2026-07-24T21:53:48Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -437,7 +455,9 @@
         "latest_own_activity_at": "2026-07-24T07:19:53Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -482,7 +502,9 @@
         "latest_own_activity_at": "2026-07-24T19:03:37Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -529,7 +551,9 @@
         "latest_own_activity_at": "2026-07-24T07:02:11Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -574,7 +598,9 @@
         "latest_own_activity_at": "2026-07-24T19:03:57Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -619,7 +645,9 @@
         "latest_own_activity_at": "2026-07-24T19:04:07Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -664,7 +692,9 @@
         "latest_own_activity_at": "2026-07-24T08:22:38Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -709,7 +739,9 @@
         "latest_own_activity_at": "2026-07-24T19:04:27Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -754,7 +786,9 @@
         "latest_own_activity_at": "2026-07-24T09:07:16Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -799,7 +833,9 @@
         "latest_own_activity_at": "2026-07-24T19:51:51Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -844,7 +880,9 @@
         "latest_own_activity_at": "2026-07-24T12:47:04Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -892,7 +930,9 @@
         "latest_own_activity_at": "2026-07-24T19:26:24Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -953,7 +993,9 @@
         "latest_own_activity_at": "2026-07-24T19:45:27Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -998,7 +1040,9 @@
         "latest_own_activity_at": "2026-07-24T20:05:54Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -1043,7 +1087,9 @@
         "latest_own_activity_at": "2026-07-24T20:49:41Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -1093,7 +1139,9 @@
         "latest_own_activity_at": "2026-07-24T21:40:05Z",
         "latest_response_at": null,
         "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -1152,5 +1200,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T21:42:29+00:00"
+  "state_changed_at": "2026-07-24T21:55:42+00:00"
 }

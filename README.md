@@ -33,7 +33,7 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [prometheus-operator/prometheus-operator#8695](https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444)<br>alertmanager: preserve top-level event_recorder configuration | reviewer | **Review submitted** | 22 checks passed | Watch the unresolved TLS compatibility finding and respond if the author follows up. |
 | [prometheus/client_golang#2062](https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408)<br>api: return HTTP status on non-JSON API error bodies | reviewer | **Review submitted** | 15 checks passed | Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request. |
 | [helm/helm#32339](https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007)<br>fix(scripts): add cache-busting to get-helm-3 version check | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request. |
-| [openai/openai-agents-python#3933](https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214)<br>fix: enforce realtime text guardrails and synchronize streaming cancellation | reviewer | **Review submitted** | 9 checks passed | The cancellation and public-result state findings are verified resolved on head 085f9391; wait for maintainer action or another author head update. |
+| [openai/openai-agents-python#3933](https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214)<br>fix: enforce realtime text guardrails and synchronize streaming cancellation | reviewer | **Review submitted** | 9 checks passed | Maintainer communication preference acknowledged: use only specific actionable inline findings here, with no general review-summary comments; re-review only after a head update. |
 | [google/adk-python#6459](https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656)<br>fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity | reviewer | **Review submitted** | 8 checks passed · workflow approval needed | Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee. |
 | [google/adk-python#6460](https://github.com/google/adk-python/pull/6460#pullrequestreview-4776004279)<br>fix(litellm): strip embedded thought_signature from tool call id | reviewer | **Review submitted** | 7 checks passed · expected CI gate · workflow approval needed | Watch the empty embedded-signature ID finding and formatter follow-up on head 15bbca82; re-review only after another author update. |
 | [pydantic/pydantic-ai#6706](https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242)<br>Validate native tool ids per capability layer instead of flattened | reviewer | **Review submitted** | 81 checks passed | Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated. |
@@ -50,7 +50,7 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [confident-ai/deepeval#2950](https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4776624336)<br>fix(openai): apply prompt-caching discount to GPTModel cost calculation | reviewer | **Review submitted** | 11 checks passed · expected CI gate · 4 failing | Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite. |
 | [traceloop/openllmetry#4375](https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105)<br>fix(cohere): avoid double-ending async error spans | reviewer | **Review submitted** | 3 checks passed · workflow approval needed | Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality. |
 
-Last public state change recorded: **2026-07-24T21:42:29+00:00**.
+Last public state change recorded: **2026-07-24T21:55:42+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
@@ -79,8 +79,9 @@ It uses the repository's short-lived `GITHUB_TOKEN`; no personal access token
 or third-party credential is required.
 
 The refresh records exact heads and draft state, detects active change requests
-on authored pull requests, and surfaces only direct human mentions or replies
-to the contributor's own review threads. It never posts upstream comments.
+on authored pull requests, and surfaces only direct human mentions, replies to
+the contributor's own review threads, or trusted linked-issue responses after
+the contribution began. It never posts upstream comments.
 
 Run it locally:
 

@@ -31,6 +31,7 @@ FAILING_CONCLUSIONS = {
     "startup_failure",
 }
 RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
+TRUSTED_AUTHOR_ASSOCIATIONS = {"OWNER", "MEMBER", "COLLABORATOR"}
 
 
 class GitHubAPI:
@@ -273,6 +274,17 @@ def _latest_timestamp(values: list[str | None]) -> str | None:
     return max(timestamps) if timestamps else None
 
 
+def _response_count(attention: dict[str, Any]) -> int:
+    return sum(
+        int(attention.get(key, 0))
+        for key in (
+            "unanswered_direct_mentions",
+            "unanswered_review_thread_replies",
+            "unanswered_linked_issue_responses",
+        )
+    )
+
+
 def summarize_attention(
     issue_comments: list[dict[str, Any]],
     review_comments: list[dict[str, Any]],
@@ -280,8 +292,11 @@ def summarize_attention(
     username: str,
     *,
     include_change_requests: bool = True,
+    linked_issue_comments: list[dict[str, Any]] | None = None,
+    linked_issue_floor_at: str | None = None,
 ) -> dict[str, Any]:
     """Find high-confidence public activity that still needs a response."""
+    linked_issue_comments = linked_issue_comments or []
     own_activity_at = _latest_timestamp(
         [
             *[
@@ -334,6 +349,30 @@ def summarize_attention(
         )
     ]
 
+    linked_issue_own_activity_at = _latest_timestamp(
+        [
+            comment.get("created_at")
+            for comment in linked_issue_comments
+            if _login(comment).casefold() == username.casefold()
+        ]
+    )
+    linked_issue_response_floor = _latest_timestamp(
+        [linked_issue_floor_at, linked_issue_own_activity_at]
+    )
+    linked_issue_responses = [
+        comment
+        for comment in linked_issue_comments
+        if _is_other_human(comment, username)
+        and (
+            comment.get("author_association") in TRUSTED_AUTHOR_ASSOCIATIONS
+            or mention_pattern.search(str(comment.get("body") or ""))
+        )
+        and (
+            linked_issue_response_floor is None
+            or (comment.get("created_at") or "") > linked_issue_response_floor
+        )
+    ]
+
     active_change_requests: set[str] = set()
     ordered_reviews = sorted(
         (
@@ -351,7 +390,11 @@ def summarize_attention(
         elif state in {"APPROVED", "DISMISSED"}:
             active_change_requests.discard(login)
 
-    response_candidates = [*thread_replies, *direct_mentions]
+    response_candidates = [
+        *thread_replies,
+        *direct_mentions,
+        *linked_issue_responses,
+    ]
     latest_response = max(
         response_candidates,
         key=lambda item: str(item.get("created_at") or ""),
@@ -362,6 +405,7 @@ def summarize_attention(
             sorted(active_change_requests) if include_change_requests else []
         ),
         "latest_own_activity_at": own_activity_at,
+        "linked_issue_latest_own_activity_at": linked_issue_own_activity_at,
         "latest_response_at": (
             latest_response.get("created_at") if latest_response else None
         ),
@@ -369,6 +413,7 @@ def summarize_attention(
             latest_response.get("html_url") if latest_response else None
         ),
         "unanswered_direct_mentions": len(direct_mentions),
+        "unanswered_linked_issue_responses": len(linked_issue_responses),
         "unanswered_review_thread_replies": len(thread_replies),
     }
 
@@ -385,9 +430,7 @@ def derive_stage(
     attention: dict[str, Any] | None = None,
 ) -> str:
     attention = attention or {}
-    response_count = int(attention.get("unanswered_direct_mentions", 0)) + int(
-        attention.get("unanswered_review_thread_replies", 0)
-    )
+    response_count = _response_count(attention)
     if pull_request.get("merged_at"):
         return "Review landed" if entry["kind"] == "review" else "Merged"
 
@@ -402,11 +445,12 @@ def derive_stage(
             return "Review submitted"
         return "Review not found"
 
+    if pull_request.get("state") == "open" and attention.get("changes_requested_by"):
+        return "Changes requested"
+    if response_count:
+        return "Maintainer response"
+
     if pull_request.get("state") == "open":
-        if attention.get("changes_requested_by"):
-            return "Changes requested"
-        if response_count:
-            return "Maintainer response"
         if workflows["action_required"]:
             return "Awaiting CI approval"
         if checks["unexpected_failures"] or workflows["failure"]:
@@ -479,12 +523,24 @@ def fetch_contribution(
     )
 
     linked_issue: dict[str, Any] | None = None
+    linked_issue_comments: list[dict[str, Any]] = []
     if entry.get("linked_issue"):
         issue_response = api.get_json(
             f"/repos/{repository}/issues/{entry['linked_issue']}"
         )
         if isinstance(issue_response, dict):
             linked_issue = issue_response
+        if entry["kind"] == "pull_request":
+            linked_issue_comment_response = api.get_json(
+                f"/repos/{repository}/issues/{entry['linked_issue']}/comments",
+                {"per_page": 100},
+            )
+            if not isinstance(linked_issue_comment_response, list):
+                raise RuntimeError(
+                    "Unexpected linked issue comment response for "
+                    f"{repository}#{entry['linked_issue']}"
+                )
+            linked_issue_comments = linked_issue_comment_response
 
     reviews = api.get_json(
         f"/repos/{repository}/pulls/{number}/reviews", {"per_page": 100}
@@ -511,6 +567,8 @@ def fetch_contribution(
         reviews,
         username,
         include_change_requests=entry["kind"] == "pull_request",
+        linked_issue_comments=linked_issue_comments,
+        linked_issue_floor_at=pull_request.get("created_at"),
     )
 
     own_review_count = 0
@@ -727,9 +785,7 @@ def render_signals(item: dict[str, Any]) -> str:
     if attention.get("changes_requested_by"):
         count = len(attention["changes_requested_by"])
         signals.append(f"{count} active change request{'s' if count != 1 else ''}")
-    response_count = int(attention.get("unanswered_direct_mentions", 0)) + int(
-        attention.get("unanswered_review_thread_replies", 0)
-    )
+    response_count = _response_count(attention)
     if response_count:
         signals.append(f"{response_count} response{'s' if response_count != 1 else ''}")
     if checks["passing"]:

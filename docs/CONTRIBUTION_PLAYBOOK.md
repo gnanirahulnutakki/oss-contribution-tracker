@@ -64,6 +64,8 @@ If any item fails, the lane is dropped without contacting maintainers.
 - Do not ask for assignment when repository instructions prohibit it.
 - Do not open a replacement pull request for an automated assignment gate.
 - Do not ping for review immediately after publishing.
+- Prefer specific, actionable inline review findings. Do not add general
+  review-summary comments when they do not help the author act.
 - Reply when a maintainer asks a question or requests a change.
 - Close the loop with concrete evidence: commit, test, CI run, or merged state.
 
@@ -83,7 +85,8 @@ If any item fails, the lane is dropped without contacting maintainers.
   review threads or directly mentioned the contributor after their latest
   public review activity.
 - **Maintainer response**: a human directly mentioned the contributor on an
-  authored pull request after the contributor's latest public activity.
+  authored pull request, or a repository member responded on its linked issue,
+  after the relevant latest contributor activity.
 - **Changes requested**: at least one reviewer's latest effective decision is
   still `CHANGES_REQUESTED`; later comment-only reviews do not clear it.
 - **Merged**: GitHub reports the pull request as merged.
@@ -92,6 +95,8 @@ The landing-rate denominator excludes explicitly identified administrative
 gates so they are not confused with maintainers rejecting the implementation.
 
 The automated response queue is intentionally conservative. It ignores bots
-and general top-level discussion, and it never posts comments. A later
-contributor review or reply clears older response signals; changed heads still
-take priority because they require code inspection.
+and general top-level discussion, and it never posts comments. Linked-issue
+responses require either a repository member or a direct mention, and must be
+newer than both the pull request and the contributor's latest linked-issue
+comment. A later contributor review or reply clears older response signals;
+changed heads still take priority because they require code inspection.

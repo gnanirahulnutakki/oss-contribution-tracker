@@ -318,6 +318,103 @@ class TrackerTests(unittest.TestCase):
 
         self.assertEqual(attention["unanswered_direct_mentions"], 0)
 
+    def test_linked_issue_response_requires_a_trusted_human_or_mention(self) -> None:
+        attention = tracker.summarize_attention(
+            issue_comments=[],
+            review_comments=[],
+            reviews=[],
+            username="example",
+            linked_issue_floor_at="2026-07-24T10:00:00Z",
+            linked_issue_comments=[
+                {
+                    "created_at": "2026-07-24T09:00:00Z",
+                    "body": "@example old direction",
+                    "author_association": "MEMBER",
+                    "user": {"login": "maintainer", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T11:00:00Z",
+                    "body": "general participant discussion",
+                    "author_association": "NONE",
+                    "user": {"login": "participant", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T12:00:00Z",
+                    "body": "please update the proposed scope",
+                    "author_association": "MEMBER",
+                    "html_url": "https://example.test/maintainer-response",
+                    "user": {"login": "maintainer", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T13:00:00Z",
+                    "body": "@example can you confirm this edge case?",
+                    "author_association": "NONE",
+                    "html_url": "https://example.test/direct-mention",
+                    "user": {"login": "participant", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T14:00:00Z",
+                    "body": "@example automated reminder",
+                    "author_association": "MEMBER",
+                    "user": {"login": "automation[bot]", "type": "Bot"},
+                },
+            ],
+        )
+
+        self.assertEqual(attention["unanswered_linked_issue_responses"], 2)
+        self.assertEqual(
+            attention["latest_response_url"],
+            "https://example.test/direct-mention",
+        )
+
+    def test_later_linked_issue_comment_clears_earlier_response(self) -> None:
+        attention = tracker.summarize_attention(
+            issue_comments=[],
+            review_comments=[],
+            reviews=[],
+            username="example",
+            linked_issue_floor_at="2026-07-24T10:00:00Z",
+            linked_issue_comments=[
+                {
+                    "created_at": "2026-07-24T11:00:00Z",
+                    "body": "please update the proposed scope",
+                    "author_association": "MEMBER",
+                    "user": {"login": "maintainer", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T12:00:00Z",
+                    "body": "updated in the pull request",
+                    "author_association": "NONE",
+                    "user": {"login": "example", "type": "User"},
+                },
+            ],
+        )
+
+        self.assertEqual(attention["unanswered_linked_issue_responses"], 0)
+        self.assertEqual(
+            attention["linked_issue_latest_own_activity_at"],
+            "2026-07-24T12:00:00Z",
+        )
+
+    def test_closed_assignment_gate_surfaces_linked_issue_response(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "pull_request", "gate": "assignment"},
+            pull_request={"state": "closed", "merged_at": None},
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue={"state": "open", "assignees": []},
+            own_review_count=0,
+            username="example",
+            attention={"unanswered_linked_issue_responses": 1},
+        )
+
+        self.assertEqual(stage, "Maintainer response")
+
     def test_change_request_survives_comments_until_approval(self) -> None:
         base_reviews = [
             {
