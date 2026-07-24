@@ -33,6 +33,11 @@ FAILING_CONCLUSIONS = {
 }
 RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 TRUSTED_AUTHOR_ASSOCIATIONS = {"OWNER", "MEMBER", "COLLABORATOR"}
+DEFAULT_REVIEW_CADENCE = {
+    "window_hours": 24,
+    "max_fresh_reviews": 2,
+    "min_spacing_hours": 4,
+}
 
 
 class GitHubAPI:
@@ -112,6 +117,25 @@ def load_json(path: Path) -> dict[str, Any]:
     return value
 
 
+def resolve_review_cadence(profile: dict[str, Any]) -> dict[str, int]:
+    raw = profile.get("review_cadence", {})
+    if not isinstance(raw, dict):
+        raise ValueError("profile.review_cadence must be an object")
+    unknown = set(raw) - set(DEFAULT_REVIEW_CADENCE)
+    if unknown:
+        raise ValueError(
+            "profile.review_cadence has unknown fields: "
+            + ", ".join(sorted(unknown))
+        )
+    cadence = {**DEFAULT_REVIEW_CADENCE, **raw}
+    for field, value in cadence.items():
+        if not isinstance(value, int) or isinstance(value, bool) or value <= 0:
+            raise ValueError(
+                f"profile.review_cadence.{field} must be a positive integer"
+            )
+    return cadence
+
+
 def validate_config(config: dict[str, Any]) -> None:
     if config.get("schema_version") != 1:
         raise ValueError("schema_version must be 1")
@@ -134,6 +158,7 @@ def validate_config(config: dict[str, Any]) -> None:
         raise ValueError("profile.excluded_owners must be a non-empty string list")
     if not isinstance(profile.get("goals"), dict):
         raise ValueError("profile.goals is required")
+    resolve_review_cadence(profile)
 
     contributions = config.get("contributions")
     if not isinstance(contributions, list):
@@ -152,6 +177,13 @@ def validate_config(config: dict[str, Any]) -> None:
         seen.add(entry_id)
         if entry.get("kind") not in {"pull_request", "review"}:
             raise ValueError(f"{prefix}.kind must be pull_request or review")
+        if "cadence_exempt" in entry and (
+            entry["kind"] != "review"
+            or not isinstance(entry["cadence_exempt"], bool)
+        ):
+            raise ValueError(
+                f"{prefix}.cadence_exempt must be a boolean on a review entry"
+            )
         repository = entry.get("repository")
         if (
             not isinstance(repository, str)
@@ -273,6 +305,40 @@ def _is_other_human(item: dict[str, Any], username: str) -> bool:
 def _latest_timestamp(values: list[str | None]) -> str | None:
     timestamps = [value for value in values if value]
     return max(timestamps) if timestamps else None
+
+
+def _parse_timestamp(value: str) -> datetime:
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+    except ValueError as error:
+        raise ValueError(f"invalid GitHub timestamp: {value}") from error
+    if parsed.tzinfo is None or parsed.utcoffset() is None:
+        raise ValueError(f"GitHub timestamp must include a timezone: {value}")
+    return parsed.astimezone(UTC)
+
+
+def _format_timestamp(value: datetime) -> str:
+    return (
+        value.astimezone(UTC)
+        .replace(microsecond=0)
+        .isoformat()
+        .replace("+00:00", "Z")
+    )
+
+
+def first_review_submitted_at(
+    reviews: list[dict[str, Any]], username: str, started_at: str
+) -> str | None:
+    floor = _parse_timestamp(f"{started_at}T00:00:00Z")
+    timestamps = [
+        str(review["submitted_at"])
+        for review in reviews
+        if _login(review).casefold() == username.casefold()
+        and review.get("state") != "PENDING"
+        and review.get("submitted_at")
+        and _parse_timestamp(str(review["submitted_at"])) >= floor
+    ]
+    return min(timestamps, key=_parse_timestamp) if timestamps else None
 
 
 def _response_count(attention: dict[str, Any]) -> int:
@@ -574,6 +640,7 @@ def fetch_contribution(
 
     own_review_count = 0
     own_review_on_head = False
+    first_review_at: str | None = None
     if entry["kind"] == "review":
         own_reviews = [
             review
@@ -584,6 +651,9 @@ def fetch_contribution(
         own_review_count = len(own_reviews)
         own_review_on_head = any(
             review.get("commit_id") == head_sha for review in own_reviews
+        )
+        first_review_at = first_review_submitted_at(
+            own_reviews, username, entry["started_at"]
         )
 
     stage = derive_stage(
@@ -631,6 +701,8 @@ def fetch_contribution(
         "review_url": entry.get("review_url"),
         "own_review_count": own_review_count,
         "own_review_on_head": own_review_on_head,
+        "first_review_submitted_at": first_review_at,
+        "cadence_exempt": bool(entry.get("cadence_exempt", False)),
         "next_action": entry["next_action"],
         "exclude_from_landing_rate": bool(
             entry.get("exclude_from_landing_rate", False)
@@ -740,13 +812,76 @@ def fetch_profile_metrics(
     }
 
 
-def build_snapshot(api: GitHubAPI, config: dict[str, Any]) -> dict[str, Any]:
+def summarize_review_cadence(
+    contributions: list[dict[str, Any]],
+    cadence: dict[str, int],
+    now: datetime | None = None,
+) -> dict[str, Any]:
+    current = now or datetime.now(UTC)
+    if current.tzinfo is None or current.utcoffset() is None:
+        raise ValueError("review cadence time must include a timezone")
+    current = current.astimezone(UTC)
+
+    first_reviews_by_pull_request: dict[tuple[str, int], datetime] = {}
+    for item in contributions:
+        submitted_at = item.get("first_review_submitted_at")
+        if (
+            item.get("kind") != "review"
+            or item.get("cadence_exempt")
+            or not submitted_at
+        ):
+            continue
+        key = (str(item["repository"]).casefold(), int(item["number"]))
+        submitted = _parse_timestamp(str(submitted_at))
+        previous = first_reviews_by_pull_request.get(key)
+        if previous is None or submitted < previous:
+            first_reviews_by_pull_request[key] = submitted
+
+    review_times = sorted(first_reviews_by_pull_request.values())
+    window = timedelta(hours=cadence["window_hours"])
+    spacing = timedelta(hours=cadence["min_spacing_hours"])
+    recent = [submitted for submitted in review_times if submitted > current - window]
+
+    eligibility_boundaries: list[datetime] = []
+    if review_times:
+        eligibility_boundaries.append(review_times[-1] + spacing)
+    if len(recent) >= cadence["max_fresh_reviews"]:
+        eligibility_boundaries.append(
+            recent[-cadence["max_fresh_reviews"]] + window
+        )
+
+    next_eligible = max(eligibility_boundaries, default=current)
+    eligible_now = current >= next_eligible
+    return {
+        **cadence,
+        "eligible_now": eligible_now,
+        "next_eligible_at": (
+            None if eligible_now else _format_timestamp(next_eligible)
+        ),
+        "latest_fresh_review_at": (
+            _format_timestamp(review_times[-1]) if review_times else None
+        ),
+        "fresh_reviews_in_window": len(recent),
+        "fresh_reviews_considered": len(review_times),
+    }
+
+
+def build_snapshot(
+    api: GitHubAPI,
+    config: dict[str, Any],
+    now: datetime | None = None,
+) -> dict[str, Any]:
     username = config["profile"]["username"]
     contributions = [
         fetch_contribution(api, entry, username) for entry in config["contributions"]
     ]
     return {
         "profile": fetch_profile_metrics(api, config["profile"], contributions),
+        "review_cadence": summarize_review_cadence(
+            contributions,
+            resolve_review_cadence(config["profile"]),
+            now,
+        ),
         "contributions": contributions,
     }
 
@@ -803,6 +938,23 @@ def render_signals(item: dict[str, Any]) -> str:
     return " · ".join(signals) or "No checks reported"
 
 
+def render_review_cadence(cadence: dict[str, Any]) -> str:
+    if cadence["eligible_now"]:
+        status = "**eligible under the automated guardrail**"
+    else:
+        next_eligible = _parse_timestamp(cadence["next_eligible_at"]).strftime(
+            "%Y-%m-%d %H:%M UTC"
+        )
+        status = f"**paused until {next_eligible}**"
+    return (
+        f"Fresh unsolicited review cadence: {status} "
+        f"(rolling {cadence['window_hours']}-hour cap: "
+        f"{cadence['max_fresh_reviews']}; minimum spacing: "
+        f"{cadence['min_spacing_hours']} hours). "
+        "Requested follow-ups remain evidence-driven and exempt."
+    )
+
+
 def render_dashboard(snapshot: dict[str, Any]) -> str:
     profile = snapshot["profile"]
     goals = profile["goals"]
@@ -855,6 +1007,8 @@ def render_dashboard(snapshot: dict[str, Any]) -> str:
             f"Administrative gates excluded from landing-rate decisions: "
             f"**{profile['excluded_administrative_gates']}**."
         ),
+        "",
+        render_review_cadence(snapshot["review_cadence"]),
         "",
         "## Tracked portfolio",
         "",

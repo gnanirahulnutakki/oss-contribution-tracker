@@ -107,6 +107,144 @@ class TrackerTests(unittest.TestCase):
         self.assertTrue(all("2026-07-23..2026-10-20" in query for query in api.queries))
         self.assertTrue(all("-user:employer" in query for query in api.queries))
 
+    def test_first_review_timestamp_ignores_pending_and_pre_program_reviews(
+        self,
+    ) -> None:
+        reviews = [
+            {
+                "state": "COMMENTED",
+                "submitted_at": "2026-07-22T23:59:59Z",
+                "user": {"login": "example"},
+            },
+            {
+                "state": "PENDING",
+                "submitted_at": "2026-07-23T09:00:00Z",
+                "user": {"login": "example"},
+            },
+            {
+                "state": "COMMENTED",
+                "submitted_at": "2026-07-23T10:00:00Z",
+                "user": {"login": "other"},
+            },
+            {
+                "state": "COMMENTED",
+                "submitted_at": "2026-07-23T11:00:00Z",
+                "user": {"login": "example"},
+            },
+            {
+                "state": "APPROVED",
+                "submitted_at": "2026-07-23T12:00:00Z",
+                "user": {"login": "example"},
+            },
+        ]
+
+        submitted_at = tracker.first_review_submitted_at(
+            reviews, "example", "2026-07-23"
+        )
+
+        self.assertEqual(submitted_at, "2026-07-23T11:00:00Z")
+
+    def test_review_cadence_waits_for_second_newest_review_to_expire(
+        self,
+    ) -> None:
+        contributions = [
+            {
+                "kind": "review",
+                "repository": "example/repo",
+                "number": number,
+                "first_review_submitted_at": submitted_at,
+            }
+            for number, submitted_at in enumerate(
+                [
+                    "2026-07-24T08:00:00Z",
+                    "2026-07-24T12:00:00Z",
+                    "2026-07-24T21:40:05Z",
+                    "2026-07-24T22:14:25Z",
+                ],
+                start=1,
+            )
+        ]
+
+        cadence = tracker.summarize_review_cadence(
+            contributions,
+            {
+                "window_hours": 24,
+                "max_fresh_reviews": 2,
+                "min_spacing_hours": 4,
+            },
+            now=datetime(2026, 7, 24, 22, 55, tzinfo=UTC),
+        )
+
+        self.assertFalse(cadence["eligible_now"])
+        self.assertEqual(cadence["next_eligible_at"], "2026-07-25T21:40:05Z")
+        self.assertEqual(cadence["fresh_reviews_in_window"], 4)
+
+    def test_review_cadence_spacing_can_be_the_active_boundary(self) -> None:
+        cadence = tracker.summarize_review_cadence(
+            [
+                {
+                    "kind": "review",
+                    "repository": "example/repo",
+                    "number": 1,
+                    "first_review_submitted_at": "2026-07-24T22:00:00Z",
+                }
+            ],
+            {
+                "window_hours": 24,
+                "max_fresh_reviews": 2,
+                "min_spacing_hours": 4,
+            },
+            now=datetime(2026, 7, 24, 23, 0, tzinfo=UTC),
+        )
+
+        self.assertFalse(cadence["eligible_now"])
+        self.assertEqual(cadence["next_eligible_at"], "2026-07-25T02:00:00Z")
+
+    def test_review_cadence_ignores_explicit_exemptions(self) -> None:
+        cadence = tracker.summarize_review_cadence(
+            [
+                {
+                    "kind": "review",
+                    "repository": "example/repo",
+                    "number": 1,
+                    "first_review_submitted_at": "2026-07-24T18:00:00Z",
+                },
+                {
+                    "kind": "review",
+                    "repository": "example/requested",
+                    "number": 2,
+                    "first_review_submitted_at": "2026-07-24T22:00:00Z",
+                    "cadence_exempt": True,
+                },
+            ],
+            {
+                "window_hours": 24,
+                "max_fresh_reviews": 2,
+                "min_spacing_hours": 4,
+            },
+            now=datetime(2026, 7, 24, 23, 0, tzinfo=UTC),
+        )
+
+        self.assertTrue(cadence["eligible_now"])
+        self.assertEqual(cadence["fresh_reviews_in_window"], 1)
+        self.assertEqual(
+            cadence["latest_fresh_review_at"], "2026-07-24T18:00:00Z"
+        )
+
+    def test_review_cadence_renders_a_fixed_utc_boundary(self) -> None:
+        rendered = tracker.render_review_cadence(
+            {
+                "eligible_now": False,
+                "next_eligible_at": "2026-07-25T21:40:05Z",
+                "window_hours": 24,
+                "max_fresh_reviews": 2,
+                "min_spacing_hours": 4,
+            }
+        )
+
+        self.assertIn("paused until 2026-07-25 21:40 UTC", rendered)
+        self.assertIn("Requested follow-ups", rendered)
+
     def test_summarize_checks_separates_expected_gate(self) -> None:
         checks = [
             {"name": "tests", "status": "completed", "conclusion": "success"},
@@ -584,6 +722,23 @@ class TrackerTests(unittest.TestCase):
         }
 
         with self.assertRaisesRegex(ValueError, "duplicate contribution id"):
+            tracker.validate_config(config)
+
+    def test_config_rejects_unknown_review_cadence_fields(self) -> None:
+        config = {
+            "schema_version": 1,
+            "profile": {
+                "username": "example",
+                "program_start": "2026-07-23",
+                "window_days": 90,
+                "review_cadence": {"daily_limit": 2},
+                "excluded_owners": ["example"],
+                "goals": {},
+            },
+            "contributions": [],
+        }
+
+        with self.assertRaisesRegex(ValueError, "unknown fields: daily_limit"):
             tracker.validate_config(config)
 
 

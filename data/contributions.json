@@ -4,6 +4,11 @@
     "username": "gnanirahulnutakki",
     "program_start": "2026-07-23",
     "window_days": 90,
+    "review_cadence": {
+      "window_hours": 24,
+      "max_fresh_reviews": 2,
+      "min_spacing_hours": 4
+    },
     "excluded_owners": [
       "gnanirahulnutakki",
       "ArdurAI",

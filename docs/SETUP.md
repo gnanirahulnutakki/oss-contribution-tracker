@@ -17,6 +17,8 @@ Edit `data/contributions.json`:
 - `profile.username`: your GitHub login.
 - `profile.program_start`: the first day included in metrics, as `YYYY-MM-DD`.
 - `profile.window_days`: the fixed reporting-window length.
+- `profile.review_cadence`: the rolling window, maximum fresh reviews in that
+  window, and minimum spacing used by the machine-readable advisory.
 - `profile.excluded_owners`: your login plus organizations whose repositories
   should not count as external contributions.
 - `profile.goals`: targets for merged pull requests, landing rate, external
@@ -47,6 +49,11 @@ Use `kind: "review"` and add `review_url` for an external code review. Optional
 fields support known CI gates, assignment-gated work, and items that should not
 affect the landing-rate denominator. Keep `next_action` specific enough that a
 future refresh cannot justify a generic status ping.
+
+Set `cadence_exempt: true` only when a review entry represents a direct
+maintainer-requested review rather than fresh unsolicited outreach. The tracker
+uses the first non-pending review after `started_at` for each distinct pull
+request, so later re-reviews do not consume another cadence slot.
 
 ## 4. Validate locally
 

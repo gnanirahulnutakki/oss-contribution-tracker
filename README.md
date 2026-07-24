@@ -21,6 +21,8 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
+Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+
 ## Tracked portfolio
 
 | Contribution | Role | Stage | Verification signals | Next action |
@@ -51,7 +53,7 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [traceloop/openllmetry#4375](https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105)<br>fix(cohere): avoid double-ending async error spans | reviewer | **Review submitted** | 3 checks passed · workflow approval needed | Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality. |
 | [Arize-ai/openinference#3429](https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779)<br>fix(anthropic): preserve APIPromise helpers | reviewer | **Review submitted** | 20 checks passed | Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added. |
 
-Last public state change recorded: **2026-07-24T22:20:32+00:00**.
+Last public state change recorded: **2026-07-24T23:04:22+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
@@ -84,7 +86,9 @@ or third-party credential is required.
 The refresh records exact heads and draft state, detects active change requests
 on authored pull requests, and surfaces only direct human mentions, replies to
 the contributor's own review threads, or trusted linked-issue responses after
-the contribution began. It never posts upstream comments.
+the contribution began. It also derives the next fresh-review eligibility
+boundary from first-submission timestamps while leaving explicitly requested
+follow-ups exempt. It never posts upstream comments.
 
 ## Reuse this tracker
 

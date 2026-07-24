@@ -11,6 +11,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 2,
@@ -20,6 +21,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": null,
       "head_sha": "ecd5483c3442ce7efc11e213241a36bae37e8ba2",
       "id": "prometheus-alertmanager-5402",
       "kind": "pull_request",
@@ -62,6 +64,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 1,
@@ -71,6 +74,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": null,
       "head_sha": "93efdc8d2815c3ef84deebe5d760a435f17e9094",
       "id": "prometheus-community-postgres-exporter-1351",
       "kind": "pull_request",
@@ -113,6 +117,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [
           "check-issue-link"
@@ -124,6 +129,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": true,
+      "first_review_submitted_at": null,
       "head_sha": "95a56f3c12798d6a30f3f044b7b35c7f04ad3881",
       "id": "prefecthq-fastmcp-4625",
       "kind": "pull_request",
@@ -166,6 +172,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [
           "EasyCLA"
@@ -177,6 +184,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": true,
+      "first_review_submitted_at": null,
       "head_sha": "a3b0679f628f46aa6b90011d108134fa18bda867",
       "id": "open-telemetry-otel-arrow-3572",
       "kind": "pull_request",
@@ -221,6 +229,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 28,
@@ -230,6 +239,7 @@
       },
       "draft": true,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": null,
       "head_sha": "12202063fd3c49af99afd782c76fd2e2a6b54ded",
       "id": "envoyproxy-gateway-9574",
       "kind": "pull_request",
@@ -272,6 +282,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 22,
@@ -281,6 +292,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T02:08:09Z",
       "head_sha": "f127a0fc3788e508ae4baa2eff79018416b043ca",
       "id": "prometheus-operator-8695-review",
       "kind": "review",
@@ -319,6 +331,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 15,
@@ -328,6 +341,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T03:25:04Z",
       "head_sha": "4b95bb4b3422eea57a499a31713410ed98fb5638",
       "id": "prometheus-client-golang-2062-review",
       "kind": "review",
@@ -366,6 +380,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 1,
@@ -375,6 +390,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T04:14:01Z",
       "head_sha": "5a30c7ae8504218fd68d87c5a7d929d0a3bb3891",
       "id": "helm-helm-32339-review",
       "kind": "review",
@@ -413,6 +429,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 9,
@@ -422,6 +439,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T05:34:42Z",
       "head_sha": "e6b93288b92e278ce63e0a44be2fefd5f94cfdbe",
       "id": "openai-openai-agents-python-3933-review",
       "kind": "review",
@@ -460,6 +478,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 8,
@@ -469,6 +488,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T05:53:37Z",
       "head_sha": "2f0043eecf8fa126d5f314819a14ea4cfeed80d0",
       "id": "google-adk-python-6459-review",
       "kind": "review",
@@ -507,6 +527,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [
           "cla/google"
@@ -518,6 +539,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T06:36:35Z",
       "head_sha": "15bbca823e483e5df4d1927b4e7f27b5afd2c599",
       "id": "google-adk-python-6460-review",
       "kind": "review",
@@ -556,6 +578,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 81,
@@ -565,6 +588,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T07:02:11Z",
       "head_sha": "3a90ec2b4683a4583ed13d48bd15394f5c8ef246",
       "id": "pydantic-pydantic-ai-6706-review",
       "kind": "review",
@@ -603,6 +627,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 2,
@@ -612,6 +637,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T07:44:44Z",
       "head_sha": "8a6a52c9b1b264e86ff2aa9ace8273adeea986da",
       "id": "microsoft-agent-framework-7292-review",
       "kind": "review",
@@ -650,6 +676,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 2,
@@ -659,6 +686,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T08:05:41Z",
       "head_sha": "c1b1fc24cfb4f65be6b34d10db0b14226d1b71f3",
       "id": "microsoft-autogen-7994-review",
       "kind": "review",
@@ -697,6 +725,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 1,
@@ -706,6 +735,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T08:22:38Z",
       "head_sha": "d2c0b5939bd6e0acf3dcd16f3bd6428c0b2ee9a6",
       "id": "crewaiinc-crewai-6625-review",
       "kind": "review",
@@ -744,6 +774,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 0,
@@ -753,6 +784,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T08:40:29Z",
       "head_sha": "ebd418003d14e94db6a8b8bc10c989c8af70c677",
       "id": "huggingface-smolagents-2565-review",
       "kind": "review",
@@ -791,6 +823,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 10,
@@ -800,6 +833,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T09:07:16Z",
       "head_sha": "13616a0df4038c93e64c02dbe8707f3c3dbab9b2",
       "id": "strands-agents-harness-sdk-3448-review",
       "kind": "review",
@@ -838,6 +872,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 0,
@@ -847,6 +882,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T09:29:57Z",
       "head_sha": "e896c03a2ac9136bfc348195faadf4b037194b28",
       "id": "openai-openai-python-3538-review",
       "kind": "review",
@@ -885,6 +921,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 87,
@@ -897,6 +934,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T12:47:04Z",
       "head_sha": "3242d4a2dc08a732c98c1ad0e0bcffde403c6d94",
       "id": "langchain-ai-deepagents-5026-review",
       "kind": "review",
@@ -935,6 +973,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [
           "pr-test-finish",
@@ -960,6 +999,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T19:26:24Z",
       "head_sha": "94b638a45bf23d72e1249efff6c14adb0894a63e",
       "id": "sgl-project-sglang-32344-review",
       "kind": "review",
@@ -998,6 +1038,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 95,
@@ -1007,6 +1048,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T19:45:27Z",
       "head_sha": "05b68eb5679da0497510a6954863687bef41c706",
       "id": "browser-use-browser-use-5300-review",
       "kind": "review",
@@ -1045,6 +1087,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 16,
@@ -1054,6 +1097,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T20:05:54Z",
       "head_sha": "a740d28ca71f6bc4221f63ad01fd9faac0ea15d3",
       "id": "modelcontextprotocol-typescript-sdk-2544-review",
       "kind": "review",
@@ -1092,6 +1136,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [
           "Vercel"
@@ -1106,6 +1151,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T20:49:41Z",
       "head_sha": "a14a307c0449a40dfefcf8d4e9aaa13db4062065",
       "id": "confident-ai-deepeval-2950-review",
       "kind": "review",
@@ -1144,6 +1190,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 3,
@@ -1153,6 +1200,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T21:40:05Z",
       "head_sha": "9c303fd199450a1a12ad6f2aedec930029170478",
       "id": "traceloop-openllmetry-4375-review",
       "kind": "review",
@@ -1191,6 +1239,7 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "passing": 20,
@@ -1200,6 +1249,7 @@
       },
       "draft": false,
       "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-24T22:14:25Z",
       "head_sha": "8554f3dba170d533d7c743c7d1f0253cfc6f3e9d",
       "id": "arize-ai-openinference-3429-review",
       "kind": "review",
@@ -1247,5 +1297,15 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T22:20:32+00:00"
+  "review_cadence": {
+    "eligible_now": false,
+    "fresh_reviews_considered": 20,
+    "fresh_reviews_in_window": 20,
+    "latest_fresh_review_at": "2026-07-24T22:14:25Z",
+    "max_fresh_reviews": 2,
+    "min_spacing_hours": 4,
+    "next_eligible_at": "2026-07-25T21:40:05Z",
+    "window_hours": 24
+  },
+  "state_changed_at": "2026-07-24T23:04:22+00:00"
 }
