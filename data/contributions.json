@@ -177,6 +177,17 @@
         "merge-gatekeeper"
       ],
       "next_action": "Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf."
+    },
+    {
+      "id": "microsoft-autogen-7994-review",
+      "kind": "review",
+      "repository": "microsoft/autogen",
+      "number": 7994,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4771362474",
+      "next_action": "Watch the reserved callbacks filtering and TypedDict test-typing findings; re-review after the author updates the pull request."
     }
   ]
 }
