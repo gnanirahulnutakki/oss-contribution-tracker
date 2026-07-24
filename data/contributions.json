@@ -57,6 +57,22 @@
       "next_action": "Wait for issue assignment; the existing pull request will reopen automatically."
     },
     {
+      "id": "open-telemetry-otel-arrow-3572",
+      "kind": "pull_request",
+      "repository": "open-telemetry/otel-arrow",
+      "number": 3572,
+      "role": "author",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "linked_issue": 3568,
+      "gate": "assignment",
+      "exclude_from_landing_rate": true,
+      "expected_check_failures": [
+        "EasyCLA"
+      ],
+      "next_action": "Sign the Linux Foundation EasyCLA, then wait for issue assignment before marking the draft ready for review."
+    },
+    {
       "id": "prometheus-operator-8695-review",
       "kind": "review",
       "repository": "prometheus-operator/prometheus-operator",

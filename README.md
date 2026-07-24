@@ -17,22 +17,23 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
 | External pull requests reviewed | 3 | 12 | 25% |
-| Simultaneous open authored PRs | 2 | ≤ 4 | Within cap |
+| Simultaneous open authored PRs | 3 | ≤ 4 | Within cap |
 
-Authored external PRs opened in this window: **3**. Administrative gates excluded from landing-rate decisions: **1**.
+Authored external PRs opened in this window: **4**. Administrative gates excluded from landing-rate decisions: **1**.
 
 ## Tracked portfolio
 
 | Contribution | Role | Stage | Verification signals | Next action |
 |---|---|---|---|---|
-| [prometheus/alertmanager#5402](https://github.com/prometheus/alertmanager/pull/5402)<br>victorops: use Splunk On-Call branding | author | **Awaiting CI approval** | 1 checks passed · workflow approval needed | Wait for maintainer workflow approval; do not ping prematurely. |
+| [prometheus/alertmanager#5402](https://github.com/prometheus/alertmanager/pull/5402)<br>victorops: use Splunk On-Call branding | author | **Awaiting CI approval** | 2 checks passed · workflow approval needed | Wait for maintainer workflow approval; do not ping prematurely. |
 | [prometheus-community/postgres_exporter#1351](https://github.com/prometheus-community/postgres_exporter/pull/1351)<br>fix: preserve precision for large counters | author | **Awaiting CI approval** | 1 checks passed · workflow approval needed | Wait for maintainer approval of first-time contributor workflows; do not ping prematurely. |
 | [PrefectHQ/fastmcp#4625](https://github.com/PrefectHQ/fastmcp/pull/4625)<br>fix: use Python field name for structured task results | author | **Awaiting assignment** | 10 checks passed · 1 expected gate | Wait for issue assignment; the existing pull request will reopen automatically. |
+| [open-telemetry/otel-arrow#3572](https://github.com/open-telemetry/otel-arrow/pull/3572)<br>fix(filter): reject unknown config fields | author | **Awaiting CI approval** | 3 checks passed · 1 expected gate · workflow approval needed | Sign the Linux Foundation EasyCLA, then wait for issue assignment before marking the draft ready for review. |
 | [prometheus-operator/prometheus-operator#8695](https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444)<br>alertmanager: preserve top-level event_recorder configuration | reviewer | **Review submitted** | 22 checks passed | Watch the unresolved TLS compatibility finding and respond if the author follows up. |
 | [prometheus/client_golang#2062](https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408)<br>api: return HTTP status on non-JSON API error bodies | reviewer | **Review submitted** | 15 checks passed | Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request. |
 | [helm/helm#32339](https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007)<br>fix(scripts): add cache-busting to get-helm-3 version check | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request. |
 
-Last public state change recorded: **2026-07-24T04:15:52+00:00**.
+Last public state change recorded: **2026-07-24T04:45:42+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

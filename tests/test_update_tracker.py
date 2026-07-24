@@ -57,11 +57,44 @@ class TrackerTests(unittest.TestCase):
         self.assertEqual(summary["expected_gates"], ["check-issue-link"])
         self.assertEqual(summary["unexpected_failures"], [])
 
+    def test_legacy_commit_statuses_are_counted_without_duplicates(self) -> None:
+        checks = [{"name": "tests", "status": "completed", "conclusion": "success"}]
+        statuses = [
+            {"context": "EasyCLA", "state": "failure"},
+            {"context": "tests", "state": "failure"},
+        ]
+
+        merged = tracker.merge_commit_statuses(checks, statuses)
+        summary = tracker.summarize_checks(merged, {"EasyCLA"})
+
+        self.assertEqual(summary["total"], 2)
+        self.assertEqual(summary["passing"], 1)
+        self.assertEqual(summary["expected_gates"], ["EasyCLA"])
+        self.assertEqual(summary["unexpected_failures"], [])
+
     def test_assignment_gate_is_not_reported_as_rejection(self) -> None:
         entry = {"kind": "pull_request", "gate": "assignment"}
         stage = tracker.derive_stage(
             entry=entry,
             pull_request={"state": "closed", "merged_at": None},
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue={"state": "open", "assignees": []},
+            own_review_count=0,
+            username="gnanirahulnutakki",
+        )
+
+        self.assertEqual(stage, "Awaiting assignment")
+
+    def test_open_draft_waiting_for_assignment_is_reported(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "pull_request", "gate": "assignment"},
+            pull_request={"state": "open", "merged_at": None, "draft": True},
             checks={"pending": 0, "unexpected_failures": []},
             workflows={
                 "action_required": 0,

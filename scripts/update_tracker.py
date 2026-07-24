@@ -156,6 +156,34 @@ def summarize_checks(
     return summary
 
 
+def merge_commit_statuses(
+    check_runs: list[dict[str, Any]], commit_statuses: list[dict[str, Any]]
+) -> list[dict[str, Any]]:
+    """Add legacy commit statuses without double-counting named check runs."""
+    merged = list(check_runs)
+    seen_names = {str(check.get("name", "")) for check in check_runs}
+    for commit_status in commit_statuses:
+        name = str(commit_status.get("context", "unnamed status"))
+        if name in seen_names:
+            continue
+        state = commit_status.get("state")
+        if state == "pending":
+            status = "in_progress"
+            conclusion = None
+        else:
+            status = "completed"
+            conclusion = "success" if state == "success" else "failure"
+        merged.append(
+            {
+                "name": name,
+                "status": status,
+                "conclusion": conclusion,
+            }
+        )
+        seen_names.add(name)
+    return merged
+
+
 def summarize_workflows(runs: list[dict[str, Any]]) -> dict[str, int]:
     summary = {
         "action_required": 0,
@@ -203,6 +231,14 @@ def derive_stage(
             return "CI failing"
         if checks["pending"] or workflows["pending"]:
             return "CI running"
+        if entry.get("gate") == "assignment" and linked_issue:
+            assignees = {
+                assignee.get("login")
+                for assignee in linked_issue.get("assignees", [])
+                if isinstance(assignee, dict)
+            }
+            if linked_issue.get("state") == "open" and username not in assignees:
+                return "Awaiting assignment"
         return "Draft" if pull_request.get("draft") else "PR open"
 
     if entry.get("gate") == "assignment" and linked_issue:
@@ -234,8 +270,18 @@ def fetch_contribution(
     )
     if not isinstance(check_response, dict):
         raise RuntimeError(f"Unexpected check response for {repository}#{number}")
+    commit_status_response = api.get_json(
+        f"/repos/{repository}/commits/{head_sha}/status", {"per_page": 100}
+    )
+    if not isinstance(commit_status_response, dict):
+        raise RuntimeError(
+            f"Unexpected commit status response for {repository}#{number}"
+        )
     checks = summarize_checks(
-        check_response.get("check_runs", []),
+        merge_commit_statuses(
+            check_response.get("check_runs", []),
+            commit_status_response.get("statuses", []),
+        ),
         set(entry.get("expected_check_failures", [])),
     )
 
