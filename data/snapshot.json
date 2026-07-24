@@ -1086,13 +1086,58 @@
         "pending": 0,
         "success": 4
       }
+    },
+    {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-07-24T21:40:05Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "checks": {
+        "expected_gates": [],
+        "passing": 3,
+        "pending": 0,
+        "total": 3,
+        "unexpected_failures": []
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "head_sha": "9c303fd199450a1a12ad6f2aedec930029170478",
+      "id": "traceloop-openllmetry-4375-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality.",
+      "number": 4375,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "traceloop/openllmetry",
+      "review_url": "https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(cohere): avoid double-ending async error spans",
+      "updated_at": "2026-07-24T21:40:06Z",
+      "url": "https://github.com/traceloop/openllmetry/pull/4375",
+      "workflows": {
+        "action_required": 1,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 0
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 18,
+    "external_reviews": 19,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -1107,5 +1152,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T21:28:16+00:00"
+  "state_changed_at": "2026-07-24T21:42:29+00:00"
 }

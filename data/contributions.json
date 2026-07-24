@@ -308,6 +308,17 @@
         "Vercel"
       ],
       "next_action": "Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite."
+    },
+    {
+      "id": "traceloop-openllmetry-4375-review",
+      "kind": "review",
+      "repository": "traceloop/openllmetry",
+      "number": 4375,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105",
+      "next_action": "Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality."
     }
   ]
 }
