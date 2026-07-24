@@ -6,10 +6,13 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
+from collections.abc import Callable
 from copy import deepcopy
 from datetime import UTC, date, datetime, timedelta
 from pathlib import Path
@@ -27,13 +30,32 @@ FAILING_CONCLUSIONS = {
     "stale",
     "startup_failure",
 }
+RETRYABLE_HTTP_CODES = {429, 500, 502, 503, 504}
 
 
 class GitHubAPI:
     """Small standard-library GitHub API client for public repository data."""
 
-    def __init__(self, token: str | None = None) -> None:
+    def __init__(
+        self,
+        token: str | None = None,
+        *,
+        max_attempts: int = 3,
+        sleep: Callable[[float], None] = time.sleep,
+    ) -> None:
+        if max_attempts < 1:
+            raise ValueError("max_attempts must be at least 1")
         self.token = token
+        self.max_attempts = max_attempts
+        self.sleep = sleep
+
+    @staticmethod
+    def _retry_delay(error: urllib.error.HTTPError, attempt: int) -> float:
+        retry_after = error.headers.get("Retry-After") if error.headers else None
+        try:
+            return min(float(retry_after), 30.0) if retry_after else 2.0**attempt
+        except ValueError:
+            return 2.0**attempt
 
     def get_json(
         self, path: str, params: dict[str, Any] | None = None
@@ -52,18 +74,32 @@ class GitHubAPI:
             headers["Authorization"] = f"Bearer {self.token}"
 
         request = urllib.request.Request(url, headers=headers)
-        try:
-            with urllib.request.urlopen(request, timeout=30) as response:
-                return json.load(response)
-        except urllib.error.HTTPError as error:
-            detail = error.read(500).decode("utf-8", errors="replace")
-            raise RuntimeError(
-                f"GitHub API request failed ({error.code}) for {url}: {detail}"
-            ) from error
-        except urllib.error.URLError as error:
-            raise RuntimeError(
-                f"GitHub API request failed for {url}: {error}"
-            ) from error
+        for attempt in range(self.max_attempts):
+            try:
+                with urllib.request.urlopen(request, timeout=30) as response:
+                    return json.load(response)
+            except urllib.error.HTTPError as error:
+                retry_after = (
+                    error.headers.get("Retry-After") if error.headers else None
+                )
+                retryable = error.code in RETRYABLE_HTTP_CODES or (
+                    error.code == 403 and retry_after is not None
+                )
+                if retryable and attempt + 1 < self.max_attempts:
+                    self.sleep(self._retry_delay(error, attempt))
+                    continue
+                detail = error.read(500).decode("utf-8", errors="replace")
+                raise RuntimeError(
+                    f"GitHub API request failed ({error.code}) for {url}: {detail}"
+                ) from error
+            except (urllib.error.URLError, TimeoutError) as error:
+                if attempt + 1 < self.max_attempts:
+                    self.sleep(2.0**attempt)
+                    continue
+                raise RuntimeError(
+                    f"GitHub API request failed for {url}: {error}"
+                ) from error
+        raise AssertionError("unreachable")
 
 
 def load_json(path: Path) -> dict[str, Any]:
@@ -212,6 +248,131 @@ def summarize_workflows(
     return summary
 
 
+def _login(item: dict[str, Any]) -> str:
+    user = item.get("user")
+    if not isinstance(user, dict):
+        return ""
+    return str(user.get("login") or "")
+
+
+def _is_other_human(item: dict[str, Any], username: str) -> bool:
+    user = item.get("user")
+    if not isinstance(user, dict):
+        return False
+    login = _login(item)
+    return bool(
+        login
+        and login.casefold() != username.casefold()
+        and user.get("type") != "Bot"
+        and not login.casefold().endswith("[bot]")
+    )
+
+
+def _latest_timestamp(values: list[str | None]) -> str | None:
+    timestamps = [value for value in values if value]
+    return max(timestamps) if timestamps else None
+
+
+def summarize_attention(
+    issue_comments: list[dict[str, Any]],
+    review_comments: list[dict[str, Any]],
+    reviews: list[dict[str, Any]],
+    username: str,
+    *,
+    include_change_requests: bool = True,
+) -> dict[str, Any]:
+    """Find high-confidence public activity that still needs a response."""
+    own_activity_at = _latest_timestamp(
+        [
+            *[
+                comment.get("created_at")
+                for comment in issue_comments
+                if _login(comment).casefold() == username.casefold()
+            ],
+            *[
+                comment.get("created_at")
+                for comment in review_comments
+                if _login(comment).casefold() == username.casefold()
+            ],
+            *[
+                review.get("submitted_at")
+                for review in reviews
+                if _login(review).casefold() == username.casefold()
+                and review.get("state") != "PENDING"
+            ],
+        ]
+    )
+
+    own_thread_roots = {
+        comment.get("in_reply_to_id") or comment.get("id")
+        for comment in review_comments
+        if _login(comment).casefold() == username.casefold()
+    }
+    thread_replies = [
+        comment
+        for comment in review_comments
+        if _is_other_human(comment, username)
+        and comment.get("in_reply_to_id") in own_thread_roots
+        and (
+            own_activity_at is None
+            or (comment.get("created_at") or "") > own_activity_at
+        )
+    ]
+
+    mention_pattern = re.compile(
+        rf"(?<![\w-])@{re.escape(username)}(?![\w-])",
+        flags=re.IGNORECASE,
+    )
+    direct_mentions = [
+        comment
+        for comment in issue_comments
+        if _is_other_human(comment, username)
+        and mention_pattern.search(str(comment.get("body") or ""))
+        and (
+            own_activity_at is None
+            or (comment.get("created_at") or "") > own_activity_at
+        )
+    ]
+
+    active_change_requests: set[str] = set()
+    ordered_reviews = sorted(
+        (
+            review
+            for review in reviews
+            if _is_other_human(review, username) and review.get("state") != "PENDING"
+        ),
+        key=lambda review: str(review.get("submitted_at") or ""),
+    )
+    for review in ordered_reviews:
+        login = _login(review)
+        state = review.get("state")
+        if state == "CHANGES_REQUESTED":
+            active_change_requests.add(login)
+        elif state in {"APPROVED", "DISMISSED"}:
+            active_change_requests.discard(login)
+
+    response_candidates = [*thread_replies, *direct_mentions]
+    latest_response = max(
+        response_candidates,
+        key=lambda item: str(item.get("created_at") or ""),
+        default=None,
+    )
+    return {
+        "changes_requested_by": (
+            sorted(active_change_requests) if include_change_requests else []
+        ),
+        "latest_own_activity_at": own_activity_at,
+        "latest_response_at": (
+            latest_response.get("created_at") if latest_response else None
+        ),
+        "latest_response_url": (
+            latest_response.get("html_url") if latest_response else None
+        ),
+        "unanswered_direct_mentions": len(direct_mentions),
+        "unanswered_review_thread_replies": len(thread_replies),
+    }
+
+
 def derive_stage(
     entry: dict[str, Any],
     pull_request: dict[str, Any],
@@ -221,7 +382,12 @@ def derive_stage(
     own_review_count: int,
     username: str,
     own_review_on_head: bool = False,
+    attention: dict[str, Any] | None = None,
 ) -> str:
+    attention = attention or {}
+    response_count = int(attention.get("unanswered_direct_mentions", 0)) + int(
+        attention.get("unanswered_review_thread_replies", 0)
+    )
     if pull_request.get("merged_at"):
         return "Review landed" if entry["kind"] == "review" else "Merged"
 
@@ -229,14 +395,18 @@ def derive_stage(
         if own_review_count:
             if pull_request.get("state") != "open":
                 return "Review complete"
-            return (
-                "Review submitted"
-                if own_review_on_head
-                else "Review update available"
-            )
+            if not own_review_on_head:
+                return "Review update available"
+            if response_count:
+                return "Response available"
+            return "Review submitted"
         return "Review not found"
 
     if pull_request.get("state") == "open":
+        if attention.get("changes_requested_by"):
+            return "Changes requested"
+        if response_count:
+            return "Maintainer response"
         if workflows["action_required"]:
             return "Awaiting CI approval"
         if checks["unexpected_failures"] or workflows["failure"]:
@@ -316,14 +486,36 @@ def fetch_contribution(
         if isinstance(issue_response, dict):
             linked_issue = issue_response
 
+    reviews = api.get_json(
+        f"/repos/{repository}/pulls/{number}/reviews", {"per_page": 100}
+    )
+    if not isinstance(reviews, list):
+        raise RuntimeError(f"Unexpected reviews response for {repository}#{number}")
+    issue_comments = api.get_json(
+        f"/repos/{repository}/issues/{number}/comments", {"per_page": 100}
+    )
+    if not isinstance(issue_comments, list):
+        raise RuntimeError(
+            f"Unexpected issue comment response for {repository}#{number}"
+        )
+    review_comments = api.get_json(
+        f"/repos/{repository}/pulls/{number}/comments", {"per_page": 100}
+    )
+    if not isinstance(review_comments, list):
+        raise RuntimeError(
+            f"Unexpected review comment response for {repository}#{number}"
+        )
+    attention = summarize_attention(
+        issue_comments,
+        review_comments,
+        reviews,
+        username,
+        include_change_requests=entry["kind"] == "pull_request",
+    )
+
     own_review_count = 0
     own_review_on_head = False
     if entry["kind"] == "review":
-        reviews = api.get_json(
-            f"/repos/{repository}/pulls/{number}/reviews", {"per_page": 100}
-        )
-        if not isinstance(reviews, list):
-            raise RuntimeError(f"Unexpected reviews response for {repository}#{number}")
         own_reviews = [
             review
             for review in reviews
@@ -344,8 +536,12 @@ def fetch_contribution(
         own_review_count,
         username,
         own_review_on_head,
+        attention,
     )
     return {
+        "attention": attention,
+        "draft": bool(pull_request.get("draft")),
+        "head_sha": head_sha,
         "id": entry["id"],
         "kind": entry["kind"],
         "repository": repository,
@@ -526,7 +722,16 @@ def escape_cell(value: Any) -> str:
 def render_signals(item: dict[str, Any]) -> str:
     checks = item["checks"]
     workflows = item["workflows"]
+    attention = item.get("attention", {})
     signals: list[str] = []
+    if attention.get("changes_requested_by"):
+        count = len(attention["changes_requested_by"])
+        signals.append(f"{count} active change request{'s' if count != 1 else ''}")
+    response_count = int(attention.get("unanswered_direct_mentions", 0)) + int(
+        attention.get("unanswered_review_thread_replies", 0)
+    )
+    if response_count:
+        signals.append(f"{response_count} response{'s' if response_count != 1 else ''}")
     if checks["passing"]:
         signals.append(f"{checks['passing']} checks passed")
     if checks["pending"] or workflows["pending"]:

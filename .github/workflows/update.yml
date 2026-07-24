@@ -7,7 +7,12 @@ on:
   workflow_dispatch:
 
 permissions:
+  actions: read
+  checks: read
   contents: write
+  issues: read
+  pull-requests: read
+  statuses: read
 
 concurrency:
   group: contribution-tracker-refresh

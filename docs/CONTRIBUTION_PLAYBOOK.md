@@ -79,7 +79,19 @@ If any item fails, the lane is dropped without contacting maintainers.
 - **Review update available**: the pull request head changed after the most
   recent review, so the new diff needs a focused re-check before the review is
   considered current.
+- **Response available**: a human replied inside one of the contributor's
+  review threads or directly mentioned the contributor after their latest
+  public review activity.
+- **Maintainer response**: a human directly mentioned the contributor on an
+  authored pull request after the contributor's latest public activity.
+- **Changes requested**: at least one reviewer's latest effective decision is
+  still `CHANGES_REQUESTED`; later comment-only reviews do not clear it.
 - **Merged**: GitHub reports the pull request as merged.
 
 The landing-rate denominator excludes explicitly identified administrative
 gates so they are not confused with maintainers rejecting the implementation.
+
+The automated response queue is intentionally conservative. It ignores bots
+and general top-level discussion, and it never posts comments. A later
+contributor review or reply clears older response signals; changed heads still
+take priority because they require code inspection.

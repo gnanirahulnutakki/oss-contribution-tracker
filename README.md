@@ -77,6 +77,10 @@ GitHub Actions workflow reads public GitHub API data, updates
 It uses the repository's short-lived `GITHUB_TOKEN`; no personal access token
 or third-party credential is required.
 
+The refresh records exact heads and draft state, detects active change requests
+on authored pull requests, and surfaces only direct human mentions or replies
+to the contributor's own review threads. It never posts upstream comments.
+
 Run it locally:
 
 ```bash
