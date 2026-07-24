@@ -16,7 +16,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 17 | 12 | Target met |
+| External pull requests reviewed | 18 | 12 | Target met |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
@@ -47,8 +47,9 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [sgl-project/sglang#32344](https://github.com/sgl-project/sglang/pull/32344#pullrequestreview-4776140668)<br>[Bugfix] Emit cached token metric before first cache hit | reviewer | **Review submitted** | 85 checks passed · expected CI gate | Watch the PromQL label-set mismatch finding on head 94b638a4; re-review after the metric schema or query and regression coverage are corrected. |
 | [browser-use/browser-use#5300](https://github.com/browser-use/browser-use/pull/5300#pullrequestreview-4776211914)<br>Call the model with minimal state after capture timeout | reviewer | **Review submitted** | 95 checks passed | Watch for author or maintainer follow-up and re-review only if the head changes or a concrete timeout-safety question is raised. |
 | [modelcontextprotocol/typescript-sdk#2544](https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162)<br>Fix tests timing out during interactive OAuth flow (#2510) | reviewer | **Review submitted** | 16 checks passed | Watch the unresolved REDIRECT lifecycle finding on head a740d28c; re-review after the triggering request stays pending through finishAuth and retry with regression coverage. |
+| [confident-ai/deepeval#2950](https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4776624336)<br>fix(openai): apply prompt-caching discount to GPTModel cost calculation | reviewer | **Review submitted** | 11 checks passed · expected CI gate · 4 failing | Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite. |
 
-Last public state change recorded: **2026-07-24T20:08:05+00:00**.
+Last public state change recorded: **2026-07-24T20:53:13+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

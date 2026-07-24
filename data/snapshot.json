@@ -152,7 +152,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(filter): reject unknown config fields",
-      "updated_at": "2026-07-24T19:48:01Z",
+      "updated_at": "2026-07-24T20:35:12Z",
       "url": "https://github.com/open-telemetry/otel-arrow/pull/3572",
       "workflows": {
         "action_required": 0,
@@ -816,13 +816,53 @@
         "pending": 0,
         "success": 4
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [
+          "Vercel"
+        ],
+        "passing": 11,
+        "pending": 0,
+        "total": 14,
+        "unexpected_failures": [
+          "test",
+          "lint (ubuntu-latest)"
+        ]
+      },
+      "exclude_from_landing_rate": false,
+      "id": "confident-ai-deepeval-2950-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite.",
+      "number": 2950,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "confident-ai/deepeval",
+      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4776624336",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(openai): apply prompt-caching discount to GPTModel cost calculation",
+      "updated_at": "2026-07-24T20:49:41Z",
+      "url": "https://github.com/confident-ai/deepeval/pull/2950",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 2,
+        "pending": 0,
+        "success": 4
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 17,
+    "external_reviews": 18,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -837,5 +877,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T20:08:05+00:00"
+  "state_changed_at": "2026-07-24T20:53:13+00:00"
 }
