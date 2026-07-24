@@ -124,8 +124,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4770386426",
-      "next_action": "Watch the handoff and resumed-continuation cancellation finding; re-review after the pull request is updated."
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4771052538",
+      "next_action": "Watch for maintainer feedback or another head update; the handoff and resumed-continuation cancellation gap is verified fixed on 81aa66bc."
     },
     {
       "id": "google-adk-python-6459-review",
@@ -135,8 +135,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4770473009",
-      "next_action": "Watch the mTLS endpoint-selection finding and re-review after the author updates the pull request."
+      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656",
+      "next_action": "Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee."
     },
     {
       "id": "google-adk-python-6460-review",
@@ -151,6 +151,17 @@
         "cla/google"
       ],
       "next_action": "Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request."
+    },
+    {
+      "id": "pydantic-pydantic-ai-6706-review",
+      "kind": "review",
+      "repository": "pydantic/pydantic-ai",
+      "number": 6706,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242",
+      "next_action": "Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated."
     }
   ]
 }

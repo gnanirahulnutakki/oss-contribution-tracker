@@ -16,7 +16,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 6 | 12 | 50% |
+| External pull requests reviewed | 7 | 12 | 58% |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
@@ -33,11 +33,12 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [prometheus-operator/prometheus-operator#8695](https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444)<br>alertmanager: preserve top-level event_recorder configuration | reviewer | **Review submitted** | 22 checks passed | Watch the unresolved TLS compatibility finding and respond if the author follows up. |
 | [prometheus/client_golang#2062](https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408)<br>api: return HTTP status on non-JSON API error bodies | reviewer | **Review submitted** | 15 checks passed | Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request. |
 | [helm/helm#32339](https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007)<br>fix(scripts): add cache-busting to get-helm-3 version check | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request. |
-| [openai/openai-agents-python#3933](https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4770386426)<br>fix: enforce realtime text guardrails and synchronize streaming cancellation | reviewer | **Review submitted** | 9 checks passed | Watch the handoff and resumed-continuation cancellation finding; re-review after the pull request is updated. |
-| [google/adk-python#6459](https://github.com/google/adk-python/pull/6459#pullrequestreview-4770473009)<br>fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity | reviewer | **Review submitted** | 18 checks passed · 8 failing | Watch the mTLS endpoint-selection finding and re-review after the author updates the pull request. |
+| [openai/openai-agents-python#3933](https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4771052538)<br>fix: enforce realtime text guardrails and synchronize streaming cancellation | reviewer | **Review submitted** | 9 checks passed | Watch for maintainer feedback or another head update; the handoff and resumed-continuation cancellation gap is verified fixed on 81aa66bc. |
+| [google/adk-python#6459](https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656)<br>fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity | reviewer | **Review submitted** | 8 checks passed · workflow approval needed | Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee. |
 | [google/adk-python#6460](https://github.com/google/adk-python/pull/6460#pullrequestreview-4770729500)<br>fix(litellm): strip embedded thought_signature from tool call id | reviewer | **Review submitted** | 7 checks passed · 1 expected gate · workflow approval needed | Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request. |
+| [pydantic/pydantic-ai#6706](https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242)<br>Validate native tool ids per capability layer instead of flattened | reviewer | **Review submitted** | 81 checks passed | Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated. |
 
-Last public state change recorded: **2026-07-24T06:41:54+00:00**.
+Last public state change recorded: **2026-07-24T07:23:18+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
