@@ -16,7 +16,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 12 | 12 | Target met |
+| External pull requests reviewed | 13 | 12 | Target met |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
@@ -42,8 +42,9 @@ Authored external PRs opened in this window: **5**. Administrative gates exclude
 | [crewAIInc/crewAI#6625](https://github.com/crewAIInc/crewAI/pull/6625#pullrequestreview-4771496651)<br>fix(reasoning): use flexible regex to detect READY state to prevent agent deadlocks | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Watch the semantic readiness-marker finding and re-review after the author updates head d2c0b593. |
 | [huggingface/smolagents#2565](https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4771627268)<br>fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary | reviewer | **Review submitted** | workflow approval needed | Watch for the author to remove the unrelated #2564 executor commit, then re-review the isolated managed-agent summary fix. |
 | [strands-agents/harness-sdk#3448](https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4771826938)<br>feat(graph): add Python concurrency limit | reviewer | **Review submitted** | 10 checks passed · 3 pending · workflow approval needed | Watch the positive-integer validation finding and re-review after the builder and direct Graph constructor are hardened. |
+| [openai/openai-python#3538](https://github.com/openai/openai-python/pull/3538#pullrequestreview-4771981505)<br>fix(streaming): return final response for incomplete and failed events | reviewer | **Review submitted** | workflow approval needed | Watch the structured-output incomplete/failed parsing finding; re-review after non-completed responses avoid strict parsing and gain Pydantic coverage. |
 
-Last public state change recorded: **2026-07-24T09:08:38+00:00**.
+Last public state change recorded: **2026-07-24T09:32:22+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
