@@ -70,7 +70,7 @@
       "expected_check_failures": [
         "EasyCLA"
       ],
-      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; wait for issue assignment and maintainer workflow approval before marking the draft ready."
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all technical checks pass."
     },
     {
       "id": "envoyproxy-gateway-9574",
@@ -125,7 +125,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/openai/openai-agents-python/pull/3933#discussion_r3643680270",
-      "next_action": "Watch the confirmed public-result agent-state finding on the current head; re-review after the ordinary and resumed handoff paths are updated."
+      "next_action": "The handoff cancellation and public-result state findings are resolved; monitor remaining maintainer and automated review threads without duplicating them."
     },
     {
       "id": "google-adk-python-6459-review",
@@ -146,11 +146,11 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4770729500",
+      "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4776004279",
       "expected_check_failures": [
         "cla/google"
       ],
-      "next_action": "Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request."
+      "next_action": "Watch the empty embedded-signature ID finding and formatter follow-up on head 15bbca82; re-review only after another author update."
     },
     {
       "id": "pydantic-pydantic-ai-6706-review",
@@ -171,12 +171,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4771214920",
-      "expected_check_failures": [
-        "Test Typing Checks (3.11)",
-        "merge-gatekeeper"
-      ],
-      "next_action": "Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf."
+      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4776007573",
+      "next_action": "The OpenAIChatOptions typing finding is verified fixed on head 8a6a52c9; wait for maintainer scope direction and CI."
     },
     {
       "id": "microsoft-autogen-7994-review",
@@ -186,8 +182,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4771362474",
-      "next_action": "Watch the reserved callbacks filtering and TypedDict test-typing findings; re-review after the author updates the pull request."
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4776009034",
+      "next_action": "Both callbacks filtering and TypedDict test-typing findings are verified fixed on head c1b1fc24; wait for maintainer review and CI."
     },
     {
       "id": "crewaiinc-crewai-6625-review",
@@ -208,8 +204,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4771627268",
-      "next_action": "Watch for the author to remove the unrelated #2564 executor commit, then re-review the isolated managed-agent summary fix."
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4776010815",
+      "next_action": "The unrelated commit is removed; watch the missing TOOL_CALL and TOOL_RESPONSE regression-test finding and re-review after an author update."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -232,6 +228,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/openai/openai-python/pull/3538#pullrequestreview-4771981505",
       "next_action": "Watch the structured-output incomplete/failed parsing finding; re-review after non-completed responses avoid strict parsing and gain Pydantic coverage."
+    },
+    {
+      "id": "langchain-ai-deepagents-5026-review",
+      "kind": "review",
+      "repository": "langchain-ai/deepagents",
+      "number": 5026,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4772078666",
+      "next_action": "Watch the unbounded sandbox brace-expansion finding and re-review after expansion is capped with regression coverage."
     }
   ]
 }

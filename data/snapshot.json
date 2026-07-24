@@ -121,9 +121,9 @@
         "expected_gates": [
           "EasyCLA"
         ],
-        "passing": 3,
+        "passing": 77,
         "pending": 0,
-        "total": 4,
+        "total": 78,
         "unexpected_failures": []
       },
       "exclude_from_landing_rate": true,
@@ -137,25 +137,25 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; wait for issue assignment and maintainer workflow approval before marking the draft ready.",
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all technical checks pass.",
       "number": 3572,
       "own_review_count": 0,
       "own_review_on_head": false,
       "repository": "open-telemetry/otel-arrow",
       "review_url": null,
       "role": "author",
-      "stage": "Awaiting CI approval",
+      "stage": "PR open",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(filter): reject unknown config fields",
-      "updated_at": "2026-07-24T04:44:50Z",
+      "updated_at": "2026-07-24T19:07:17Z",
       "url": "https://github.com/open-telemetry/otel-arrow/pull/3572",
       "workflows": {
-        "action_required": 9,
+        "action_required": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 6
       }
     },
     {
@@ -311,7 +311,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch the confirmed public-result agent-state finding on the current head; re-review after the ordinary and resumed handoff paths are updated.",
+      "next_action": "The handoff cancellation and public-result state findings are resolved; monitor remaining maintainer and automated review threads without duplicating them.",
       "number": 3933,
       "own_review_count": 4,
       "own_review_on_head": false,
@@ -323,7 +323,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-07-24T14:48:28Z",
+      "updated_at": "2026-07-24T15:59:12Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -381,19 +381,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch the malformed embedded-signature ID finding and re-review after the author updates the pull request.",
+      "next_action": "Watch the empty embedded-signature ID finding and formatter follow-up on head 15bbca82; re-review only after another author update.",
       "number": 6460,
-      "own_review_count": 1,
-      "own_review_on_head": false,
+      "own_review_count": 2,
+      "own_review_on_head": true,
       "repository": "google/adk-python",
-      "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4770729500",
+      "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4776004279",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(litellm): strip embedded thought_signature from tool call id",
-      "updated_at": "2026-07-24T12:25:36Z",
+      "updated_at": "2026-07-24T19:03:38Z",
       "url": "https://github.com/google/adk-python/pull/6460",
       "workflows": {
         "action_required": 2,
@@ -438,13 +438,10 @@
     },
     {
       "checks": {
-        "expected_gates": [
-          "Test Typing Checks (3.11)",
-          "merge-gatekeeper"
-        ],
-        "passing": 40,
+        "expected_gates": [],
+        "passing": 2,
         "pending": 0,
-        "total": 42,
+        "total": 2,
         "unexpected_failures": []
       },
       "exclude_from_landing_rate": false,
@@ -452,25 +449,25 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch the validated OpenAIChatOptions test-typing fix and re-review after the author updates head 01ef5bf.",
+      "next_action": "The OpenAIChatOptions typing finding is verified fixed on head 8a6a52c9; wait for maintainer scope direction and CI.",
       "number": 7292,
-      "own_review_count": 1,
+      "own_review_count": 2,
       "own_review_on_head": true,
       "repository": "microsoft/agent-framework",
-      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4771214920",
+      "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4776007573",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "Python: [Feature]: Support OpenAI instructions in Responses API",
-      "updated_at": "2026-07-24T13:23:57Z",
+      "updated_at": "2026-07-24T19:03:58Z",
       "url": "https://github.com/microsoft/agent-framework/pull/7292",
       "workflows": {
-        "action_required": 0,
-        "failure": 1,
+        "action_required": 6,
+        "failure": 0,
         "pending": 0,
-        "success": 5
+        "success": 0
       }
     },
     {
@@ -486,19 +483,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch the reserved callbacks filtering and TypedDict test-typing findings; re-review after the author updates the pull request.",
+      "next_action": "Both callbacks filtering and TypedDict test-typing findings are verified fixed on head c1b1fc24; wait for maintainer review and CI.",
       "number": 7994,
-      "own_review_count": 1,
-      "own_review_on_head": false,
+      "own_review_count": 2,
+      "own_review_on_head": true,
       "repository": "microsoft/autogen",
-      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4771362474",
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4776009034",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-24T12:24:35Z",
+      "updated_at": "2026-07-24T19:04:07Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -554,19 +551,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch for the author to remove the unrelated #2564 executor commit, then re-review the isolated managed-agent summary fix.",
+      "next_action": "The unrelated commit is removed; watch the missing TOOL_CALL and TOOL_RESPONSE regression-test finding and re-review after an author update.",
       "number": 2565,
-      "own_review_count": 1,
-      "own_review_on_head": false,
+      "own_review_count": 2,
+      "own_review_on_head": true,
       "repository": "huggingface/smolagents",
-      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4771627268",
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4776010815",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-07-24T09:49:15Z",
+      "updated_at": "2026-07-24T19:04:27Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -642,6 +639,43 @@
         "pending": 0,
         "success": 0
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [],
+        "passing": 87,
+        "pending": 0,
+        "total": 89,
+        "unexpected_failures": [
+          "\u2705 CI Success",
+          "\ud83e\uddea Test deepagents / Python 3.13 (windows-latest)"
+        ]
+      },
+      "exclude_from_landing_rate": false,
+      "id": "langchain-ai-deepagents-5026-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the unbounded sandbox brace-expansion finding and re-review after expansion is capped with regression coverage.",
+      "number": 5026,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "langchain-ai/deepagents",
+      "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4772078666",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(sdk): make `BackendProtocol.glob` recursive for bare patterns",
+      "updated_at": "2026-07-24T12:47:04Z",
+      "url": "https://github.com/langchain-ai/deepagents/pull/5026",
+      "workflows": {
+        "action_required": 0,
+        "failure": 1,
+        "pending": 0,
+        "success": 22
+      }
     }
   ],
   "profile": {
@@ -663,5 +697,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T14:59:06+00:00"
+  "state_changed_at": "2026-07-24T19:10:17+00:00"
 }
