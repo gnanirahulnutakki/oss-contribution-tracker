@@ -132,7 +132,7 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Sign the Linux Foundation EasyCLA, then wait for issue assignment before marking the draft ready for review.",
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; wait for issue assignment and maintainer workflow approval before marking the draft ready.",
       "number": 3572,
       "own_review_count": 0,
       "repository": "open-telemetry/otel-arrow",
@@ -271,5 +271,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T04:45:42+00:00"
+  "state_changed_at": "2026-07-24T04:49:05+00:00"
 }

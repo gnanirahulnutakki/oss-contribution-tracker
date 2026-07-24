@@ -70,7 +70,7 @@
       "expected_check_failures": [
         "EasyCLA"
       ],
-      "next_action": "Sign the Linux Foundation EasyCLA, then wait for issue assignment before marking the draft ready for review."
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; wait for issue assignment and maintainer workflow approval before marking the draft ready."
     },
     {
       "id": "prometheus-operator-8695-review",
