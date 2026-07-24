@@ -199,6 +199,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/crewAIInc/crewAI/pull/6625#pullrequestreview-4771496651",
       "next_action": "Watch the semantic readiness-marker finding and re-review after the author updates head d2c0b593."
+    },
+    {
+      "id": "huggingface-smolagents-2565-review",
+      "kind": "review",
+      "repository": "huggingface/smolagents",
+      "number": 2565,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4771627268",
+      "next_action": "Watch for the author to remove the unrelated #2564 executor commit, then re-review the isolated managed-agent summary fix."
     }
   ]
 }
