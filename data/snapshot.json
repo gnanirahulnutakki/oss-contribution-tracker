@@ -572,13 +572,47 @@
         "pending": 0,
         "success": 0
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [],
+        "passing": 10,
+        "pending": 3,
+        "total": 13,
+        "unexpected_failures": []
+      },
+      "exclude_from_landing_rate": false,
+      "id": "strands-agents-harness-sdk-3448-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the positive-integer validation finding and re-review after the builder and direct Graph constructor are hardened.",
+      "number": 3448,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "strands-agents/harness-sdk",
+      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4771826938",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "feat(graph): add Python concurrency limit",
+      "updated_at": "2026-07-24T09:07:16Z",
+      "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
+      "workflows": {
+        "action_required": 2,
+        "failure": 0,
+        "pending": 0,
+        "success": 0
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 11,
+    "external_reviews": 12,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -593,5 +627,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T08:43:04+00:00"
+  "state_changed_at": "2026-07-24T09:08:38+00:00"
 }
