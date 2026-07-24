@@ -280,6 +280,34 @@ def summarize_workflows(
     return summary
 
 
+def summarize_base_drift(
+    pull_request: dict[str, Any], comparison: dict[str, Any]
+) -> dict[str, bool]:
+    """Bucket base drift without recording a noisy per-commit counter."""
+    behind_by = comparison.get("behind_by")
+    if not isinstance(behind_by, int) or isinstance(behind_by, bool):
+        raise ValueError("GitHub comparison response must include integer behind_by")
+    behind = behind_by > 0
+    return {
+        "behind": behind,
+        "update_required": behind and pull_request.get("mergeable_state") == "behind",
+    }
+
+
+def fetch_live_base_sha(
+    api: GitHubAPI, repository: str, pull_request: dict[str, Any]
+) -> str:
+    """Resolve the current target-branch tip instead of the PR's embedded base."""
+    base_ref = pull_request.get("base", {}).get("ref")
+    if not isinstance(base_ref, str) or not base_ref:
+        raise RuntimeError("Open pull request is missing its base ref")
+    encoded_ref = urllib.parse.quote(base_ref, safe="")
+    response = api.get_json(f"/repos/{repository}/commits/{encoded_ref}")
+    if not isinstance(response, dict) or not isinstance(response.get("sha"), str):
+        raise RuntimeError(f"Unexpected live base response for {repository}:{base_ref}")
+    return response["sha"]
+
+
 def _login(item: dict[str, Any]) -> str:
     user = item.get("user")
     if not isinstance(user, dict):
@@ -490,8 +518,10 @@ def derive_stage(
     username: str,
     own_review_on_head: bool = False,
     attention: dict[str, Any] | None = None,
+    base_drift: dict[str, bool] | None = None,
 ) -> str:
     attention = attention or {}
+    base_drift = base_drift or {}
     response_count = _response_count(attention)
     if pull_request.get("merged_at"):
         return "Review landed" if entry["kind"] == "review" else "Merged"
@@ -527,6 +557,8 @@ def derive_stage(
             }
             if linked_issue.get("state") == "open" and username not in assignees:
                 return "Awaiting assignment"
+        if not pull_request.get("draft") and base_drift.get("update_required"):
+            return "Branch update required"
         return "Draft" if pull_request.get("draft") else "PR open"
 
     if entry.get("gate") == "assignment" and linked_issue:
@@ -583,6 +615,18 @@ def fetch_contribution(
         workflow_response.get("workflow_runs", []),
         set(entry.get("expected_workflow_failures", [])),
     )
+
+    base_drift: dict[str, bool] | None = None
+    if entry["kind"] == "pull_request" and pull_request.get("state") == "open":
+        base_sha = fetch_live_base_sha(api, repository, pull_request)
+        comparison_response = api.get_json(
+            f"/repos/{repository}/compare/{base_sha}...{head_sha}"
+        )
+        if not isinstance(comparison_response, dict):
+            raise RuntimeError(
+                f"Unexpected comparison response for {repository}#{number}"
+            )
+        base_drift = summarize_base_drift(pull_request, comparison_response)
 
     linked_issue: dict[str, Any] | None = None
     linked_issue_comments: list[dict[str, Any]] = []
@@ -661,9 +705,11 @@ def fetch_contribution(
         username,
         own_review_on_head,
         attention,
+        base_drift,
     )
     return {
         "attention": attention,
+        **({"base_drift": base_drift} if base_drift is not None else {}),
         "draft": bool(pull_request.get("draft")),
         "head_sha": head_sha,
         "id": entry["id"],
@@ -936,6 +982,7 @@ def render_signals(item: dict[str, Any]) -> str:
     checks = item["checks"]
     workflows = item["workflows"]
     attention = item.get("attention", {})
+    base_drift = item.get("base_drift") or {}
     signals: list[str] = []
     if attention.get("changes_requested_by"):
         count = len(attention["changes_requested_by"])
@@ -954,6 +1001,12 @@ def render_signals(item: dict[str, Any]) -> str:
         signals.append(f"{count} failing")
     if workflows["action_required"]:
         signals.append("workflow approval needed")
+    if base_drift.get("behind"):
+        signals.append(
+            "branch update required"
+            if base_drift.get("update_required")
+            else "base advanced (update optional)"
+        )
     return " · ".join(signals) or "No checks reported"
 
 

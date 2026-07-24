@@ -351,6 +351,114 @@ class TrackerTests(unittest.TestCase):
 
         self.assertEqual(stage, "Awaiting CI approval")
 
+    def test_base_drift_is_bucketed_without_per_commit_churn(self) -> None:
+        pull_request = {"mergeable_state": "blocked"}
+
+        one_commit = tracker.summarize_base_drift(pull_request, {"behind_by": 1})
+        nine_commits = tracker.summarize_base_drift(pull_request, {"behind_by": 9})
+
+        self.assertEqual(
+            one_commit,
+            {"behind": True, "update_required": False},
+        )
+        self.assertEqual(one_commit, nine_commits)
+
+    def test_live_base_sha_uses_current_encoded_branch_ref(self) -> None:
+        class RecordingAPI:
+            def __init__(self) -> None:
+                self.paths: list[str] = []
+
+            def get_json(self, path: str) -> dict[str, str]:
+                self.paths.append(path)
+                return {"sha": "live-base-sha"}
+
+        api = RecordingAPI()
+        pull_request = {
+            "base": {
+                "ref": "release/1.x",
+                "sha": "stale-embedded-base-sha",
+            }
+        }
+
+        result = tracker.fetch_live_base_sha(api, "owner/repo", pull_request)
+
+        self.assertEqual(result, "live-base-sha")
+        self.assertEqual(
+            api.paths,
+            ["/repos/owner/repo/commits/release%2F1.x"],
+        )
+
+    def test_ready_pr_surfaces_a_required_branch_update(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "pull_request"},
+            pull_request={
+                "state": "open",
+                "merged_at": None,
+                "draft": False,
+                "mergeable_state": "behind",
+            },
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue=None,
+            own_review_count=0,
+            username="gnanirahulnutakki",
+            base_drift={"behind": True, "update_required": True},
+        )
+
+        self.assertEqual(stage, "Branch update required")
+
+    def test_draft_pr_does_not_demand_a_branch_update(self) -> None:
+        stage = tracker.derive_stage(
+            entry={"kind": "pull_request"},
+            pull_request={
+                "state": "open",
+                "merged_at": None,
+                "draft": True,
+                "mergeable_state": "behind",
+            },
+            checks={"pending": 0, "unexpected_failures": []},
+            workflows={
+                "action_required": 0,
+                "pending": 0,
+                "success": 1,
+                "failure": 0,
+            },
+            linked_issue=None,
+            own_review_count=0,
+            username="gnanirahulnutakki",
+            base_drift={"behind": True, "update_required": True},
+        )
+
+        self.assertEqual(stage, "Draft")
+
+    def test_base_drift_signal_distinguishes_optional_updates(self) -> None:
+        item = {
+            "attention": {},
+            "base_drift": {"behind": True, "update_required": False},
+            "checks": {
+                "passing": 1,
+                "pending": 0,
+                "expected_gates": [],
+                "unexpected_failures": [],
+            },
+            "workflows": {
+                "action_required": 0,
+                "expected_gates": 0,
+                "failure": 0,
+                "pending": 0,
+            },
+        }
+
+        self.assertEqual(
+            tracker.render_signals(item),
+            "1 checks passed · base advanced (update optional)",
+        )
+
     def test_review_on_current_head_is_submitted(self) -> None:
         stage = tracker.derive_stage(
             entry={"kind": "review"},

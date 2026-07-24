@@ -11,6 +11,10 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "base_drift": {
+        "behind": false,
+        "update_required": false
+      },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
@@ -63,6 +67,10 @@
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
+      },
+      "base_drift": {
+        "behind": false,
+        "update_required": false
       },
       "cadence_exempt": false,
       "checks": {
@@ -172,6 +180,10 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
+      "base_drift": {
+        "behind": true,
+        "update_required": false
+      },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [
@@ -208,7 +220,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(filter): reject unknown config fields",
-      "updated_at": "2026-07-24T23:30:30Z",
+      "updated_at": "2026-07-24T23:31:20Z",
       "url": "https://github.com/open-telemetry/otel-arrow/pull/3572",
       "workflows": {
         "action_required": 1,
@@ -228,6 +240,10 @@
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
+      },
+      "base_drift": {
+        "behind": true,
+        "update_required": false
       },
       "cadence_exempt": false,
       "checks": {
@@ -1307,5 +1323,5 @@
     "next_eligible_at": "2026-07-25T21:40:05Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-24T23:32:38+00:00"
+  "state_changed_at": "2026-07-24T23:52:51+00:00"
 }
