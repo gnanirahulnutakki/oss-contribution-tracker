@@ -287,13 +287,46 @@
         "pending": 0,
         "success": 0
       }
+    },
+    {
+      "checks": {
+        "expected_gates": [],
+        "passing": 9,
+        "pending": 0,
+        "total": 9,
+        "unexpected_failures": []
+      },
+      "exclude_from_landing_rate": false,
+      "id": "openai-openai-agents-python-3933-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Watch the handoff and resumed-continuation cancellation finding; re-review after the pull request is updated.",
+      "number": 3933,
+      "own_review_count": 1,
+      "repository": "openai/openai-agents-python",
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4770386426",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-24",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
+      "updated_at": "2026-07-24T05:34:42Z",
+      "url": "https://github.com/openai/openai-agents-python/pull/3933",
+      "workflows": {
+        "action_required": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 1
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 3,
+    "external_reviews": 4,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -308,5 +341,5 @@
     "window_end": "2026-10-20",
     "window_start": "2026-07-23"
   },
-  "state_changed_at": "2026-07-24T05:19:47+00:00"
+  "state_changed_at": "2026-07-24T05:36:13+00:00"
 }

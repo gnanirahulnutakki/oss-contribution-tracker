@@ -115,6 +115,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007",
       "next_action": "Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request."
+    },
+    {
+      "id": "openai-openai-agents-python-3933-review",
+      "kind": "review",
+      "repository": "openai/openai-agents-python",
+      "number": 3933,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4770386426",
+      "next_action": "Watch the handoff and resumed-continuation cancellation finding; re-review after the pull request is updated."
     }
   ]
 }
