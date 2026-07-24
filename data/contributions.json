@@ -226,8 +226,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/openai/openai-python/pull/3538#pullrequestreview-4771981505",
-      "next_action": "Watch the structured-output incomplete/failed parsing finding; re-review after non-completed responses avoid strict parsing and gain Pydantic coverage."
+      "review_url": "https://github.com/openai/openai-python/pull/3538#pullrequestreview-4776232747",
+      "next_action": "The incomplete/failed structured-output fix is verified on head e896c03a; wait for maintainer review or another head update."
     },
     {
       "id": "langchain-ai-deepagents-5026-review",
