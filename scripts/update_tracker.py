@@ -124,8 +124,7 @@ def resolve_review_cadence(profile: dict[str, Any]) -> dict[str, int]:
     unknown = set(raw) - set(DEFAULT_REVIEW_CADENCE)
     if unknown:
         raise ValueError(
-            "profile.review_cadence has unknown fields: "
-            + ", ".join(sorted(unknown))
+            "profile.review_cadence has unknown fields: " + ", ".join(sorted(unknown))
         )
     cadence = {**DEFAULT_REVIEW_CADENCE, **raw}
     for field, value in cadence.items():
@@ -178,8 +177,7 @@ def validate_config(config: dict[str, Any]) -> None:
         if entry.get("kind") not in {"pull_request", "review"}:
             raise ValueError(f"{prefix}.kind must be pull_request or review")
         if "cadence_exempt" in entry and (
-            entry["kind"] != "review"
-            or not isinstance(entry["cadence_exempt"], bool)
+            entry["kind"] != "review" or not isinstance(entry["cadence_exempt"], bool)
         ):
             raise ValueError(
                 f"{prefix}.cadence_exempt must be a boolean on a review entry"
@@ -319,10 +317,7 @@ def _parse_timestamp(value: str) -> datetime:
 
 def _format_timestamp(value: datetime) -> str:
     return (
-        value.astimezone(UTC)
-        .replace(microsecond=0)
-        .isoformat()
-        .replace("+00:00", "Z")
+        value.astimezone(UTC).replace(microsecond=0).isoformat().replace("+00:00", "Z")
     )
 
 
@@ -846,9 +841,7 @@ def summarize_review_cadence(
     if review_times:
         eligibility_boundaries.append(review_times[-1] + spacing)
     if len(recent) >= cadence["max_fresh_reviews"]:
-        eligibility_boundaries.append(
-            recent[-cadence["max_fresh_reviews"]] + window
-        )
+        eligibility_boundaries.append(recent[-cadence["max_fresh_reviews"]] + window)
 
     next_eligible = max(eligibility_boundaries, default=current)
     eligible_now = current >= next_eligible
@@ -886,6 +879,31 @@ def build_snapshot(
     }
 
 
+def stabilize_contribution_timestamps(
+    current: dict[str, Any],
+    previous: dict[str, Any],
+) -> None:
+    previous_by_id = {
+        item["id"]: item
+        for item in previous.get("contributions", [])
+        if isinstance(item, dict) and isinstance(item.get("id"), str)
+    }
+    for item in current.get("contributions", []):
+        if not isinstance(item, dict) or not isinstance(item.get("id"), str):
+            continue
+        old_item = previous_by_id.get(item["id"])
+        if not old_item or "updated_at" not in item or "updated_at" not in old_item:
+            continue
+        material_item = {
+            key: value for key, value in item.items() if key != "updated_at"
+        }
+        old_material_item = {
+            key: value for key, value in old_item.items() if key != "updated_at"
+        }
+        if material_item == old_material_item:
+            item["updated_at"] = old_item["updated_at"]
+
+
 def stabilize_snapshot(
     current: dict[str, Any],
     previous: dict[str, Any] | None,
@@ -893,12 +911,13 @@ def stabilize_snapshot(
 ) -> dict[str, Any]:
     timestamp = (now or datetime.now(UTC)).replace(microsecond=0).isoformat()
     previous = previous or {}
+    stable = deepcopy(current)
+    stabilize_contribution_timestamps(stable, previous)
     previous_core = {
         key: value for key, value in previous.items() if key != "state_changed_at"
     }
-    if current == previous_core and previous.get("state_changed_at"):
+    if stable == previous_core and previous.get("state_changed_at"):
         timestamp = previous["state_changed_at"]
-    stable = deepcopy(current)
     stable["state_changed_at"] = timestamp
     return stable
 

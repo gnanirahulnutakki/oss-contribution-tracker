@@ -227,9 +227,7 @@ class TrackerTests(unittest.TestCase):
 
         self.assertTrue(cadence["eligible_now"])
         self.assertEqual(cadence["fresh_reviews_in_window"], 1)
-        self.assertEqual(
-            cadence["latest_fresh_review_at"], "2026-07-24T18:00:00Z"
-        )
+        self.assertEqual(cadence["latest_fresh_review_at"], "2026-07-24T18:00:00Z")
 
     def test_review_cadence_renders_a_fixed_utc_boundary(self) -> None:
         rendered = tracker.render_review_cadence(
@@ -678,6 +676,85 @@ class TrackerTests(unittest.TestCase):
         )
 
         self.assertEqual(result["state_changed_at"], "2026-07-23T12:00:00+00:00")
+
+    def test_stable_snapshot_ignores_bot_only_pull_request_timestamp_churn(
+        self,
+    ) -> None:
+        current = {
+            "profile": {"merged": 1},
+            "contributions": [
+                {
+                    "id": "example-pr",
+                    "head_sha": "abc123",
+                    "stage": "PR open",
+                    "updated_at": "2026-07-24T13:00:00Z",
+                }
+            ],
+        }
+        previous = {
+            "profile": {"merged": 1},
+            "contributions": [
+                {
+                    "id": "example-pr",
+                    "head_sha": "abc123",
+                    "stage": "PR open",
+                    "updated_at": "2026-07-24T12:00:00Z",
+                }
+            ],
+            "state_changed_at": "2026-07-24T12:00:00+00:00",
+        }
+
+        result = tracker.stabilize_snapshot(
+            current,
+            previous,
+            now=datetime(2026, 7, 24, 13, 0, tzinfo=UTC),
+        )
+
+        self.assertEqual(
+            result["contributions"][0]["updated_at"], "2026-07-24T12:00:00Z"
+        )
+        self.assertEqual(result["state_changed_at"], "2026-07-24T12:00:00+00:00")
+        self.assertEqual(
+            current["contributions"][0]["updated_at"], "2026-07-24T13:00:00Z"
+        )
+
+    def test_stable_snapshot_keeps_timestamp_for_material_pull_request_change(
+        self,
+    ) -> None:
+        current = {
+            "profile": {"merged": 1},
+            "contributions": [
+                {
+                    "id": "example-pr",
+                    "head_sha": "def456",
+                    "stage": "PR open",
+                    "updated_at": "2026-07-24T13:00:00Z",
+                }
+            ],
+        }
+        previous = {
+            "profile": {"merged": 1},
+            "contributions": [
+                {
+                    "id": "example-pr",
+                    "head_sha": "abc123",
+                    "stage": "PR open",
+                    "updated_at": "2026-07-24T12:00:00Z",
+                }
+            ],
+            "state_changed_at": "2026-07-24T12:00:00+00:00",
+        }
+
+        result = tracker.stabilize_snapshot(
+            current,
+            previous,
+            now=datetime(2026, 7, 24, 13, 0, tzinfo=UTC),
+        )
+
+        self.assertEqual(
+            result["contributions"][0]["updated_at"], "2026-07-24T13:00:00Z"
+        )
+        self.assertEqual(result["state_changed_at"], "2026-07-24T13:00:00+00:00")
 
     def test_marker_replacement_preserves_static_readme(self) -> None:
         original = (

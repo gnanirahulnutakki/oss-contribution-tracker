@@ -88,7 +88,9 @@ on authored pull requests, and surfaces only direct human mentions, replies to
 the contributor's own review threads, or trusted linked-issue responses after
 the contribution began. It also derives the next fresh-review eligibility
 boundary from first-submission timestamps while leaving explicitly requested
-follow-ups exempt. It never posts upstream comments.
+follow-ups exempt. Bot-only pull-request timestamp churn is stabilized so it
+cannot create synthetic tracker commits. The tracker never posts upstream
+comments.
 
 ## Reuse this tracker
 
