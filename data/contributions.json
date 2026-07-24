@@ -77,6 +77,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408",
       "next_action": "Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request."
+    },
+    {
+      "id": "helm-helm-32339-review",
+      "kind": "review",
+      "repository": "helm/helm",
+      "number": 32339,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007",
+      "next_action": "Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request."
     }
   ]
 }
