@@ -30,6 +30,17 @@
       "next_action": "Wait for maintainer workflow approval; do not ping prematurely."
     },
     {
+      "id": "prometheus-community-postgres-exporter-1351",
+      "kind": "pull_request",
+      "repository": "prometheus-community/postgres_exporter",
+      "number": 1351,
+      "role": "author",
+      "tier": "anchor",
+      "started_at": "2026-07-24",
+      "linked_issue": 300,
+      "next_action": "Wait for maintainer approval of first-time contributor workflows; do not ping prematurely."
+    },
+    {
       "id": "prefecthq-fastmcp-4625",
       "kind": "pull_request",
       "repository": "PrefectHQ/fastmcp",
