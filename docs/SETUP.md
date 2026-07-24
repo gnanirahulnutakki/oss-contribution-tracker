@@ -89,4 +89,6 @@ maintainer responses, and next actions.
 - Keep authored work in progress bounded.
 - Do not claim unassigned issues or duplicate active pull requests.
 - Respond only to concrete maintainer questions or actionable review feedback.
+- Bound fresh unsolicited reviews by both cycle and time; this template uses
+  one per cycle, two per rolling 24 hours, and at least four hours between them.
 - Never let the tracker post upstream comments automatically.

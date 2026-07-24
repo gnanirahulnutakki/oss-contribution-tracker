@@ -69,6 +69,24 @@ If any item fails, the lane is dropped without contacting maintainers.
 - Reply when a maintainer asks a question or requests a change.
 - Close the loop with concrete evidence: commit, test, CI run, or merged state.
 
+## Review cadence
+
+External reviews are a service to authors, not a profile-activity source.
+Once the scorecard target is met, new unsolicited reviews require an unusually
+clear, locally reproduced finding.
+
+- Publish at most one fresh unsolicited external review per automated cycle.
+- Publish at most two fresh unsolicited external reviews in any rolling
+  24-hour period, with at least four hours between them.
+- Re-reviews after a head change and replies to direct author or maintainer
+  questions are follow-up work, not fresh unsolicited reviews. They are exempt
+  from the numeric cap only when they add new, actionable evidence.
+- Never repeat an existing inline finding, post an approval-only drive-by
+  review, or add a generic summary to create visible activity.
+- During a cooldown, use the cycle for response triage, local reproduction,
+  issue research, implementation, or tracker maintenance without posting
+  upstream.
+
 ## What the dashboard means
 
 - **PR open**: implementation is public and awaiting normal review.

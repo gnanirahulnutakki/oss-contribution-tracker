@@ -65,6 +65,8 @@ _The scheduled job still checks daily. It commits only when these public facts c
 - Work in progress stays bounded to four authored pull requests, with only one
   active implementation per project.
 - External reviews count when they contain a reproduced, actionable finding.
+- Fresh unsolicited reviews are limited to one per automated cycle and two per
+  rolling 24 hours, with at least four hours between them.
 - Automated checks commit only when real public state changes; daily no-op
   refreshes do not manufacture profile activity.
 
