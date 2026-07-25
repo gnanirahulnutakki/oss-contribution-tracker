@@ -77,9 +77,9 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 1,
+        "passing": 15,
         "pending": 0,
-        "total": 1,
+        "total": 15,
         "unexpected_failures": []
       },
       "draft": false,
@@ -109,11 +109,11 @@
       "updated_at": "2026-07-25T13:06:01Z",
       "url": "https://github.com/prometheus-community/postgres_exporter/pull/1351",
       "workflows": {
-        "action_required": 3,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -1324,5 +1324,5 @@
     "next_eligible_at": "2026-07-25T21:40:05Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-25T13:09:47+00:00"
+  "state_changed_at": "2026-07-25T14:46:21+00:00"
 }

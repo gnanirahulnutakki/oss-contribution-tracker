@@ -28,7 +28,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling
 | Contribution | Role | Stage | Verification signals | Next action |
 |---|---|---|---|---|
 | [prometheus/alertmanager#5402](https://github.com/prometheus/alertmanager/pull/5402)<br>victorops: use Splunk On-Call branding | author | **Awaiting CI approval** | 2 checks passed · workflow approval needed | Wait for maintainer workflow approval; do not ping prematurely. |
-| [prometheus-community/postgres_exporter#1351](https://github.com/prometheus-community/postgres_exporter/pull/1351)<br>fix: preserve precision for large counters | author | **Changes requested** | 1 active change request · 1 checks passed · workflow approval needed | Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review. |
+| [prometheus-community/postgres_exporter#1351](https://github.com/prometheus-community/postgres_exporter/pull/1351)<br>fix: preserve precision for large counters | author | **Changes requested** | 1 active change request · 15 checks passed | Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review. |
 | [PrefectHQ/fastmcp#4625](https://github.com/PrefectHQ/fastmcp/pull/4625)<br>fix: use Python field name for structured task results | author | **Awaiting assignment** | 10 checks passed · expected CI gate | Wait for issue assignment; the existing pull request will reopen automatically. |
 | [open-telemetry/otel-arrow#3572](https://github.com/open-telemetry/otel-arrow/pull/3572)<br>fix(filter): reject unknown config fields | author | **Awaiting CI approval** | 77 checks passed · expected CI gate · workflow approval needed · base advanced (update optional) | Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all technical checks pass. |
 | [envoyproxy/gateway#9574](https://github.com/envoyproxy/gateway/pull/9574)<br>docs: explain backend protocol selection | author | **Draft** | 28 checks passed · base advanced (update optional) | CI is green; wait for maintainer assignment or direction on #8773, then mark the draft ready if requested. |
@@ -53,7 +53,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling
 | [traceloop/openllmetry#4375](https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105)<br>fix(cohere): avoid double-ending async error spans | reviewer | **Review submitted** | 3 checks passed · workflow approval needed | Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality. |
 | [Arize-ai/openinference#3429](https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779)<br>fix(anthropic): preserve APIPromise helpers | reviewer | **Review submitted** | 20 checks passed | Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added. |
 
-Last public state change recorded: **2026-07-25T13:09:47+00:00**.
+Last public state change recorded: **2026-07-25T14:46:21+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
