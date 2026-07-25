@@ -1057,9 +1057,9 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 95,
+        "passing": 96,
         "pending": 0,
-        "total": 95,
+        "total": 96,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1069,7 +1069,7 @@
       "id": "browser-use-browser-use-5300-review",
       "kind": "review",
       "linked_issue": null,
-      "merged_at": null,
+      "merged_at": "2026-07-25T01:29:05Z",
       "next_action": "Watch for author or maintainer follow-up and re-review only if the head changes or a concrete timeout-safety question is raised.",
       "number": 5300,
       "own_review_count": 1,
@@ -1077,12 +1077,12 @@
       "repository": "browser-use/browser-use",
       "review_url": "https://github.com/browser-use/browser-use/pull/5300#pullrequestreview-4776211914",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review landed",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "Call the model with minimal state after capture timeout",
-      "updated_at": "2026-07-24T19:45:27Z",
+      "updated_at": "2026-07-25T01:29:05Z",
       "url": "https://github.com/browser-use/browser-use/pull/5300",
       "workflows": {
         "action_required": 0,
@@ -1316,12 +1316,12 @@
   "review_cadence": {
     "eligible_now": false,
     "fresh_reviews_considered": 20,
-    "fresh_reviews_in_window": 20,
+    "fresh_reviews_in_window": 14,
     "latest_fresh_review_at": "2026-07-24T22:14:25Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
     "next_eligible_at": "2026-07-25T21:40:05Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-24T23:52:51+00:00"
+  "state_changed_at": "2026-07-25T06:51:45+00:00"
 }
