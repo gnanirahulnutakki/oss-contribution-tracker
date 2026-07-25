@@ -43,7 +43,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 300,
-      "next_action": "Wait for maintainer approval of first-time contributor workflows; do not ping prematurely."
+      "next_action": "Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review."
     },
     {
       "id": "prefecthq-fastmcp-4625",
@@ -209,8 +209,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4776010815",
-      "next_action": "The unrelated commit is removed; watch the missing TOOL_CALL and TOOL_RESPONSE regression-test finding and re-review after an author update."
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4779293759",
+      "next_action": "Regression coverage is verified and approved on head e5685e0; wait for maintainer review and merge."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -308,11 +308,11 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4776624336",
+      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4779294175",
       "expected_check_failures": [
         "Vercel"
       ],
-      "next_action": "Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite."
+      "next_action": "The mocked-usage regression is fixed on a7a4a718; GPT-5.4 cached pricing remains unresolved, so re-review after pricing data and a default-model regression are added."
     },
     {
       "id": "traceloop-openllmetry-4375-review",

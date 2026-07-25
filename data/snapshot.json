@@ -59,8 +59,10 @@
     },
     {
       "attention": {
-        "changes_requested_by": [],
-        "latest_own_activity_at": null,
+        "changes_requested_by": [
+          "SuperQ"
+        ],
+        "latest_own_activity_at": "2026-07-25T12:57:14Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -83,7 +85,7 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": null,
-      "head_sha": "93efdc8d2815c3ef84deebe5d760a435f17e9094",
+      "head_sha": "9c8b1d98a409ed81654bde8f75d7f86f4d991919",
       "id": "prometheus-community-postgres-exporter-1351",
       "kind": "pull_request",
       "linked_issue": {
@@ -92,19 +94,19 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Wait for maintainer approval of first-time contributor workflows; do not ping prematurely.",
+      "next_action": "Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review.",
       "number": 1351,
       "own_review_count": 0,
       "own_review_on_head": false,
       "repository": "prometheus-community/postgres_exporter",
       "review_url": null,
       "role": "author",
-      "stage": "Awaiting CI approval",
+      "stage": "Changes requested",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: preserve precision for large counters",
-      "updated_at": "2026-07-24T03:55:18Z",
+      "updated_at": "2026-07-25T13:06:01Z",
       "url": "https://github.com/prometheus-community/postgres_exporter/pull/1351",
       "workflows": {
         "action_required": 3,
@@ -782,7 +784,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-24T19:04:27Z",
+        "latest_own_activity_at": "2026-07-25T13:01:39Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -801,24 +803,24 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T08:40:29Z",
-      "head_sha": "ebd418003d14e94db6a8b8bc10c989c8af70c677",
+      "head_sha": "e5685e03636f23a7fe469cfbb7669d57af59a432",
       "id": "huggingface-smolagents-2565-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The unrelated commit is removed; watch the missing TOOL_CALL and TOOL_RESPONSE regression-test finding and re-review after an author update.",
+      "next_action": "Regression coverage is verified and approved on head e5685e0; wait for maintainer review and merge.",
       "number": 2565,
-      "own_review_count": 2,
+      "own_review_count": 3,
       "own_review_on_head": true,
       "repository": "huggingface/smolagents",
-      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4776010815",
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4779293759",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-07-24T19:04:27Z",
+      "updated_at": "2026-07-25T13:01:39Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -1144,7 +1146,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-24T20:49:41Z",
+        "latest_own_activity_at": "2026-07-25T13:02:02Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -1157,42 +1159,41 @@
         "expected_gates": [
           "Vercel"
         ],
-        "passing": 11,
+        "passing": 12,
         "pending": 0,
         "total": 14,
         "unexpected_failures": [
-          "test",
           "lint (ubuntu-latest)"
         ]
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T20:49:41Z",
-      "head_sha": "a14a307c0449a40dfefcf8d4e9aaa13db4062065",
+      "head_sha": "a7a4a718405331c0b932e8ee69f34a0bc009b29d",
       "id": "confident-ai-deepeval-2950-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch the default GPT-5 cache-pricing and existing-completion regression findings on head a14a307c; re-review after the author updates the prices and full affected test suite.",
+      "next_action": "The mocked-usage regression is fixed on a7a4a718; GPT-5.4 cached pricing remains unresolved, so re-review after pricing data and a default-model regression are added.",
       "number": 2950,
-      "own_review_count": 1,
+      "own_review_count": 2,
       "own_review_on_head": true,
       "repository": "confident-ai/deepeval",
-      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4776624336",
+      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4779294175",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(openai): apply prompt-caching discount to GPTModel cost calculation",
-      "updated_at": "2026-07-24T20:49:41Z",
+      "updated_at": "2026-07-25T13:02:02Z",
       "url": "https://github.com/confident-ai/deepeval/pull/2950",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 2,
+        "failure": 1,
         "pending": 0,
-        "success": 4
+        "success": 5
       }
     },
     {
@@ -1316,12 +1317,12 @@
   "review_cadence": {
     "eligible_now": false,
     "fresh_reviews_considered": 20,
-    "fresh_reviews_in_window": 14,
+    "fresh_reviews_in_window": 6,
     "latest_fresh_review_at": "2026-07-24T22:14:25Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
     "next_eligible_at": "2026-07-25T21:40:05Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-25T06:51:45+00:00"
+  "state_changed_at": "2026-07-25T13:09:47+00:00"
 }
