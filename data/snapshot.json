@@ -94,7 +94,7 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review.",
+      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks pass; wait for maintainer re-review.",
       "number": 1351,
       "own_review_count": 0,
       "own_review_on_head": false,
@@ -1324,5 +1324,5 @@
     "next_eligible_at": "2026-07-25T21:40:05Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-25T14:46:21+00:00"
+  "state_changed_at": "2026-07-25T18:56:47+00:00"
 }

@@ -43,7 +43,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 300,
-      "next_action": "Requested CLI-only configuration change is pushed in 9c8b1d9; wait for CI and maintainer re-review."
+      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks pass; wait for maintainer re-review."
     },
     {
       "id": "prefecthq-fastmcp-4625",
