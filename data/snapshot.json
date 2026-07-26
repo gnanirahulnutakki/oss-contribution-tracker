@@ -71,7 +71,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -834,25 +834,25 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-24T09:07:16Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-07-26T14:30:35Z",
+        "latest_response_url": "https://github.com/strands-agents/harness-sdk/pull/3448#discussion_r3652703733",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 1
       },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 10,
+        "passing": 7,
         "pending": 3,
-        "total": 13,
+        "total": 10,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T09:07:16Z",
-      "head_sha": "13616a0df4038c93e64c02dbe8707f3c3dbab9b2",
+      "head_sha": "97c2b6e62498b98fc8d575743299bc6e0351c190",
       "id": "strands-agents-harness-sdk-3448-review",
       "kind": "review",
       "linked_issue": null,
@@ -860,16 +860,16 @@
       "next_action": "Watch the positive-integer validation finding and re-review after the builder and direct Graph constructor are hardened.",
       "number": 3448,
       "own_review_count": 1,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "strands-agents/harness-sdk",
       "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4771826938",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "feat(graph): add Python concurrency limit",
-      "updated_at": "2026-07-24T09:07:16Z",
+      "updated_at": "2026-07-26T14:30:35Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
         "action_required": 2,
@@ -1422,5 +1422,5 @@
     "next_eligible_at": "2026-07-27T01:03:01Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-26T07:05:50+00:00"
+  "state_changed_at": "2026-07-26T14:47:36+00:00"
 }
