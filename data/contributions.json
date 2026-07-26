@@ -220,8 +220,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4771826938",
-      "next_action": "Watch the positive-integer validation finding and re-review after the builder and direct Graph constructor are hardened."
+      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4782383330",
+      "next_action": "The positive-integer validation fix is verified and approved on head 97c2b6e; wait for maintainer workflow authorization, review, or another head update."
     },
     {
       "id": "openai-openai-python-3538-review",
