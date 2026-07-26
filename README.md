@@ -16,12 +16,12 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 20 | 12 | Target met |
+| External pull requests reviewed | 21 | 12 | Target met |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
-Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+Fresh unsolicited review cadence: **paused until 2026-07-26 05:03 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
 ## Tracked portfolio
 
@@ -34,7 +34,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling
 | [envoyproxy/gateway#9574](https://github.com/envoyproxy/gateway/pull/9574)<br>docs: explain backend protocol selection | author | **Draft** | 28 checks passed · base advanced (update optional) | CI is green; wait for maintainer assignment or direction on #8773, then mark the draft ready if requested. |
 | [prometheus-operator/prometheus-operator#8695](https://github.com/prometheus-operator/prometheus-operator/pull/8695#pullrequestreview-4769609444)<br>alertmanager: preserve top-level event_recorder configuration | reviewer | **Review submitted** | 22 checks passed | Watch the unresolved TLS compatibility finding and respond if the author follows up. |
 | [prometheus/client_golang#2062](https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408)<br>api: return HTTP status on non-JSON API error bodies | reviewer | **Review submitted** | 15 checks passed | Watch the valid-JSON error-envelope finding and re-review if the author updates the pull request. |
-| [helm/helm#32339](https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007)<br>fix(scripts): add cache-busting to get-helm-3 version check | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request. |
+| [helm/helm#32339](https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007)<br>fix(scripts): add cache-busting to get-helm-3 version check | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | The cache-header portability rationale is accepted and non-blocking; re-review after the author addresses Helm 4 parity or updates the head. |
 | [openai/openai-agents-python#3933](https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214)<br>fix: enforce realtime text guardrails and synchronize streaming cancellation | reviewer | **Review update available** | 9 checks passed | Head e6b93288 has three unresolved, specific automated findings; do not duplicate them or post a general summary. Re-review only after the author updates the head or asks a concrete question. |
 | [google/adk-python#6459](https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656)<br>fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity | reviewer | **Review submitted** | 8 checks passed · workflow approval needed | Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee. |
 | [google/adk-python#6460](https://github.com/google/adk-python/pull/6460#pullrequestreview-4776004279)<br>fix(litellm): strip embedded thought_signature from tool call id | reviewer | **Review submitted** | 7 checks passed · expected CI gate · workflow approval needed | Watch the empty embedded-signature ID finding and formatter follow-up on head 15bbca82; re-review only after another author update. |
@@ -52,8 +52,9 @@ Fresh unsolicited review cadence: **paused until 2026-07-25 21:40 UTC** (rolling
 | [confident-ai/deepeval#2950](https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4779294175)<br>fix(openai): apply prompt-caching discount to GPTModel cost calculation | reviewer | **Review submitted** | 12 checks passed · expected CI gate · 2 failing | The mocked-usage regression is fixed on a7a4a718; GPT-5.4 cached pricing remains unresolved, so re-review after pricing data and a default-model regression are added. |
 | [traceloop/openllmetry#4375](https://github.com/traceloop/openllmetry/pull/4375#pullrequestreview-4776934105)<br>fix(cohere): avoid double-ending async error spans | reviewer | **Review submitted** | 3 checks passed · workflow approval needed | Watch the duplicate exception-event finding on head 9c303fd1; re-review after one layer owns exception recording and the regression asserts exact cardinality. |
 | [Arize-ai/openinference#3429](https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779)<br>fix(anthropic): preserve APIPromise helpers | reviewer | **Review submitted** | 20 checks passed | Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added. |
+| [AgentOps-AI/agentops#1428](https://github.com/AgentOps-AI/agentops/pull/1428#pullrequestreview-4780556283)<br>fix(langchain): capture structured output tool calls | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Structured-output capture is reproduced and approved on head 85f6896; wait for maintainer review, CI authorization, or a new head. |
 
-Last public state change recorded: **2026-07-25T18:56:47+00:00**.
+Last public state change recorded: **2026-07-26T01:05:32+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

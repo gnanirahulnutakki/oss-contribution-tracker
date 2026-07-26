@@ -119,7 +119,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007",
-      "next_action": "Watch the cache-header and Helm 4 parity threads; re-review after the author updates the pull request."
+      "next_action": "The cache-header portability rationale is accepted and non-blocking; re-review after the author addresses Helm 4 parity or updates the head."
     },
     {
       "id": "openai-openai-agents-python-3933-review",
@@ -335,6 +335,17 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779",
       "next_action": "Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added."
+    },
+    {
+      "id": "agentops-ai-agentops-1428-review",
+      "kind": "review",
+      "repository": "AgentOps-AI/agentops",
+      "number": 1428,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-26",
+      "review_url": "https://github.com/AgentOps-AI/agentops/pull/1428#pullrequestreview-4780556283",
+      "next_action": "Structured-output capture is reproduced and approved on head 85f6896; wait for maintainer review, CI authorization, or a new head."
     }
   ]
 }
