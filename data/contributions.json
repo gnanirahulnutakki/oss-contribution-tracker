@@ -346,6 +346,17 @@
       "started_at": "2026-07-26",
       "review_url": "https://github.com/AgentOps-AI/agentops/pull/1428#pullrequestreview-4780556283",
       "next_action": "Structured-output capture is reproduced and approved on head 85f6896; wait for maintainer review, CI authorization, or a new head."
+    },
+    {
+      "id": "agno-agi-agno-9174-review",
+      "kind": "review",
+      "repository": "agno-agi/agno",
+      "number": 9174,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-07-26",
+      "review_url": "https://github.com/agno-agi/agno/pull/9174#pullrequestreview-4781165073",
+      "next_action": "The cache optimization is independently verified and approved on head 140bd1d; watch the non-blocking concurrent cold-start wording and formatter cleanup, then re-review only after a new head or concrete reply."
     }
   ]
 }
