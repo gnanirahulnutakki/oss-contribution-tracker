@@ -59,7 +59,7 @@
       "expected_check_failures": [
         "check-issue-link"
       ],
-      "next_action": "Wait for issue assignment; the existing pull request will reopen automatically."
+      "next_action": "Issue #4616 was closed by merged maintainer PR #4657; this administrative pull request remains closed. No follow-up is needed."
     },
     {
       "id": "open-telemetry-otel-arrow-3572",
@@ -118,8 +118,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007",
-      "next_action": "The cache-header portability rationale is accepted and non-blocking; re-review after the author addresses Helm 4 parity or updates the head."
+      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790319373",
+      "next_action": "Our cache-behavior concern and Helm 3/4 parity are verified on bbaf420a; wait for the author to address the open --header readability request and best-effort/testability discussion before re-reviewing."
     },
     {
       "id": "openai-openai-agents-python-3933-review",
@@ -140,8 +140,14 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656",
-      "next_action": "Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee."
+      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4790316157",
+      "expected_check_failures": [
+        "maintainers will submit via Copybara"
+      ],
+      "expected_workflow_failures": [
+        "Do Not Merge on GitHub"
+      ],
+      "next_action": "Force-pushed head 4b115485 is byte-identical in the two pull-request files to verified 2f0043ee; exact-head and current-main synthetic checks each pass 52 focused tests plus pinned style and diff validation. Only the expected Copybara handoff remains; wait for maintainer action or a changed head."
     },
     {
       "id": "google-adk-python-6460-review",
@@ -334,7 +340,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4787290072",
-      "next_action": "The consumed asResponse body finding is verified fixed and approved on head d4827bfb; all 16 package tests, type-check, build, lint, and format passed, and all 20 GitHub checks completed without failure. Wait for maintainer action or a changed head."
+      "next_action": "The consumed asResponse body finding is verified fixed and approved on head d4827bfb; all 16 package tests, type-check, build, lint, and format passed, and all 21 GitHub checks completed without failure. Wait for maintainer action or a changed head."
     },
     {
       "id": "agentops-ai-agentops-1428-review",

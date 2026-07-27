@@ -149,7 +149,7 @@
         "state": "closed"
       },
       "merged_at": null,
-      "next_action": "Wait for issue assignment; the existing pull request will reopen automatically.",
+      "next_action": "Issue #4616 was closed by merged maintainer PR #4657; this administrative pull request remains closed. No follow-up is needed.",
       "number": 4625,
       "own_review_count": 0,
       "own_review_on_head": false,
@@ -390,7 +390,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-26T00:54:57Z",
+        "latest_own_activity_at": "2026-07-27T18:37:44Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -401,32 +401,32 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 1,
+        "passing": 3,
         "pending": 0,
-        "total": 1,
+        "total": 3,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T04:14:01Z",
-      "head_sha": "5a30c7ae8504218fd68d87c5a7d929d0a3bb3891",
+      "head_sha": "bbaf420a101379dad4f8452129cf26f2fff7e536",
       "id": "helm-helm-32339-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The cache-header portability rationale is accepted and non-blocking; re-review after the author addresses Helm 4 parity or updates the head.",
+      "next_action": "Our cache-behavior concern and Helm 3/4 parity are verified on bbaf420a; wait for the author to address the open --header readability request and best-effort/testability discussion before re-reviewing.",
       "number": 32339,
-      "own_review_count": 2,
+      "own_review_count": 3,
       "own_review_on_head": true,
       "repository": "helm/helm",
-      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4770049007",
+      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790319373",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
-      "title": "fix(scripts): add cache-busting to get-helm-3 version check",
-      "updated_at": "2026-07-26T00:54:57Z",
+      "title": "fix(scripts): add cache-busting to Helm version checks",
+      "updated_at": "2026-07-27T18:37:44Z",
       "url": "https://github.com/helm/helm/pull/32339",
       "workflows": {
         "action_required": 3,
@@ -488,7 +488,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-24T07:19:53Z",
+        "latest_own_activity_at": "2026-07-27T18:37:16Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -498,40 +498,42 @@
       },
       "cadence_exempt": false,
       "checks": {
-        "expected_gates": [],
-        "passing": 8,
+        "expected_gates": [
+          "maintainers will submit via Copybara"
+        ],
+        "passing": 23,
         "pending": 0,
-        "total": 8,
+        "total": 24,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T05:53:37Z",
-      "head_sha": "2f0043eecf8fa126d5f314819a14ea4cfeed80d0",
+      "head_sha": "4b11548554a2942d7fa18763a5da77a86f473974",
       "id": "google-adk-python-6459-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Watch for maintainer feedback or another head update; the mTLS policy matrix and formatter follow-up are verified on 2f0043ee.",
+      "next_action": "Force-pushed head 4b115485 is byte-identical in the two pull-request files to verified 2f0043ee; exact-head and current-main synthetic checks each pass 52 focused tests plus pinned style and diff validation. Only the expected Copybara handoff remains; wait for maintainer action or a changed head.",
       "number": 6459,
-      "own_review_count": 4,
+      "own_review_count": 5,
       "own_review_on_head": true,
       "repository": "google/adk-python",
-      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4771066656",
+      "review_url": "https://github.com/google/adk-python/pull/6459#pullrequestreview-4790316157",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity",
-      "updated_at": "2026-07-24T11:13:38Z",
+      "updated_at": "2026-07-27T18:37:16Z",
       "url": "https://github.com/google/adk-python/pull/6459",
       "workflows": {
-        "action_required": 2,
-        "expected_gates": 0,
+        "action_required": 0,
+        "expected_gates": 1,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 1
       }
     },
     {
@@ -1259,9 +1261,9 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 20,
+        "passing": 21,
         "pending": 0,
-        "total": 20,
+        "total": 21,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1272,7 +1274,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The consumed asResponse body finding is verified fixed and approved on head d4827bfb; all 16 package tests, type-check, build, lint, and format passed, and all 20 GitHub checks completed without failure. Wait for maintainer action or a changed head.",
+      "next_action": "The consumed asResponse body finding is verified fixed and approved on head d4827bfb; all 16 package tests, type-check, build, lint, and format passed, and all 21 GitHub checks completed without failure. Wait for maintainer action or a changed head.",
       "number": 3429,
       "own_review_count": 2,
       "own_review_on_head": true,
@@ -1284,7 +1286,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(anthropic): preserve APIPromise helpers",
-      "updated_at": "2026-07-27T13:11:44Z",
+      "updated_at": "2026-07-27T15:26:16Z",
       "url": "https://github.com/Arize-ai/openinference/pull/3429",
       "workflows": {
         "action_required": 0,
@@ -1522,5 +1524,5 @@
     "next_eligible_at": "2026-07-28T01:22:18Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-27T15:19:58+00:00"
+  "state_changed_at": "2026-07-27T18:43:57+00:00"
 }
