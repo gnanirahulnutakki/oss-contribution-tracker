@@ -146,7 +146,7 @@
       "linked_issue": {
         "assignees": [],
         "number": 4616,
-        "state": "open"
+        "state": "closed"
       },
       "merged_at": null,
       "next_action": "Wait for issue assignment; the existing pull request will reopen automatically.",
@@ -156,7 +156,7 @@
       "repository": "PrefectHQ/fastmcp",
       "review_url": null,
       "role": "author",
-      "stage": "Awaiting assignment",
+      "stage": "Closed",
       "started_at": "2026-07-24",
       "state": "closed",
       "tier": "stretch",
@@ -1522,5 +1522,5 @@
     "next_eligible_at": "2026-07-28T01:22:18Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-27T13:14:51+00:00"
+  "state_changed_at": "2026-07-27T15:19:58+00:00"
 }
