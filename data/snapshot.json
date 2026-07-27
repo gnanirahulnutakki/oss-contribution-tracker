@@ -390,7 +390,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-27T18:37:44Z",
+        "latest_own_activity_at": "2026-07-27T19:14:16Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -409,24 +409,24 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T04:14:01Z",
-      "head_sha": "bbaf420a101379dad4f8452129cf26f2fff7e536",
+      "head_sha": "bc0114c70841e2a05c95e53e20358fb761dbfb2e",
       "id": "helm-helm-32339-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Our cache-behavior concern and Helm 3/4 parity are verified on bbaf420a; wait for the author to address the open --header readability request and best-effort/testability discussion before re-reviewing.",
+      "next_action": "Approved bc0114c after verifying the requested --header spelling and best-effort CDN wording, all four curl/wget paths, syntax, diff hygiene, and a conflict-free current-main merge; wait for a changed head or concrete maintainer follow-up.",
       "number": 32339,
-      "own_review_count": 3,
+      "own_review_count": 4,
       "own_review_on_head": true,
       "repository": "helm/helm",
-      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790319373",
+      "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790630703",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(scripts): add cache-busting to Helm version checks",
-      "updated_at": "2026-07-27T18:37:44Z",
+      "updated_at": "2026-07-27T19:14:16Z",
       "url": "https://github.com/helm/helm/pull/32339",
       "workflows": {
         "action_required": 3,
@@ -1524,5 +1524,5 @@
     "next_eligible_at": "2026-07-28T01:22:18Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-27T18:43:57+00:00"
+  "state_changed_at": "2026-07-27T19:20:30+00:00"
 }
