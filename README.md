@@ -16,12 +16,12 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Metrics include onl
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 22 | 12 | Target met |
+| External pull requests reviewed | 23 | 12 | Target met |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
-Fresh unsolicited review cadence: **paused until 2026-07-27 01:03 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+Fresh unsolicited review cadence: **paused until 2026-07-27 07:03 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
 ## Tracked portfolio
 
@@ -54,8 +54,9 @@ Fresh unsolicited review cadence: **paused until 2026-07-27 01:03 UTC** (rolling
 | [Arize-ai/openinference#3429](https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4777149779)<br>fix(anthropic): preserve APIPromise helpers | reviewer | **Review submitted** | 20 checks passed | Watch the consumed asResponse body finding on head 8554f3db; re-review after failure observation no longer triggers eager parsing and raw-response regression coverage is added. |
 | [AgentOps-AI/agentops#1428](https://github.com/AgentOps-AI/agentops/pull/1428#pullrequestreview-4780556283)<br>fix(langchain): capture structured output tool calls | reviewer | **Review submitted** | 1 checks passed · workflow approval needed | Structured-output capture is reproduced and approved on head 85f6896; wait for maintainer review, CI authorization, or a new head. |
 | [agno-agi/agno#9174](https://github.com/agno-agi/agno/pull/9174#pullrequestreview-4781165073)<br>refactor: resolve the pydantic version once instead of per tool | reviewer | **Review submitted** | 10 checks passed | The cache optimization is independently verified and approved on head 140bd1d; watch the non-blocking concurrent cold-start wording and formatter cleanup, then re-review only after a new head or concrete reply. |
+| [omnigent-ai/omnigent#3304](https://github.com/omnigent-ai/omnigent/pull/3304#pullrequestreview-4783071226)<br>fix(accounts): enforce the last-admin invariant atomically on delete | reviewer | **Review submitted** | 60 checks passed · expected CI gate | The last-admin invariant is independently validated and approved on head bb2ca4c across SQLite, PostgreSQL 16, and MySQL 8.0; wait for author or maintainer follow-up and re-review only after a new head or concrete reply. |
 
-Last public state change recorded: **2026-07-26T19:04:54+00:00**.
+Last public state change recorded: **2026-07-27T01:29:48+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

@@ -1391,13 +1391,64 @@
         "pending": 0,
         "success": 2
       }
+    },
+    {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-07-27T01:22:18Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "cadence_exempt": false,
+      "checks": {
+        "expected_gates": [
+          "Maintainer Approval"
+        ],
+        "passing": 60,
+        "pending": 0,
+        "total": 61,
+        "unexpected_failures": []
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-27T01:22:18Z",
+      "head_sha": "bb2ca4c20dad199b02daaa667f46a8d32bc4748e",
+      "id": "omnigent-ai-omnigent-3304-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "The last-admin invariant is independently validated and approved on head bb2ca4c across SQLite, PostgreSQL 16, and MySQL 8.0; wait for author or maintainer follow-up and re-review only after a new head or concrete reply.",
+      "number": 3304,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "omnigent-ai/omnigent",
+      "review_url": "https://github.com/omnigent-ai/omnigent/pull/3304#pullrequestreview-4783071226",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-27",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(accounts): enforce the last-admin invariant atomically on delete",
+      "updated_at": "2026-07-27T01:22:18Z",
+      "url": "https://github.com/omnigent-ai/omnigent/pull/3304",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 10
+      }
     }
   ],
   "profile": {
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 22,
+    "external_reviews": 23,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -1414,13 +1465,13 @@
   },
   "review_cadence": {
     "eligible_now": false,
-    "fresh_reviews_considered": 22,
+    "fresh_reviews_considered": 23,
     "fresh_reviews_in_window": 2,
-    "latest_fresh_review_at": "2026-07-26T07:03:02Z",
+    "latest_fresh_review_at": "2026-07-27T01:22:18Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": "2026-07-27T01:03:01Z",
+    "next_eligible_at": "2026-07-27T07:03:02Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-26T19:04:54+00:00"
+  "state_changed_at": "2026-07-27T01:29:48+00:00"
 }
