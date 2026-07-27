@@ -174,8 +174,8 @@ def validate_config(config: dict[str, Any]) -> None:
         if entry_id in seen:
             raise ValueError(f"duplicate contribution id: {entry_id}")
         seen.add(entry_id)
-        if entry.get("kind") not in {"pull_request", "review"}:
-            raise ValueError(f"{prefix}.kind must be pull_request or review")
+        if entry.get("kind") not in {"pull_request", "review", "issue"}:
+            raise ValueError(f"{prefix}.kind must be pull_request, review, or issue")
         if "cadence_exempt" in entry and (
             entry["kind"] != "review" or not isinstance(entry["cadence_exempt"], bool)
         ):
@@ -572,9 +572,109 @@ def derive_stage(
     return "Closed"
 
 
+def derive_issue_stage(
+    issue: dict[str, Any],
+    attention: dict[str, Any],
+    username: str,
+) -> str:
+    if issue.get("state") != "open":
+        return "Issue closed"
+    if _response_count(attention):
+        return "Maintainer response"
+
+    assignees = {
+        str(assignee.get("login")).casefold()
+        for assignee in issue.get("assignees", [])
+        if isinstance(assignee, dict) and assignee.get("login")
+    }
+    if username.casefold() in assignees:
+        return "Assigned"
+    if assignees:
+        return "Assigned elsewhere"
+    return "Issue open"
+
+
+def fetch_issue_contribution(
+    api: GitHubAPI,
+    entry: dict[str, Any],
+    username: str,
+) -> dict[str, Any]:
+    repository = entry["repository"]
+    number = entry["number"]
+    issue = api.get_json(f"/repos/{repository}/issues/{number}")
+    if not isinstance(issue, dict) or "pull_request" in issue:
+        raise RuntimeError(f"Unexpected issue response for {repository}#{number}")
+
+    issue_comments = api.get_json(
+        f"/repos/{repository}/issues/{number}/comments",
+        {"per_page": 100},
+    )
+    if not isinstance(issue_comments, list):
+        raise RuntimeError(
+            f"Unexpected issue comment response for {repository}#{number}"
+        )
+
+    attention = summarize_attention(
+        issue_comments=[],
+        review_comments=[],
+        reviews=[],
+        username=username,
+        include_change_requests=False,
+        linked_issue_comments=issue_comments,
+        linked_issue_floor_at=issue.get("created_at"),
+    )
+    assignees = [
+        assignee.get("login")
+        for assignee in issue.get("assignees", [])
+        if isinstance(assignee, dict) and assignee.get("login")
+    ]
+    return {
+        "attention": attention,
+        "assignees": assignees,
+        "checks": {
+            "total": 0,
+            "passing": 0,
+            "pending": 0,
+            "expected_gates": [],
+            "unexpected_failures": [],
+        },
+        "draft": False,
+        "exclude_from_landing_rate": False,
+        "first_review_submitted_at": None,
+        "id": entry["id"],
+        "kind": entry["kind"],
+        "linked_issue": None,
+        "merged_at": None,
+        "next_action": entry["next_action"],
+        "number": number,
+        "own_review_count": 0,
+        "own_review_on_head": False,
+        "repository": repository,
+        "review_url": None,
+        "role": entry["role"],
+        "stage": derive_issue_stage(issue, attention, username),
+        "started_at": entry["started_at"],
+        "state": issue["state"],
+        "tier": entry["tier"],
+        "title": issue["title"],
+        "updated_at": issue["updated_at"],
+        "url": issue["html_url"],
+        "workflows": {
+            "action_required": 0,
+            "expected_gates": 0,
+            "failure": 0,
+            "pending": 0,
+            "success": 0,
+        },
+    }
+
+
 def fetch_contribution(
     api: GitHubAPI, entry: dict[str, Any], username: str
 ) -> dict[str, Any]:
+    if entry["kind"] == "issue":
+        return fetch_issue_contribution(api, entry, username)
+
     repository = entry["repository"]
     number = entry["number"]
     pull_request = api.get_json(f"/repos/{repository}/pulls/{number}")
@@ -793,7 +893,7 @@ def fetch_profile_metrics(
         api,
         (f"{prefix} is:merged created:{program_range} merged:{program_range}"),
     )
-    open_prs, _ = search_issues(api, f"{prefix} is:open created:{program_range}")
+    open_prs, _ = search_issues(api, f"{prefix} is:open")
     cohort_merged, _ = search_issues(
         api,
         (f"{prefix} is:merged created:{program_range} merged:{program_range}"),
@@ -984,6 +1084,19 @@ def render_signals(item: dict[str, Any]) -> str:
     attention = item.get("attention", {})
     base_drift = item.get("base_drift") or {}
     signals: list[str] = []
+    if item.get("kind") == "issue":
+        response_count = _response_count(attention)
+        if response_count:
+            signals.append(
+                f"{response_count} response{'s' if response_count != 1 else ''}"
+            )
+        assignees = item.get("assignees", [])
+        if assignees:
+            signals.append("assigned to " + ", ".join(f"@{name}" for name in assignees))
+        else:
+            signals.append("unassigned")
+        return " · ".join(signals)
+
     if attention.get("changes_requested_by"):
         count = len(attention["changes_requested_by"])
         signals.append(f"{count} active change request{'s' if count != 1 else ''}")
@@ -1047,7 +1160,8 @@ def render_dashboard(snapshot: dict[str, Any]) -> str:
         (
             f"Program window: **{profile['window_start']} through "
             f"{profile['window_end']}** ({profile['window_days']} days). "
-            "Metrics include only new work from the program start."
+            "Outcome metrics include only new work from the program start; "
+            "the authored-PR cap spans all active external work."
         ),
         "",
         "| Outcome | Current | Target | Progress |",

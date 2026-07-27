@@ -6,9 +6,10 @@ that maintainers are likely to accept.
 
 ## 90-day outcomes
 
-The current program begins on July 23, 2026. Activity predating that restart,
-including older open pull requests, stays visible on GitHub but is outside this
-scorecard.
+The current program begins on July 23, 2026. Activity predating that restart is
+outside the outcome scorecard but remains in the tracked portfolio when it is
+still open. Older authored pull requests still count against the global
+work-in-progress cap.
 
 - 24 merged, independent pull requests
 - at least a 70% landing rate for decided pull requests
@@ -105,6 +106,12 @@ clear, locally reproduced finding.
 - **Maintainer response**: a human directly mentioned the contributor on an
   authored pull request, or a repository member responded on its linked issue,
   after the relevant latest contributor activity.
+- **Issue open**: an authored or participated issue remains open with no newer
+  actionable maintainer response.
+- **Assigned**: an issue is assigned to this contributor and remains an active
+  implementation commitment even when publication is paused by the PR cap.
+- **Assigned elsewhere**: another contributor owns the issue; preserve the
+  report or discussion, but do not start competing work.
 - **Changes requested**: at least one reviewer's latest effective decision is
   still `CHANGES_REQUESTED`; later comment-only reviews do not clear it.
 - **Merged**: GitHub reports the pull request as merged.

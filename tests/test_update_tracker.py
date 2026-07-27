@@ -104,7 +104,16 @@ class TrackerTests(unittest.TestCase):
         metrics = tracker.fetch_profile_metrics(api, profile, [])
 
         self.assertEqual(metrics["window_end"], "2026-10-20")
-        self.assertTrue(all("2026-07-23..2026-10-20" in query for query in api.queries))
+        open_queries = [query for query in api.queries if " is:open" in query]
+        self.assertEqual(len(open_queries), 1)
+        self.assertNotIn("created:", open_queries[0])
+        self.assertTrue(
+            all(
+                "2026-07-23..2026-10-20" in query
+                for query in api.queries
+                if query not in open_queries
+            )
+        )
         self.assertTrue(all("-user:employer" in query for query in api.queries))
 
     def test_first_review_timestamp_ignores_pending_and_pre_program_reviews(
@@ -314,6 +323,91 @@ class TrackerTests(unittest.TestCase):
         )
 
         self.assertEqual(stage, "Awaiting assignment")
+
+    def test_issue_stage_distinguishes_our_assignment(self) -> None:
+        issue = {
+            "state": "open",
+            "assignees": [{"login": "Example"}],
+        }
+
+        self.assertEqual(
+            tracker.derive_issue_stage(issue, {}, "example"),
+            "Assigned",
+        )
+        self.assertEqual(
+            tracker.derive_issue_stage(issue, {}, "someone-else"),
+            "Assigned elsewhere",
+        )
+
+    def test_issue_stage_prioritizes_new_maintainer_response(self) -> None:
+        stage = tracker.derive_issue_stage(
+            {"state": "open", "assignees": [{"login": "example"}]},
+            {"unanswered_linked_issue_responses": 1},
+            "example",
+        )
+
+        self.assertEqual(stage, "Maintainer response")
+
+    def test_fetch_issue_contribution_tracks_assignment_and_replies(self) -> None:
+        test_case = self
+
+        class IssueAPI:
+            def get_json(
+                self,
+                path: str,
+                params: dict[str, object] | None = None,
+            ) -> dict | list[dict]:
+                if path.endswith("/issues/99"):
+                    return {
+                        "state": "open",
+                        "title": "Track the public issue",
+                        "html_url": "https://github.com/owner/repo/issues/99",
+                        "created_at": "2026-07-23T09:00:00Z",
+                        "updated_at": "2026-07-24T10:00:00Z",
+                        "assignees": [{"login": "Example"}],
+                    }
+                if path.endswith("/issues/99/comments"):
+                    test_case.assertEqual(params, {"per_page": 100})
+                    return [
+                        {
+                            "id": 1,
+                            "body": "Initial evidence",
+                            "created_at": "2026-07-23T09:10:00Z",
+                            "html_url": "https://github.com/owner/repo/issues/99#issuecomment-1",
+                            "user": {"login": "example", "type": "User"},
+                        },
+                        {
+                            "id": 2,
+                            "body": "Can you confirm this case?",
+                            "created_at": "2026-07-24T10:00:00Z",
+                            "html_url": "https://github.com/owner/repo/issues/99#issuecomment-2",
+                            "author_association": "MEMBER",
+                            "user": {"login": "maintainer", "type": "User"},
+                        },
+                    ]
+                test_case.fail(f"unexpected API path: {path}")
+
+        item = tracker.fetch_issue_contribution(
+            IssueAPI(),
+            {
+                "id": "owner-repo-99-issue",
+                "kind": "issue",
+                "repository": "owner/repo",
+                "number": 99,
+                "role": "author",
+                "tier": "legacy",
+                "started_at": "2026-07-23",
+                "next_action": "Answer the maintainer's concrete question.",
+            },
+            "example",
+        )
+
+        self.assertEqual(item["stage"], "Maintainer response")
+        self.assertEqual(item["assignees"], ["Example"])
+        self.assertEqual(
+            item["attention"]["latest_response_url"],
+            "https://github.com/owner/repo/issues/99#issuecomment-2",
+        )
 
     def test_open_draft_waiting_for_assignment_is_reported(self) -> None:
         stage = tracker.derive_stage(
@@ -925,6 +1019,32 @@ class TrackerTests(unittest.TestCase):
 
         with self.assertRaisesRegex(ValueError, "unknown fields: daily_limit"):
             tracker.validate_config(config)
+
+    def test_config_accepts_issue_watch_entries(self) -> None:
+        config = {
+            "schema_version": 1,
+            "profile": {
+                "username": "example",
+                "program_start": "2026-07-23",
+                "window_days": 90,
+                "excluded_owners": ["example"],
+                "goals": {},
+            },
+            "contributions": [
+                {
+                    "id": "owner-repo-1-issue",
+                    "kind": "issue",
+                    "repository": "owner/repo",
+                    "number": 1,
+                    "role": "participant",
+                    "tier": "legacy",
+                    "started_at": "2026-07-23",
+                    "next_action": "Wait for a concrete maintainer reply.",
+                }
+            ],
+        }
+
+        tracker.validate_config(config)
 
 
 if __name__ == "__main__":

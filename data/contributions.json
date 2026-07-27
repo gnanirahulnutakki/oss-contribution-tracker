@@ -89,6 +89,48 @@
       "next_action": "CI is green; wait for maintainer assignment or direction on #8773, then mark the draft ready if requested."
     },
     {
+      "id": "oam-dev-cluster-gateway-171",
+      "kind": "pull_request",
+      "repository": "oam-dev/cluster-gateway",
+      "number": 171,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-07-13",
+      "linked_issue": 170,
+      "next_action": "All eight checks pass and no review thread or maintainer reply is outstanding; wait without pinging."
+    },
+    {
+      "id": "nousresearch-hermes-agent-10824",
+      "kind": "pull_request",
+      "repository": "NousResearch/hermes-agent",
+      "number": 10824,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "Head ce1cd22 is rebased onto current main, bounds reuse to >=3.11,<3.14, preserves UV_PYTHON repinning, and passes 41 shell-installer plus 13 contributor-mapping tests. The review thread is resolved and all 27 reporting CI checks pass; wait for maintainer re-review without pinging."
+    },
+    {
+      "id": "nousresearch-hermes-agent-10828",
+      "kind": "pull_request",
+      "repository": "NousResearch/hermes-agent",
+      "number": 10828,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "Closed after confirming model-only Responses inference conflicts with the current custom-provider compatibility policy; no follow-up is needed."
+    },
+    {
+      "id": "nousresearch-hermes-agent-10852",
+      "kind": "pull_request",
+      "repository": "NousResearch/hermes-agent",
+      "number": 10852,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "linked_issue": 10809,
+      "next_action": "Head 1f898ab preserves the explicit 500-token cap through custom-provider requests and retry/fallback paths, with 462 focused tests plus 48,637 full-suite passes. The review thread is resolved and all 27 reporting CI checks pass; wait for maintainer re-review without pinging."
+    },
+    {
       "id": "prometheus-operator-8695-review",
       "kind": "review",
       "repository": "prometheus-operator/prometheus-operator",
@@ -161,7 +203,7 @@
       "expected_check_failures": [
         "cla/google"
       ],
-      "next_action": "Watch the empty embedded-signature ID finding and formatter follow-up on head 15bbca82; re-review only after another author update."
+      "next_action": "Head 7c6904ab still has the unresolved empty embedded-signature ID finding; the failing agent-triage run is an unrelated Gemini 503 and CLA remains the expected gate. Do not duplicate the inline finding; re-review only after a substantive author update."
     },
     {
       "id": "pydantic-pydantic-ai-6706-review",
@@ -388,6 +430,96 @@
       "started_at": "2026-07-27",
       "review_url": "https://github.com/opensquilla/opensquilla/pull/815#pullrequestreview-4787283091",
       "next_action": "The false cache-break diagnostic is verified fixed and approved on head af315af: the original reproducer now reports baseline_initialized without a break, 2,210 exact-head tests passed, and a current-main synthetic merge passed all 18 focused regressions plus Ruff and mypy. Wait for maintainer action or a changed head."
+    },
+    {
+      "id": "oam-dev-cluster-gateway-170-issue",
+      "kind": "issue",
+      "repository": "oam-dev/cluster-gateway",
+      "number": 170,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-07-13",
+      "next_action": "The linked implementation PR is green; wait for maintainer review without a status ping."
+    },
+    {
+      "id": "caviraoss-openmemory-186-issue",
+      "kind": "issue",
+      "repository": "CaviraOSS/OpenMemory",
+      "number": 186,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "next_action": "The issue is assigned to @nullure and has no unanswered maintainer reply; wait for implementation or a concrete question."
+    },
+    {
+      "id": "plastic-labs-honcho-790-issue",
+      "kind": "issue",
+      "repository": "plastic-labs/honcho",
+      "number": 790,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "next_action": "No maintainer reply or assignment has landed; preserve the report and do not ping."
+    },
+    {
+      "id": "shaneholloman-mcp-knowledge-graph-22-issue",
+      "kind": "issue",
+      "repository": "shaneholloman/mcp-knowledge-graph",
+      "number": 22,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "next_action": "No maintainer reply or assignment has landed; preserve the report and do not ping."
+    },
+    {
+      "id": "akuity-kargo-6685-issue",
+      "kind": "issue",
+      "repository": "akuity/kargo",
+      "number": 6685,
+      "role": "assignee",
+      "tier": "emerging",
+      "started_at": "2026-07-23",
+      "next_action": "Assigned implementation is valid, but hold publication while the global authored-PR cap is exceeded; recheck for competing work before resuming."
+    },
+    {
+      "id": "kagent-dev-kagent-2303-issue",
+      "kind": "issue",
+      "repository": "kagent-dev/kagent",
+      "number": 2303,
+      "role": "participant",
+      "tier": "emerging",
+      "started_at": "2026-07-23",
+      "next_action": "No maintainer reply, assignment, or competing implementation decision has landed; wait without pinging."
+    },
+    {
+      "id": "prefecthq-fastmcp-2879-issue",
+      "kind": "issue",
+      "repository": "PrefectHQ/fastmcp",
+      "number": 2879,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-17",
+      "next_action": "No author or maintainer reply followed the prior technical comment; retain as a watch-only legacy lane."
+    },
+    {
+      "id": "argoproj-argo-cd-21059-issue",
+      "kind": "issue",
+      "repository": "argoproj/argo-cd",
+      "number": 21059,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane."
+    },
+    {
+      "id": "argoproj-argo-cd-12273-issue",
+      "kind": "issue",
+      "repository": "argoproj/argo-cd",
+      "number": 12273,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane."
     }
   ]
 }

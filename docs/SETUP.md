@@ -29,7 +29,8 @@ historical comparisons misleading.
 
 ## 3. Add reviewed contributions
 
-Each entry under `contributions` identifies one public pull request or review:
+Each entry under `contributions` identifies one public pull request, review, or
+active issue lane:
 
 ```json
 {
@@ -49,6 +50,22 @@ Use `kind: "review"` and add `review_url` for an external code review. Optional
 fields support known CI gates, assignment-gated work, and items that should not
 affect the landing-rate denominator. Keep `next_action` specific enough that a
 future refresh cannot justify a generic status ping.
+
+Use `kind: "issue"` for an authored issue, an assignment, or an issue discussion
+that still needs watching:
+
+```json
+{
+  "id": "example-project-99-issue",
+  "kind": "issue",
+  "repository": "example/project",
+  "number": 99,
+  "role": "participant",
+  "tier": "legacy",
+  "started_at": "2026-01-10",
+  "next_action": "Wait for a concrete maintainer reply; do not ping."
+}
+```
 
 Set `cadence_exempt: true` only when a review entry represents a direct
 maintainer-requested review rather than fresh unsolicited outreach. The tracker
