@@ -906,7 +906,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-24T19:04:07Z",
+        "latest_own_activity_at": "2026-07-28T19:07:41Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -930,19 +930,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Both callbacks filtering and TypedDict test-typing findings are verified fixed on head c1b1fc24; wait for maintainer review and CI.",
+      "next_action": "Re-reviewed exact head 315e4f04: four focused tests, targeted Pyright and mypy, and Ruff lint pass; repository-pinned Ruff format fails on the two new callback-manager signatures. One inline formatter finding is open; wait for an author update without duplicating it.",
       "number": 7994,
-      "own_review_count": 2,
-      "own_review_on_head": false,
+      "own_review_count": 3,
+      "own_review_on_head": true,
       "repository": "microsoft/autogen",
-      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4776009034",
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4800956307",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-28T18:45:54Z",
+      "updated_at": "2026-07-28T19:07:41Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -2228,5 +2228,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T18:53:33+00:00"
+  "state_changed_at": "2026-07-28T19:11:40+00:00"
 }

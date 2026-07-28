@@ -235,8 +235,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4776009034",
-      "next_action": "Both callbacks filtering and TypedDict test-typing findings are verified fixed on head c1b1fc24; wait for maintainer review and CI."
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4800956307",
+      "next_action": "Re-reviewed exact head 315e4f04: four focused tests, targeted Pyright and mypy, and Ruff lint pass; repository-pinned Ruff format fails on the two new callback-manager signatures. One inline formatter finding is open; wait for an author update without duplicating it."
     },
     {
       "id": "crewaiinc-crewai-6625-review",
