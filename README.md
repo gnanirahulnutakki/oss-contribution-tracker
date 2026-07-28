@@ -21,7 +21,7 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
-Fresh unsolicited review cadence: **paused until 2026-07-28 07:12 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+Fresh unsolicited review cadence: **eligible under the automated guardrail** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
 ## Tracked portfolio
 
@@ -71,7 +71,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-28 07:12 UTC** (rolling
 | [argoproj/argo-cd#21059](https://github.com/argoproj/argo-cd/issues/21059)<br>CLI: add possibility to diff the desired state instead of the live state | participant | **Issue open** | unassigned | No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane. |
 | [argoproj/argo-cd#12273](https://github.com/argoproj/argo-cd/issues/12273)<br>Rework Credentials template url layout in Settings: Repositories | participant | **Issue open** | unassigned | No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane. |
 
-Last public state change recorded: **2026-07-28T02:28:48+00:00**.
+Last public state change recorded: **2026-07-28T15:08:46+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

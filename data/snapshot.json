@@ -2218,14 +2218,14 @@
     "window_start": "2026-07-23"
   },
   "review_cadence": {
-    "eligible_now": false,
+    "eligible_now": true,
     "fresh_reviews_considered": 25,
-    "fresh_reviews_in_window": 2,
+    "fresh_reviews_in_window": 1,
     "latest_fresh_review_at": "2026-07-28T02:25:53Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": "2026-07-28T07:12:21Z",
+    "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T02:28:48+00:00"
+  "state_changed_at": "2026-07-28T15:08:46+00:00"
 }
