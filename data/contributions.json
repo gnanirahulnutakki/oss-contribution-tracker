@@ -512,7 +512,7 @@
       "role": "participant",
       "tier": "emerging",
       "started_at": "2026-07-23",
-      "next_action": "No maintainer reply, assignment, or competing implementation decision has landed; wait without pinging."
+      "next_action": "Issue author @QuentinBisson opened the exact implementation as draft PR #2332 on 2026-07-25; do not implement, claim, review, or comment. Remove this lane from the candidate queue unless a maintainer makes a concrete request."
     },
     {
       "id": "prefecthq-fastmcp-2879-issue",
