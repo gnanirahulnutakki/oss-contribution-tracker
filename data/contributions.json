@@ -161,7 +161,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790630703",
-      "next_action": "Approved bc0114c after verifying the requested --header spelling and best-effort CDN wording, all four curl/wget paths, syntax, diff hygiene, and a conflict-free current-main merge; wait for a changed head or concrete maintainer follow-up."
+      "next_action": "Merged on exact reviewed head bc0114c at 2026-07-28T21:30:38Z after seven passing checks. A maintainer noted a possible dev-v3 backport but did not request action from this reviewer; do not reply or open follow-up work while over cap."
     },
     {
       "id": "openai-openai-agents-python-3933-review",

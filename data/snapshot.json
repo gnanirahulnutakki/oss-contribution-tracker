@@ -617,9 +617,9 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 3,
+        "passing": 7,
         "pending": 0,
-        "total": 3,
+        "total": 7,
         "unexpected_failures": []
       },
       "draft": false,
@@ -629,27 +629,27 @@
       "id": "helm-helm-32339-review",
       "kind": "review",
       "linked_issue": null,
-      "merged_at": null,
-      "next_action": "Approved bc0114c after verifying the requested --header spelling and best-effort CDN wording, all four curl/wget paths, syntax, diff hygiene, and a conflict-free current-main merge; wait for a changed head or concrete maintainer follow-up.",
+      "merged_at": "2026-07-28T21:30:38Z",
+      "next_action": "Merged on exact reviewed head bc0114c at 2026-07-28T21:30:38Z after seven passing checks. A maintainer noted a possible dev-v3 backport but did not request action from this reviewer; do not reply or open follow-up work while over cap.",
       "number": 32339,
       "own_review_count": 4,
       "own_review_on_head": true,
       "repository": "helm/helm",
       "review_url": "https://github.com/helm/helm/pull/32339#pullrequestreview-4790630703",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review landed",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(scripts): add cache-busting to Helm version checks",
-      "updated_at": "2026-07-27T19:14:16Z",
+      "updated_at": "2026-07-28T21:30:38Z",
       "url": "https://github.com/helm/helm/pull/32339",
       "workflows": {
-        "action_required": 3,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -2277,5 +2277,5 @@
     "next_eligible_at": "2026-07-29T02:25:53Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T20:50:16+00:00"
+  "state_changed_at": "2026-07-28T21:41:47+00:00"
 }
