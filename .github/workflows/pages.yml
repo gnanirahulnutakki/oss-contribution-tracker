@@ -1,0 +1,111 @@
+name: Deploy tracker to Pages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/pages.yml"
+      - "_config.yml"
+      - "LICENSE"
+      - "README.md"
+      - "data/contributions.json"
+      - "data/snapshot.json"
+      - "docs/**"
+      - "index.md"
+  pull_request:
+    paths:
+      - ".github/workflows/pages.yml"
+      - "_config.yml"
+      - "LICENSE"
+      - "README.md"
+      - "data/contributions.json"
+      - "data/snapshot.json"
+      - "docs/**"
+      - "index.md"
+  workflow_run:
+    # This name is an API contract with .github/workflows/update.yml.
+    workflows:
+      - Daily refresh
+    types:
+      - completed
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: pages-${{ github.event_name == 'pull_request' && github.event.pull_request.number || 'production' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  build:
+    if: >-
+      vars.PUBLISH_PAGES == 'true' &&
+      (github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Check out the event commit
+        if: github.event_name != 'workflow_run'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Check out current main after the daily refresh
+        if: github.event_name == 'workflow_run'
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 1
+          persist-credentials: false
+          ref: main
+
+      - name: Resolve the published revision
+        id: revision
+        shell: bash
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+
+      - name: Build the Jekyll site
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+        with:
+          build_revision: ${{ steps.revision.outputs.sha }}
+          destination: ./_site
+          source: ./
+
+      - name: Verify the site entry point
+        shell: bash
+        run: |
+          test -s _site/index.html
+          grep -Fq "90-day scorecard" _site/index.html
+          test -s _site/data/snapshot.json
+          python -m json.tool _site/data/snapshot.json >/dev/null
+
+      - name: Upload the Pages artifact
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: ./_site
+
+  deploy:
+    if: vars.PUBLISH_PAGES == 'true' && github.event_name != 'pull_request'
+    needs:
+      - build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      id-token: write
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128 # v5.0.0

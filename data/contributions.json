@@ -43,7 +43,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 300,
-      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks pass; wait for maintainer re-review."
+      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks are non-failing (13 passed, 2 skipped); wait for maintainer re-review."
     },
     {
       "id": "prefecthq-fastmcp-4625",
@@ -75,7 +75,7 @@
       "expected_check_failures": [
         "EasyCLA"
       ],
-      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all technical checks pass."
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all 78 technical checks are non-failing (73 passed, 5 skipped)."
     },
     {
       "id": "envoyproxy-gateway-9574",
@@ -225,7 +225,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/microsoft/agent-framework/pull/7292#pullrequestreview-4776007573",
-      "next_action": "Merged on head 8a6a52c9 after two maintainer approvals and 37 passing checks; no follow-up required."
+      "next_action": "Merged on head 8a6a52c9 after two maintainer approvals and 37 non-failing checks (23 passed, 14 skipped); no follow-up required."
     },
     {
       "id": "microsoft-autogen-7994-review",

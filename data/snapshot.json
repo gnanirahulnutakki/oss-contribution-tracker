@@ -18,8 +18,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 2,
         "passing": 2,
         "pending": 0,
+        "skipped": 0,
+        "successful": 2,
         "total": 2,
         "unexpected_failures": []
       },
@@ -77,8 +81,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 15,
         "passing": 15,
         "pending": 0,
+        "skipped": 2,
+        "successful": 13,
         "total": 15,
         "unexpected_failures": []
       },
@@ -94,7 +102,7 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks pass; wait for maintainer re-review.",
+      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks are non-failing (13 passed, 2 skipped); wait for maintainer re-review.",
       "number": 1351,
       "own_review_count": 0,
       "own_review_on_head": false,
@@ -132,8 +140,12 @@
         "expected_gates": [
           "check-issue-link"
         ],
+        "neutral": 0,
+        "non_failing": 10,
         "passing": 10,
         "pending": 0,
+        "skipped": 1,
+        "successful": 9,
         "total": 11,
         "unexpected_failures": []
       },
@@ -191,8 +203,12 @@
         "expected_gates": [
           "EasyCLA"
         ],
+        "neutral": 0,
+        "non_failing": 78,
         "passing": 78,
         "pending": 0,
+        "skipped": 5,
+        "successful": 73,
         "total": 79,
         "unexpected_failures": []
       },
@@ -210,7 +226,7 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all technical checks pass.",
+      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all 78 technical checks are non-failing (73 passed, 5 skipped).",
       "number": 3572,
       "own_review_count": 0,
       "own_review_on_head": false,
@@ -222,7 +238,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(filter): reject unknown config fields",
-      "updated_at": "2026-07-27T21:12:36Z",
+      "updated_at": "2026-07-28T22:41:07Z",
       "url": "https://github.com/open-telemetry/otel-arrow/pull/3572",
       "workflows": {
         "action_required": 0,
@@ -250,8 +266,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 3,
+        "non_failing": 28,
         "passing": 28,
         "pending": 0,
+        "skipped": 11,
+        "successful": 14,
         "total": 28,
         "unexpected_failures": []
       },
@@ -307,8 +327,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 8,
         "passing": 8,
         "pending": 0,
+        "skipped": 0,
+        "successful": 8,
         "total": 8,
         "unexpected_failures": []
       },
@@ -364,8 +388,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 1,
+        "non_failing": 38,
         "passing": 38,
         "pending": 0,
+        "skipped": 10,
+        "successful": 27,
         "total": 38,
         "unexpected_failures": []
       },
@@ -413,8 +441,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -466,8 +498,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 1,
+        "non_failing": 38,
         "passing": 38,
         "pending": 0,
+        "skipped": 10,
+        "successful": 27,
         "total": 38,
         "unexpected_failures": []
       },
@@ -519,8 +555,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 22,
         "passing": 22,
         "pending": 0,
+        "skipped": 1,
+        "successful": 21,
         "total": 22,
         "unexpected_failures": []
       },
@@ -568,8 +608,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 15,
         "passing": 15,
         "pending": 0,
+        "skipped": 1,
+        "successful": 14,
         "total": 15,
         "unexpected_failures": []
       },
@@ -617,8 +661,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 7,
         "passing": 7,
         "pending": 0,
+        "skipped": 0,
+        "successful": 7,
         "total": 7,
         "unexpected_failures": []
       },
@@ -666,8 +714,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 9,
         "passing": 9,
         "pending": 0,
+        "skipped": 0,
+        "successful": 9,
         "total": 9,
         "unexpected_failures": []
       },
@@ -691,7 +743,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-07-24T22:11:55Z",
+      "updated_at": "2026-07-24T23:11:58Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -717,8 +769,12 @@
         "expected_gates": [
           "maintainers will submit via Copybara"
         ],
+        "neutral": 0,
+        "non_failing": 23,
         "passing": 23,
         "pending": 0,
+        "skipped": 4,
+        "successful": 19,
         "total": 24,
         "unexpected_failures": []
       },
@@ -742,7 +798,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: route MCP calls to the .mtls.googleapis.com endpoint for Agent Identity",
-      "updated_at": "2026-07-27T18:37:16Z",
+      "updated_at": "2026-07-27T20:43:58Z",
       "url": "https://github.com/google/adk-python/pull/6459",
       "workflows": {
         "action_required": 0,
@@ -768,8 +824,12 @@
         "expected_gates": [
           "cla/google"
         ],
+        "neutral": 0,
+        "non_failing": 6,
         "passing": 6,
         "pending": 0,
+        "skipped": 4,
+        "successful": 2,
         "total": 8,
         "unexpected_failures": [
           "agent-triage-pull-request"
@@ -795,7 +855,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(litellm): strip embedded thought_signature from tool call id",
-      "updated_at": "2026-07-27T20:46:36Z",
+      "updated_at": "2026-07-28T00:10:51Z",
       "url": "https://github.com/google/adk-python/pull/6460",
       "workflows": {
         "action_required": 2,
@@ -819,8 +879,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 1,
+        "non_failing": 81,
         "passing": 81,
         "pending": 0,
+        "skipped": 31,
+        "successful": 49,
         "total": 81,
         "unexpected_failures": []
       },
@@ -844,7 +908,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "Validate native tool ids per capability layer instead of flattened",
-      "updated_at": "2026-07-24T07:02:11Z",
+      "updated_at": "2026-07-28T17:42:51Z",
       "url": "https://github.com/pydantic/pydantic-ai/pull/6706",
       "workflows": {
         "action_required": 0,
@@ -868,8 +932,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 37,
         "passing": 37,
         "pending": 0,
+        "skipped": 14,
+        "successful": 23,
         "total": 37,
         "unexpected_failures": []
       },
@@ -881,7 +949,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": "2026-07-27T10:33:58Z",
-      "next_action": "Merged on head 8a6a52c9 after two maintainer approvals and 37 passing checks; no follow-up required.",
+      "next_action": "Merged on head 8a6a52c9 after two maintainer approvals and 37 non-failing checks (23 passed, 14 skipped); no follow-up required.",
       "number": 7292,
       "own_review_count": 2,
       "own_review_on_head": true,
@@ -917,8 +985,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 2,
         "passing": 2,
         "pending": 0,
+        "skipped": 0,
+        "successful": 2,
         "total": 2,
         "unexpected_failures": []
       },
@@ -942,7 +1014,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-28T19:46:57Z",
+      "updated_at": "2026-07-28T20:28:38Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -966,8 +1038,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 1,
         "passing": 1,
         "pending": 0,
+        "skipped": 0,
+        "successful": 1,
         "total": 1,
         "unexpected_failures": []
       },
@@ -1016,8 +1092,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1041,7 +1121,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-07-28T18:03:37Z",
+      "updated_at": "2026-07-28T20:25:28Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -1065,8 +1145,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 7,
         "passing": 7,
         "pending": 3,
+        "skipped": 1,
+        "successful": 6,
         "total": 10,
         "unexpected_failures": []
       },
@@ -1114,8 +1198,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1163,8 +1251,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 87,
         "passing": 87,
         "pending": 0,
+        "skipped": 25,
+        "successful": 62,
         "total": 89,
         "unexpected_failures": [
           "\u2705 CI Success",
@@ -1231,8 +1323,12 @@
           "pr-test-amd-extra-finish",
           "call-gate / pr-gate"
         ],
+        "neutral": 0,
+        "non_failing": 85,
         "passing": 85,
         "pending": 0,
+        "skipped": 79,
+        "successful": 6,
         "total": 100,
         "unexpected_failures": []
       },
@@ -1280,8 +1376,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 96,
         "passing": 96,
         "pending": 0,
+        "skipped": 2,
+        "successful": 94,
         "total": 96,
         "unexpected_failures": []
       },
@@ -1329,8 +1429,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 17,
         "passing": 17,
         "pending": 0,
+        "skipped": 3,
+        "successful": 14,
         "total": 17,
         "unexpected_failures": []
       },
@@ -1380,8 +1484,12 @@
         "expected_gates": [
           "Vercel"
         ],
+        "neutral": 0,
+        "non_failing": 12,
         "passing": 12,
         "pending": 0,
+        "skipped": 0,
+        "successful": 12,
         "total": 14,
         "unexpected_failures": [
           "lint (ubuntu-latest)"
@@ -1431,8 +1539,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 3,
         "passing": 3,
         "pending": 0,
+        "skipped": 0,
+        "successful": 3,
         "total": 3,
         "unexpected_failures": []
       },
@@ -1480,8 +1592,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 21,
         "passing": 21,
         "pending": 0,
+        "skipped": 7,
+        "successful": 14,
         "total": 21,
         "unexpected_failures": []
       },
@@ -1529,8 +1645,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 1,
         "passing": 1,
         "pending": 0,
+        "skipped": 0,
+        "successful": 1,
         "total": 1,
         "unexpected_failures": []
       },
@@ -1578,8 +1698,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 10,
         "passing": 10,
         "pending": 0,
+        "skipped": 0,
+        "successful": 10,
         "total": 10,
         "unexpected_failures": []
       },
@@ -1629,8 +1753,12 @@
         "expected_gates": [
           "Maintainer Approval"
         ],
+        "neutral": 0,
+        "non_failing": 60,
         "passing": 60,
         "pending": 0,
+        "skipped": 5,
+        "successful": 55,
         "total": 61,
         "unexpected_failures": []
       },
@@ -1654,7 +1782,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(accounts): enforce the last-admin invariant atomically on delete",
-      "updated_at": "2026-07-27T01:22:18Z",
+      "updated_at": "2026-07-28T22:42:55Z",
       "url": "https://github.com/omnigent-ai/omnigent/pull/3304",
       "workflows": {
         "action_required": 0,
@@ -1678,8 +1806,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1727,8 +1859,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 6,
         "passing": 6,
         "pending": 0,
+        "skipped": 0,
+        "successful": 6,
         "total": 6,
         "unexpected_failures": []
       },
@@ -1776,8 +1912,12 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 1,
         "passing": 1,
         "pending": 0,
+        "skipped": 0,
+        "successful": 1,
         "total": 1,
         "unexpected_failures": []
       },
@@ -1825,8 +1965,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1875,8 +2019,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1923,8 +2071,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -1971,8 +2123,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2021,8 +2177,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2069,8 +2229,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2117,8 +2281,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2165,8 +2333,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2213,8 +2385,12 @@
       },
       "checks": {
         "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 0,
         "passing": 0,
         "pending": 0,
+        "skipped": 0,
+        "successful": 0,
         "total": 0,
         "unexpected_failures": []
       },
@@ -2277,5 +2453,5 @@
     "next_eligible_at": "2026-07-29T02:25:53Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T21:41:47+00:00"
+  "state_changed_at": "2026-07-28T23:15:09+00:00"
 }

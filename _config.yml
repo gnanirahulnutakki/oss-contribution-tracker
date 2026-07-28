@@ -1,0 +1,9 @@
+title: Open Source Contribution Tracker
+description: Evidence-backed public pull requests, reviews, CI signals, and maintainer follow-up.
+theme: jekyll-theme-minimal
+show_downloads: false
+plugins:
+  - jekyll-seo-tag
+exclude:
+  - scripts
+  - tests

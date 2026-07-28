@@ -266,9 +266,28 @@ class TrackerTests(unittest.TestCase):
         summary = tracker.summarize_checks(checks, {"check-issue-link"})
 
         self.assertEqual(summary["passing"], 1)
+        self.assertEqual(summary["successful"], 1)
+        self.assertEqual(summary["non_failing"], 1)
+        self.assertEqual(summary["skipped"], 0)
+        self.assertEqual(summary["neutral"], 0)
         self.assertEqual(summary["pending"], 1)
         self.assertEqual(summary["expected_gates"], ["check-issue-link"])
         self.assertEqual(summary["unexpected_failures"], [])
+
+    def test_summarize_checks_preserves_non_failing_conclusions(self) -> None:
+        checks = [
+            {"name": "tests", "status": "completed", "conclusion": "success"},
+            {"name": "optional", "status": "completed", "conclusion": "skipped"},
+            {"name": "advisory", "status": "completed", "conclusion": "neutral"},
+        ]
+
+        summary = tracker.summarize_checks(checks, set())
+
+        self.assertEqual(summary["passing"], 3)
+        self.assertEqual(summary["successful"], 1)
+        self.assertEqual(summary["non_failing"], 3)
+        self.assertEqual(summary["skipped"], 1)
+        self.assertEqual(summary["neutral"], 1)
 
     def test_legacy_commit_statuses_are_counted_without_duplicates(self) -> None:
         checks = [{"name": "tests", "status": "completed", "conclusion": "success"}]
@@ -536,6 +555,10 @@ class TrackerTests(unittest.TestCase):
             "base_drift": {"behind": True, "update_required": False},
             "checks": {
                 "passing": 1,
+                "successful": 1,
+                "non_failing": 1,
+                "skipped": 0,
+                "neutral": 0,
                 "pending": 0,
                 "expected_gates": [],
                 "unexpected_failures": [],
@@ -550,8 +573,42 @@ class TrackerTests(unittest.TestCase):
 
         self.assertEqual(
             tracker.render_signals(item),
-            "1 checks passed · base advanced (update optional)",
+            "1 check passed · base advanced (update optional)",
         )
+
+    def test_check_signal_distinguishes_non_failing_checks(self) -> None:
+        checks = {
+            "passing": 38,
+            "successful": 27,
+            "non_failing": 38,
+            "skipped": 10,
+            "neutral": 1,
+        }
+
+        self.assertEqual(
+            tracker.render_check_summary(checks),
+            "38 non-failing checks (27 passed, 10 skipped, 1 neutral)",
+        )
+
+    def test_escape_cell_neutralizes_untrusted_markup(self) -> None:
+        value = (
+            '<img src=x onerror="alert(1)"> '
+            "[click](javascript:alert(1)) {{ site.github }} | row\nnext"
+        )
+
+        escaped = tracker.escape_cell(value)
+
+        self.assertNotIn("<img", escaped)
+        self.assertNotIn("[click](javascript:", escaped)
+        self.assertNotIn("{{", escaped)
+        self.assertNotIn("\n", escaped)
+        self.assertIn("&lt;img", escaped)
+        self.assertIn(
+            "&#91;click&#93;&#40;javascript:alert&#40;1&#41;&#41;",
+            escaped,
+        )
+        self.assertIn("&#123;&#123;", escaped)
+        self.assertIn("&#124;", escaped)
 
     def test_review_on_current_head_is_submitted(self) -> None:
         stage = tracker.derive_stage(

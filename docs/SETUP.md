@@ -10,6 +10,11 @@ Use GitHub's **Use this template** action, then create a public repository under
 your account. Public visibility lets profile visitors and maintainers inspect
 the same evidence shown in the dashboard.
 
+Before publishing, replace the original repository URLs in the three README
+badges and the live-dashboard link with your own `<owner>/<repository>` and
+GitHub Pages URL. Those static links cannot be inferred by Markdown and must
+not continue advertising the template owner's dashboard.
+
 ## 2. Configure the program
 
 Edit `data/contributions.json`:
@@ -108,7 +113,25 @@ workflow**, then confirm:
 2. `README.md` and `data/snapshot.json` change only when public facts change.
 3. A second run against unchanged GitHub state creates no commit.
 
-## 6. Make the evidence visible
+## 6. Publish the optional Pages site
+
+The Pages workflow is opt-in so repositories created from this template do not
+fail before their owner configures a publishing source.
+
+1. Open **Settings → Pages** and select **GitHub Actions** as the source.
+2. Open **Settings → Secrets and variables → Actions → Variables** and add
+   `PUBLISH_PAGES` with the value `true`.
+3. Run **Actions → Deploy tracker to Pages → Run workflow** once.
+4. Confirm the deployment environment reports the expected
+   `https://<username>.github.io/<repository>/` URL.
+
+Ordinary pushes to `main` rebuild the site. The Pages workflow also watches the
+successful completion of **Daily refresh**, because commits made with that
+workflow's `GITHUB_TOKEN` do not trigger another push workflow. It checks out
+the current `main` branch after the refresh and never consumes artifacts or
+code from an untrusted workflow.
+
+## 7. Make the evidence visible
 
 Link the repository from your GitHub profile README or website field. Keep
 claims in the profile concise and use this tracker for live counts, CI results,

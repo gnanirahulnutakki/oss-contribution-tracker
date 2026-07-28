@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import html
 import json
 import os
 import re
@@ -22,7 +23,7 @@ API_ROOT = "https://api.github.com"
 USER_AGENT = "oss-contribution-tracker"
 START_MARKER = "<!-- TRACKER:START -->"
 END_MARKER = "<!-- TRACKER:END -->"
-PASSING_CONCLUSIONS = {"success", "neutral", "skipped"}
+NON_FAILING_CONCLUSIONS = {"success", "neutral", "skipped"}
 FAILING_CONCLUSIONS = {
     "failure",
     "timed_out",
@@ -218,6 +219,10 @@ def summarize_checks(
     summary: dict[str, Any] = {
         "total": len(check_runs),
         "passing": 0,
+        "successful": 0,
+        "non_failing": 0,
+        "skipped": 0,
+        "neutral": 0,
         "pending": 0,
         "expected_gates": [],
         "unexpected_failures": [],
@@ -228,8 +233,17 @@ def summarize_checks(
             summary["pending"] += 1
             continue
         conclusion = check.get("conclusion")
-        if conclusion in PASSING_CONCLUSIONS:
+        if conclusion in NON_FAILING_CONCLUSIONS:
+            # `passing` is a legacy public snapshot field that historically
+            # included successful, skipped, and neutral checks.
             summary["passing"] += 1
+            summary["non_failing"] += 1
+            if conclusion == "success":
+                summary["successful"] += 1
+            elif conclusion == "skipped":
+                summary["skipped"] += 1
+            else:
+                summary["neutral"] += 1
         elif name in expected_failures:
             summary["expected_gates"].append(name)
         elif conclusion in FAILING_CONCLUSIONS or conclusion is None:
@@ -661,6 +675,10 @@ def fetch_issue_contribution(
         "checks": {
             "total": 0,
             "passing": 0,
+            "successful": 0,
+            "non_failing": 0,
+            "skipped": 0,
+            "neutral": 0,
             "pending": 0,
             "expected_gates": [],
             "unexpected_failures": [],
@@ -1103,7 +1121,50 @@ def progress_status(current: int, target: int) -> str:
 
 
 def escape_cell(value: Any) -> str:
-    return str(value).replace("|", "\\|").replace("\n", " ")
+    """Render untrusted text as inert Markdown table content.
+
+    Pull-request and issue titles come from repositories we do not control.
+    Escape HTML first, then encode Markdown and Liquid structural delimiters so
+    Jekyll cannot reinterpret upstream text as executable markup.
+    """
+    text = html.escape(
+        str(value).replace("\r", " ").replace("\n", " "),
+        quote=True,
+    )
+    entities = {
+        "\\": "&#92;",
+        "{": "&#123;",
+        "}": "&#125;",
+        "[": "&#91;",
+        "]": "&#93;",
+        "(": "&#40;",
+        ")": "&#41;",
+        "|": "&#124;",
+    }
+    return "".join(entities.get(character, character) for character in text)
+
+
+def render_check_summary(checks: dict[str, Any]) -> str | None:
+    """Render successful and merely non-failing checks without conflating them."""
+    successful = checks.get("successful", checks["passing"])
+    non_failing = checks.get("non_failing", checks["passing"])
+    if not non_failing:
+        return None
+
+    skipped = checks.get("skipped", 0)
+    neutral = checks.get("neutral", 0)
+    check_word = "check" if non_failing == 1 else "checks"
+    if successful == non_failing:
+        return f"{non_failing} {check_word} passed"
+
+    details: list[str] = []
+    if successful:
+        details.append(f"{successful} passed")
+    if skipped:
+        details.append(f"{skipped} skipped")
+    if neutral:
+        details.append(f"{neutral} neutral")
+    return f"{non_failing} non-failing {check_word} ({', '.join(details)})"
 
 
 def render_signals(item: dict[str, Any]) -> str:
@@ -1131,8 +1192,9 @@ def render_signals(item: dict[str, Any]) -> str:
     response_count = _response_count(attention)
     if response_count:
         signals.append(f"{response_count} response{'s' if response_count != 1 else ''}")
-    if checks["passing"]:
-        signals.append(f"{checks['passing']} checks passed")
+    check_summary = render_check_summary(checks)
+    if check_summary:
+        signals.append(check_summary)
     if checks["pending"] or workflows["pending"]:
         signals.append(f"{checks['pending'] + workflows['pending']} pending")
     if checks["expected_gates"] or workflows.get("expected_gates"):
