@@ -906,7 +906,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-28T19:07:41Z",
+        "latest_own_activity_at": "2026-07-28T19:46:57Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -925,24 +925,24 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T08:05:41Z",
-      "head_sha": "315e4f04b66aa95a4efa97a9abc44d471ca53c04",
+      "head_sha": "7b5e64de4cb8c84de16567d314be32741eb1ee38",
       "id": "microsoft-autogen-7994-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Re-reviewed exact head 315e4f04: four focused tests, targeted Pyright and mypy, and Ruff lint pass; repository-pinned Ruff format fails on the two new callback-manager signatures. One inline formatter finding is open; wait for an author update without duplicating it.",
+      "next_action": "Approved exact head 7b5e64de after the author applied the pinned formatter: Ruff format and lint pass, all four focused tests pass, Pyright reports zero errors, and mypy reports no issues. Wait for maintainer workflow approval or another concrete update.",
       "number": 7994,
-      "own_review_count": 3,
+      "own_review_count": 4,
       "own_review_on_head": true,
       "repository": "microsoft/autogen",
-      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4800956307",
+      "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4801249949",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-28T19:07:41Z",
+      "updated_at": "2026-07-28T19:46:57Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -1763,6 +1763,55 @@
       }
     },
     {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-07-28T19:38:57Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "cadence_exempt": false,
+      "checks": {
+        "expected_gates": [],
+        "passing": 1,
+        "pending": 0,
+        "total": 1,
+        "unexpected_failures": []
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-28T19:38:57Z",
+      "head_sha": "afa47ab860afce51f06c1aeebec1ac7bdc9469b8",
+      "id": "tma1-ai-tma1-73-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Exact head afa47ab builds on Node 22.12.0 and preserves the three localized page contracts, but the lockfile still installs sharp 0.34.5 and leaves GHSA-f88m-g3jw-g9cj present. One file-level finding is open; wait for a head update or concrete reply without duplicating it.",
+      "number": 73,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "tma1-ai/tma1",
+      "review_url": "https://github.com/tma1-ai/tma1/pull/73#pullrequestreview-4801192177",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-28",
+      "state": "open",
+      "tier": "emerging",
+      "title": "chore(deps): Bump sharp and astro in /site",
+      "updated_at": "2026-07-28T19:38:57Z",
+      "url": "https://github.com/tma1-ai/tma1/pull/73",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 1
+      }
+    },
+    {
       "assignees": [],
       "attention": {
         "changes_requested_by": [],
@@ -2203,7 +2252,7 @@
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 25,
+    "external_reviews": 26,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -2219,14 +2268,14 @@
     "window_start": "2026-07-23"
   },
   "review_cadence": {
-    "eligible_now": true,
-    "fresh_reviews_considered": 25,
-    "fresh_reviews_in_window": 1,
-    "latest_fresh_review_at": "2026-07-28T02:25:53Z",
+    "eligible_now": false,
+    "fresh_reviews_considered": 26,
+    "fresh_reviews_in_window": 2,
+    "latest_fresh_review_at": "2026-07-28T19:38:57Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": null,
+    "next_eligible_at": "2026-07-29T02:25:53Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T19:11:40+00:00"
+  "state_changed_at": "2026-07-28T19:50:14+00:00"
 }
