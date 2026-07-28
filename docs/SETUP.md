@@ -72,6 +72,13 @@ maintainer-requested review rather than fresh unsolicited outreach. The tracker
 uses the first non-pending review after `started_at` for each distinct pull
 request, so later re-reviews do not consume another cadence slot.
 
+After manually inspecting a response signal that requires no public action, set
+`attention_acknowledged_at` to that activity's timezone-aware timestamp. The
+tracker suppresses response activity at or before that point for only that
+entry; any later mention, review-thread reply, or trusted linked-issue response
+surfaces normally. Use this for human-reviewed dismissals, not to hide an
+unanswered maintainer question.
+
 ## 4. Validate locally
 
 Python 3.13 or newer is recommended. The runtime uses only the standard library.

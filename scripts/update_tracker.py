@@ -182,6 +182,19 @@ def validate_config(config: dict[str, Any]) -> None:
             raise ValueError(
                 f"{prefix}.cadence_exempt must be a boolean on a review entry"
             )
+        attention_acknowledged_at = entry.get("attention_acknowledged_at")
+        if attention_acknowledged_at is not None:
+            if not isinstance(attention_acknowledged_at, str):
+                raise ValueError(
+                    f"{prefix}.attention_acknowledged_at must be a timestamp string"
+                )
+            try:
+                _parse_timestamp(attention_acknowledged_at)
+            except ValueError as error:
+                raise ValueError(
+                    f"{prefix}.attention_acknowledged_at must be a "
+                    "timezone-aware timestamp"
+                ) from error
         repository = entry.get("repository")
         if (
             not isinstance(repository, str)
@@ -384,6 +397,7 @@ def summarize_attention(
     include_change_requests: bool = True,
     linked_issue_comments: list[dict[str, Any]] | None = None,
     linked_issue_floor_at: str | None = None,
+    attention_acknowledged_at: str | None = None,
 ) -> dict[str, Any]:
     """Find high-confidence public activity that still needs a response."""
     linked_issue_comments = linked_issue_comments or []
@@ -407,6 +421,9 @@ def summarize_attention(
             ],
         ]
     )
+    attention_floor_at = _latest_timestamp(
+        [own_activity_at, attention_acknowledged_at]
+    )
 
     own_thread_roots = {
         comment.get("in_reply_to_id") or comment.get("id")
@@ -419,8 +436,8 @@ def summarize_attention(
         if _is_other_human(comment, username)
         and comment.get("in_reply_to_id") in own_thread_roots
         and (
-            own_activity_at is None
-            or (comment.get("created_at") or "") > own_activity_at
+            attention_floor_at is None
+            or (comment.get("created_at") or "") > attention_floor_at
         )
     ]
 
@@ -434,8 +451,8 @@ def summarize_attention(
         if _is_other_human(comment, username)
         and mention_pattern.search(str(comment.get("body") or ""))
         and (
-            own_activity_at is None
-            or (comment.get("created_at") or "") > own_activity_at
+            attention_floor_at is None
+            or (comment.get("created_at") or "") > attention_floor_at
         )
     ]
 
@@ -447,7 +464,11 @@ def summarize_attention(
         ]
     )
     linked_issue_response_floor = _latest_timestamp(
-        [linked_issue_floor_at, linked_issue_own_activity_at]
+        [
+            linked_issue_floor_at,
+            linked_issue_own_activity_at,
+            attention_acknowledged_at,
+        ]
     )
     linked_issue_responses = [
         comment
@@ -491,6 +512,11 @@ def summarize_attention(
         default=None,
     )
     return {
+        **(
+            {"acknowledged_at": attention_acknowledged_at}
+            if attention_acknowledged_at
+            else {}
+        ),
         "changes_requested_by": (
             sorted(active_change_requests) if include_change_requests else []
         ),
@@ -622,6 +648,7 @@ def fetch_issue_contribution(
         include_change_requests=False,
         linked_issue_comments=issue_comments,
         linked_issue_floor_at=issue.get("created_at"),
+        attention_acknowledged_at=entry.get("attention_acknowledged_at"),
     )
     assignees = [
         assignee.get("login")
@@ -775,6 +802,7 @@ def fetch_contribution(
         include_change_requests=entry["kind"] == "pull_request",
         linked_issue_comments=linked_issue_comments,
         linked_issue_floor_at=pull_request.get("created_at"),
+        attention_acknowledged_at=entry.get("attention_acknowledged_at"),
     )
 
     own_review_count = 0

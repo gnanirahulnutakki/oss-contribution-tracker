@@ -258,7 +258,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4779293759",
-      "next_action": "Regression coverage is verified and approved on head e5685e0; wait for maintainer review and merge."
+      "attention_acknowledged_at": "2026-07-28T18:03:36Z",
+      "next_action": "The author's maintainer-facing bump cited the existing approval but requested no contributor action; no reply is needed. Wait for maintainer review, a changed head, or a concrete question."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",

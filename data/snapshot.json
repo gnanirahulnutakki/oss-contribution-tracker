@@ -925,7 +925,7 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T08:05:41Z",
-      "head_sha": "c1b1fc24cfb4f65be6b34d10db0b14226d1b71f3",
+      "head_sha": "315e4f04b66aa95a4efa97a9abc44d471ca53c04",
       "id": "microsoft-autogen-7994-review",
       "kind": "review",
       "linked_issue": null,
@@ -933,16 +933,16 @@
       "next_action": "Both callbacks filtering and TypedDict test-typing findings are verified fixed on head c1b1fc24; wait for maintainer review and CI.",
       "number": 7994,
       "own_review_count": 2,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "microsoft/autogen",
       "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4776009034",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-24T19:04:07Z",
+      "updated_at": "2026-07-28T18:45:54Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -1003,6 +1003,7 @@
     },
     {
       "attention": {
+        "acknowledged_at": "2026-07-28T18:03:36Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-25T13:01:39Z",
         "latest_response_at": null,
@@ -1028,7 +1029,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Regression coverage is verified and approved on head e5685e0; wait for maintainer review and merge.",
+      "next_action": "The author's maintainer-facing bump cited the existing approval but requested no contributor action; no reply is needed. Wait for maintainer review, a changed head, or a concrete question.",
       "number": 2565,
       "own_review_count": 3,
       "own_review_on_head": true,
@@ -1040,7 +1041,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-07-25T13:01:39Z",
+      "updated_at": "2026-07-28T18:03:37Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -1328,9 +1329,9 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "passing": 16,
+        "passing": 17,
         "pending": 0,
-        "total": 16,
+        "total": 17,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1353,7 +1354,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "Fix tests timing out during interactive OAuth flow (#2510)",
-      "updated_at": "2026-07-24T20:05:54Z",
+      "updated_at": "2026-07-28T15:42:59Z",
       "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544",
       "workflows": {
         "action_required": 0,
@@ -2227,5 +2228,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T15:08:46+00:00"
+  "state_changed_at": "2026-07-28T18:53:33+00:00"
 }

@@ -676,6 +676,37 @@ class TrackerTests(unittest.TestCase):
 
         self.assertEqual(attention["unanswered_direct_mentions"], 0)
 
+    def test_attention_acknowledgement_suppresses_only_older_mentions(self) -> None:
+        attention = tracker.summarize_attention(
+            issue_comments=[
+                {
+                    "created_at": "2026-07-24T11:00:00Z",
+                    "body": "@example already triaged",
+                    "html_url": "https://example.test/acknowledged",
+                    "user": {"login": "author", "type": "User"},
+                },
+                {
+                    "created_at": "2026-07-24T12:00:00Z",
+                    "body": "@example new question",
+                    "html_url": "https://example.test/new-question",
+                    "user": {"login": "author", "type": "User"},
+                },
+            ],
+            review_comments=[],
+            reviews=[],
+            username="example",
+            attention_acknowledged_at="2026-07-24T11:00:00Z",
+        )
+
+        self.assertEqual(
+            attention["acknowledged_at"], "2026-07-24T11:00:00Z"
+        )
+        self.assertEqual(attention["unanswered_direct_mentions"], 1)
+        self.assertEqual(
+            attention["latest_response_url"],
+            "https://example.test/new-question",
+        )
+
     def test_linked_issue_response_requires_a_trusted_human_or_mention(self) -> None:
         attention = tracker.summarize_attention(
             issue_comments=[],
@@ -1045,6 +1076,34 @@ class TrackerTests(unittest.TestCase):
         }
 
         tracker.validate_config(config)
+
+    def test_config_rejects_invalid_attention_acknowledgement(self) -> None:
+        config = {
+            "schema_version": 1,
+            "profile": {
+                "username": "example",
+                "program_start": "2026-07-23",
+                "window_days": 90,
+                "excluded_owners": ["example"],
+                "goals": {},
+            },
+            "contributions": [
+                {
+                    "id": "owner-repo-1-review",
+                    "kind": "review",
+                    "repository": "owner/repo",
+                    "number": 1,
+                    "role": "reviewer",
+                    "tier": "anchor",
+                    "started_at": "2026-07-23",
+                    "attention_acknowledged_at": "2026-07-24T11:00:00",
+                    "next_action": "Wait for new activity.",
+                }
+            ],
+        }
+
+        with self.assertRaisesRegex(ValueError, "timezone-aware timestamp"):
+            tracker.validate_config(config)
 
 
 if __name__ == "__main__":
