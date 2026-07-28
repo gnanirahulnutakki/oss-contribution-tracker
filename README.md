@@ -16,12 +16,12 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 24 | 12 | Target met |
+| External pull requests reviewed | 25 | 12 | Target met |
 | Simultaneous open authored PRs | 7 | ≤ 4 | Over cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
-Fresh unsolicited review cadence: **paused until 2026-07-28 01:22 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+Fresh unsolicited review cadence: **paused until 2026-07-28 07:12 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
 ## Tracked portfolio
 
@@ -60,6 +60,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-28 01:22 UTC** (rolling
 | [agno-agi/agno#9174](https://github.com/agno-agi/agno/pull/9174#pullrequestreview-4781165073)<br>refactor: resolve the pydantic version once instead of per tool | reviewer | **Review submitted** | 10 checks passed | The cache optimization is independently verified and approved on head 140bd1d; watch the non-blocking concurrent cold-start wording and formatter cleanup, then re-review only after a new head or concrete reply. |
 | [omnigent-ai/omnigent#3304](https://github.com/omnigent-ai/omnigent/pull/3304#pullrequestreview-4783071226)<br>fix(accounts): enforce the last-admin invariant atomically on delete | reviewer | **Review submitted** | 60 checks passed · expected CI gate | The last-admin invariant is independently validated and approved on head bb2ca4c across SQLite, PostgreSQL 16, and MySQL 8.0; wait for author or maintainer follow-up and re-review only after a new head or concrete reply. |
 | [opensquilla/opensquilla#815](https://github.com/opensquilla/opensquilla/pull/815#pullrequestreview-4787283091)<br>fix(engine): evict cache-break monitor state for terminal sessions | reviewer | **Review submitted** | workflow approval needed | The false cache-break diagnostic is verified fixed and approved on head af315af: the original reproducer now reports baseline_initialized without a break, 2,210 exact-head tests passed, and a current-main synthetic merge passed all 18 focused regressions plus Ruff and mypy. Wait for maintainer action or a changed head. |
+| [agentscope-ai/agentscope#1874](https://github.com/agentscope-ai/agentscope/pull/1874#pullrequestreview-4792240922)<br>fix(embedding): omit default OpenAI dimensions | reviewer | **Review submitted** | 6 checks passed | Two P2 findings are open on head ce2832e: preserve explicit pass_dimensions=False when Parameters uses defaults, and retain genuine multi-type anyOf schemas. Re-review only after an author update or concrete reply. |
 | [oam-dev/cluster-gateway#170](https://github.com/oam-dev/cluster-gateway/issues/170)<br>Security: managed credential must override inbound Authorization on proxy requests | author | **Issue open** | unassigned | The linked implementation PR is green; wait for maintainer review without a status ping. |
 | [CaviraOSS/OpenMemory#186](https://github.com/CaviraOSS/OpenMemory/issues/186)<br>`delete_all` removes DB rows but not the in-process hsg query cache — deleted memories remain retrievable for the process lifetime | author | **Assigned elsewhere** | assigned to @nullure | The issue is assigned to @nullure and has no unanswered maintainer reply; wait for implementation or a concrete question. |
 | [plastic-labs/honcho#790](https://github.com/plastic-labs/honcho/issues/790)<br>Deleted workspace's search results keep being served from the redis cache until TTL; recreating the same workspace id resurrects them | author | **Issue open** | unassigned | No maintainer reply or assignment has landed; preserve the report and do not ping. |
@@ -70,7 +71,7 @@ Fresh unsolicited review cadence: **paused until 2026-07-28 01:22 UTC** (rolling
 | [argoproj/argo-cd#21059](https://github.com/argoproj/argo-cd/issues/21059)<br>CLI: add possibility to diff the desired state instead of the live state | participant | **Issue open** | unassigned | No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane. |
 | [argoproj/argo-cd#12273](https://github.com/argoproj/argo-cd/issues/12273)<br>Rework Credentials template url layout in Settings: Repositories | participant | **Issue open** | unassigned | No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane. |
 
-Last public state change recorded: **2026-07-27T22:42:44+00:00**.
+Last public state change recorded: **2026-07-28T02:28:48+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

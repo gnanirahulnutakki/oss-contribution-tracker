@@ -1713,6 +1713,55 @@
       }
     },
     {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-07-28T02:25:53Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "cadence_exempt": false,
+      "checks": {
+        "expected_gates": [],
+        "passing": 6,
+        "pending": 0,
+        "total": 6,
+        "unexpected_failures": []
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-07-28T02:25:53Z",
+      "head_sha": "ce2832ee1f7ac23c78e50315a274509308f37856",
+      "id": "agentscope-ai-agentscope-1874-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Two P2 findings are open on head ce2832e: preserve explicit pass_dimensions=False when Parameters uses defaults, and retain genuine multi-type anyOf schemas. Re-review only after an author update or concrete reply.",
+      "number": 1874,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "agentscope-ai/agentscope",
+      "review_url": "https://github.com/agentscope-ai/agentscope/pull/1874#pullrequestreview-4792240922",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-07-28",
+      "state": "open",
+      "tier": "emerging",
+      "title": "fix(embedding): omit default OpenAI dimensions",
+      "updated_at": "2026-07-28T02:25:53Z",
+      "url": "https://github.com/agentscope-ai/agentscope/pull/1874",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 3
+      }
+    },
+    {
       "assignees": [],
       "attention": {
         "changes_requested_by": [],
@@ -2153,7 +2202,7 @@
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 24,
+    "external_reviews": 25,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -2170,13 +2219,13 @@
   },
   "review_cadence": {
     "eligible_now": false,
-    "fresh_reviews_considered": 24,
+    "fresh_reviews_considered": 25,
     "fresh_reviews_in_window": 2,
-    "latest_fresh_review_at": "2026-07-27T07:12:21Z",
+    "latest_fresh_review_at": "2026-07-28T02:25:53Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": "2026-07-28T01:22:18Z",
+    "next_eligible_at": "2026-07-28T07:12:21Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-27T22:42:44+00:00"
+  "state_changed_at": "2026-07-28T02:28:48+00:00"
 }

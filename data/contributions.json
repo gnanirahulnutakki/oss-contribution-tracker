@@ -432,6 +432,17 @@
       "next_action": "The false cache-break diagnostic is verified fixed and approved on head af315af: the original reproducer now reports baseline_initialized without a break, 2,210 exact-head tests passed, and a current-main synthetic merge passed all 18 focused regressions plus Ruff and mypy. Wait for maintainer action or a changed head."
     },
     {
+      "id": "agentscope-ai-agentscope-1874-review",
+      "kind": "review",
+      "repository": "agentscope-ai/agentscope",
+      "number": 1874,
+      "role": "reviewer",
+      "tier": "emerging",
+      "started_at": "2026-07-28",
+      "review_url": "https://github.com/agentscope-ai/agentscope/pull/1874#pullrequestreview-4792240922",
+      "next_action": "Two P2 findings are open on head ce2832e: preserve explicit pass_dimensions=False when Parameters uses defaults, and retain genuine multi-type anyOf schemas. Re-review only after an author update or concrete reply."
+    },
+    {
       "id": "oam-dev-cluster-gateway-170-issue",
       "kind": "issue",
       "repository": "oam-dev/cluster-gateway",
