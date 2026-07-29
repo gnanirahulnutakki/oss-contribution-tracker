@@ -416,10 +416,8 @@
       "tier": "anchor",
       "started_at": "2026-07-27",
       "review_url": "https://github.com/omnigent-ai/omnigent/pull/3304#pullrequestreview-4783071226",
-      "expected_check_failures": [
-        "Maintainer Approval"
-      ],
-      "next_action": "The last-admin invariant is independently validated and approved on head bb2ca4c across SQLite, PostgreSQL 16, and MySQL 8.0; wait for author or maintainer follow-up and re-review only after a new head or concrete reply."
+      "attention_acknowledged_at": "2026-07-29T00:06:32Z",
+      "next_action": "Merged on exact reviewed head bb2ca4c at 2026-07-29T00:07:09Z after maintainer approval and 68 non-failing checks (60 passed, 8 skipped). The approval thanked the contributor but asked no question; no reply is warranted."
     },
     {
       "id": "opensquilla-opensquilla-815-review",

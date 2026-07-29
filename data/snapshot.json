@@ -1739,6 +1739,7 @@
     },
     {
       "attention": {
+        "acknowledged_at": "2026-07-29T00:06:32Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-27T01:22:18Z",
         "latest_response_at": null,
@@ -1750,16 +1751,14 @@
       },
       "cadence_exempt": false,
       "checks": {
-        "expected_gates": [
-          "Maintainer Approval"
-        ],
+        "expected_gates": [],
         "neutral": 0,
-        "non_failing": 60,
-        "passing": 60,
+        "non_failing": 68,
+        "passing": 68,
         "pending": 0,
-        "skipped": 5,
-        "successful": 55,
-        "total": 61,
+        "skipped": 8,
+        "successful": 60,
+        "total": 68,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1769,20 +1768,20 @@
       "id": "omnigent-ai-omnigent-3304-review",
       "kind": "review",
       "linked_issue": null,
-      "merged_at": null,
-      "next_action": "The last-admin invariant is independently validated and approved on head bb2ca4c across SQLite, PostgreSQL 16, and MySQL 8.0; wait for author or maintainer follow-up and re-review only after a new head or concrete reply.",
+      "merged_at": "2026-07-29T00:07:09Z",
+      "next_action": "Merged on exact reviewed head bb2ca4c at 2026-07-29T00:07:09Z after maintainer approval and 68 non-failing checks (60 passed, 8 skipped). The approval thanked the contributor but asked no question; no reply is warranted.",
       "number": 3304,
       "own_review_count": 1,
       "own_review_on_head": true,
       "repository": "omnigent-ai/omnigent",
       "review_url": "https://github.com/omnigent-ai/omnigent/pull/3304#pullrequestreview-4783071226",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review landed",
       "started_at": "2026-07-27",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(accounts): enforce the last-admin invariant atomically on delete",
-      "updated_at": "2026-07-28T22:42:55Z",
+      "updated_at": "2026-07-29T00:07:54Z",
       "url": "https://github.com/omnigent-ai/omnigent/pull/3304",
       "workflows": {
         "action_required": 0,
@@ -2453,5 +2452,5 @@
     "next_eligible_at": "2026-07-29T02:25:53Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-28T23:15:09+00:00"
+  "state_changed_at": "2026-07-29T00:13:10+00:00"
 }
