@@ -1104,7 +1104,7 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T08:40:29Z",
-      "head_sha": "e5685e03636f23a7fe469cfbb7669d57af59a432",
+      "head_sha": "9f35e46427f2ed68eb3f191f1ae2e154379622da",
       "id": "huggingface-smolagents-2565-review",
       "kind": "review",
       "linked_issue": null,
@@ -1112,16 +1112,16 @@
       "next_action": "The author's maintainer-facing bump cited the existing approval but requested no contributor action; no reply is needed. Wait for maintainer review, a changed head, or a concrete question.",
       "number": 2565,
       "own_review_count": 3,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "huggingface/smolagents",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4779293759",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-07-28T20:25:28Z",
+      "updated_at": "2026-07-29T14:59:58Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -2505,5 +2505,5 @@
     "next_eligible_at": "2026-07-29T19:38:57Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-29T04:30:17+00:00"
+  "state_changed_at": "2026-07-29T15:04:20+00:00"
 }
