@@ -86,7 +86,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 8773,
-      "next_action": "CI is green; wait for maintainer assignment or direction on #8773, then mark the draft ready if requested."
+      "next_action": "Ready on unchanged head 12202063 after all 28 checks completed non-failing and Codex found no major issues. GitHub denied the fork author's Copilot review request for lack of repository permission; wait for human review or a concrete request without pinging."
     },
     {
       "id": "oam-dev-cluster-gateway-171",
