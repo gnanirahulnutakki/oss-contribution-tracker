@@ -1953,7 +1953,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-29T02:26:31Z",
+        "latest_own_activity_at": "2026-07-29T04:24:14Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -1976,24 +1976,24 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-29T02:26:31Z",
-      "head_sha": "b1851d2836d08ab4a7f819059828d19f838619aa",
+      "head_sha": "f2398efcdee1304dc729a6cb4a6837325b169581",
       "id": "kserve-kserve-5917-review",
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "One P2 finding is open on exact head b1851d2: the single-node-group fast paths in InferenceService and LLMInferenceService bypass PV-affinity compatibility. Both focused regressions fail on the PR head; removing only the two shortcuts makes the regressions and both affected package suites pass. Wait for a changed head or concrete reply.",
+      "next_action": "The author removed both incompatible sole-node-group shortcuts on head f2398efc and added caller-level regressions for InferenceService and LLMInferenceService. Independent race tests, adjusted-call-site compilation, and diff validation pass; the original finding is resolved. Wait for maintainer action, a changed head, or a concrete question without posting another comment.",
       "number": 5917,
-      "own_review_count": 1,
+      "own_review_count": 2,
       "own_review_on_head": true,
       "repository": "kserve/kserve",
-      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4803454186",
+      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4803949886",
       "role": "reviewer",
       "stage": "Review submitted",
       "started_at": "2026-07-29",
       "state": "open",
       "tier": "anchor",
       "title": "fix: select compatible LocalModelNodeGroup instead of blindly picking [0]",
-      "updated_at": "2026-07-29T02:26:31Z",
+      "updated_at": "2026-07-29T04:24:14Z",
       "url": "https://github.com/kserve/kserve/pull/5917",
       "workflows": {
         "action_required": 16,
@@ -2505,5 +2505,5 @@
     "next_eligible_at": "2026-07-29T19:38:57Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-07-29T03:06:31+00:00"
+  "state_changed_at": "2026-07-29T04:30:17+00:00"
 }
