@@ -460,8 +460,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-29",
-      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4803454186",
-      "next_action": "One P2 finding is open on exact head b1851d2: the single-node-group fast paths in InferenceService and LLMInferenceService bypass PV-affinity compatibility. Both focused regressions fail on the PR head; removing only the two shortcuts makes the regressions and both affected package suites pass. Wait for a changed head or concrete reply."
+      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4803949886",
+      "next_action": "The author removed both incompatible sole-node-group shortcuts on head f2398efc and added caller-level regressions for InferenceService and LLMInferenceService. Independent race tests, adjusted-call-site compilation, and diff validation pass; the original finding is resolved. Wait for maintainer action, a changed head, or a concrete question without posting another comment."
     },
     {
       "id": "oam-dev-cluster-gateway-170-issue",
