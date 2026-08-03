@@ -715,18 +715,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 9,
-        "passing": 9,
+        "non_failing": 10,
+        "passing": 10,
         "pending": 0,
-        "skipped": 0,
+        "skipped": 1,
         "successful": 9,
-        "total": 9,
+        "total": 10,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T05:34:42Z",
-      "head_sha": "b66414faf569999dfb100f516c703aa9649b6253",
+      "head_sha": "426ef55a9a16819e8309ee7bd356e0a26b0357a5",
       "id": "openai-openai-agents-python-3933-review",
       "kind": "review",
       "linked_issue": null,
@@ -738,12 +738,12 @@
       "repository": "openai/openai-agents-python",
       "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix: enforce realtime text guardrails and synchronize streaming cancellation",
-      "updated_at": "2026-08-02T12:42:37Z",
+      "updated_at": "2026-08-02T22:23:23Z",
       "url": "https://github.com/openai/openai-agents-python/pull/3933",
       "workflows": {
         "action_required": 0,
@@ -975,12 +975,12 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-28T19:46:57Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-08-02T21:15:58Z",
+        "latest_response_url": "https://github.com/microsoft/autogen/pull/7994#discussion_r3700316574",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 3
       },
       "cadence_exempt": false,
       "checks": {
@@ -1009,12 +1009,12 @@
       "repository": "microsoft/autogen",
       "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4801249949",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-07-28T20:28:38Z",
+      "updated_at": "2026-08-02T23:28:20Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
         "action_required": 7,
@@ -2512,5 +2512,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-02T14:48:07+00:00"
+  "state_changed_at": "2026-08-03T15:22:13+00:00"
 }
