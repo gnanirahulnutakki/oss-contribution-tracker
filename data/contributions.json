@@ -75,7 +75,7 @@
       "expected_check_failures": [
         "EasyCLA"
       ],
-      "next_action": "Link and verify the commit email on GitHub, then complete EasyCLA; the PR is assigned, ready, twice approved, and all 78 technical checks are non-failing (73 passed, 5 skipped)."
+      "next_action": "Link and verify gnani.nutakki@gmail.com on GitHub, then complete EasyCLA; the PR is ready and twice approved with 73 passing and 5 skipped technical checks, but currently has no assignee. Do not post another routing comment before the legal gate is green."
     },
     {
       "id": "envoyproxy-gateway-9574",
@@ -128,7 +128,7 @@
       "tier": "legacy",
       "started_at": "2026-04-16",
       "linked_issue": 10809,
-      "next_action": "Head 1f898ab preserves the explicit 500-token cap through custom-provider requests and retry/fallback paths, with 462 focused tests plus 48,637 full-suite passes. The review thread is resolved and all 27 reporting CI checks pass; wait for maintainer re-review without pinging."
+      "next_action": "Rebased head 07246b88 onto current main and preserved the explicit 500-token cap through custom-provider async retry/fallback paths. All 277 expanded local tests pass, and all 38 hosted checks are non-failing (26 passed, 11 skipped, 1 neutral), including amd64 and arm64 Docker builds; wait for maintainer re-review without posting a status comment."
     },
     {
       "id": "prometheus-operator-8695-review",
@@ -172,7 +172,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/openai/openai-agents-python/pull/3933#pullrequestreview-4776733214",
-      "next_action": "Head e6b93288 has three unresolved, specific automated findings; do not duplicate them or post a general summary. Re-review only after the author updates the head or asks a concrete question."
+      "attention_acknowledged_at": "2026-07-24T21:51:09Z",
+      "next_action": "Closed unmerged on 2026-08-02. The maintainer's request to stop posting general comments and identify only specific points is acknowledged; no reply or follow-up is warranted."
     },
     {
       "id": "google-adk-python-6459-review",
@@ -189,7 +190,8 @@
       "expected_workflow_failures": [
         "Do Not Merge on GitHub"
       ],
-      "next_action": "Force-pushed head 4b115485 is byte-identical in the two pull-request files to verified 2f0043ee; exact-head and current-main synthetic checks each pass 52 focused tests plus pinned style and diff validation. Only the expected Copybara handoff remains; wait for maintainer action or a changed head."
+      "attention_acknowledged_at": "2026-07-29T22:45:52Z",
+      "next_action": "Closed unmerged after a maintainer confirmed the endpoint rewrite already occurs in _get_connection_uri(). The explanation is specific and requires no reviewer reply or replacement pull request."
     },
     {
       "id": "google-adk-python-6460-review",
@@ -214,7 +216,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242",
-      "next_action": "Watch the CombinedCapability child-layer validation finding and re-review after the pull request is updated."
+      "attention_acknowledged_at": "2026-08-01T16:10:52Z",
+      "next_action": "Exact head a51fa5e7 still rejects conflicting native tools returned by a factory inside CombinedCapability even though the same tools override as separate run-level entries. Seven focused and 417 full agent tests pass, but the validation-boundary contract remains unresolved; GitHub returned 'User is blocked' when the proof-backed follow-up was submitted, so do not retry through another channel unless access changes or a maintainer contacts us."
     },
     {
       "id": "microsoft-agent-framework-7292-review",
@@ -236,7 +239,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/microsoft/autogen/pull/7994#pullrequestreview-4801249949",
-      "next_action": "Approved exact head 7b5e64de after the author applied the pinned formatter: Ruff format and lint pass, all four focused tests pass, Pyright reports zero errors, and mypy reports no issues. Wait for maintainer workflow approval or another concrete update."
+      "attention_acknowledged_at": "2026-08-04T00:24:20Z",
+      "next_action": "Answered the author's concrete re-review question at issuecomment-5173162647: head 7b5e64de is unchanged from the independently tested and approved commit, so the existing approval still applies. Wait for maintainer workflow approval or a substantive new head."
     },
     {
       "id": "crewaiinc-crewai-6625-review",
@@ -257,9 +261,9 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4779293759",
-      "attention_acknowledged_at": "2026-07-28T18:03:36Z",
-      "next_action": "The author's maintainer-facing bump cited the existing approval but requested no contributor action; no reply is needed. Wait for maintainer review, a changed head, or a concrete question."
+      "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
+      "attention_acknowledged_at": "2026-08-01T15:16:18Z",
+      "next_action": "Changes requested on exact head 288b92ef: ActionStep still serializes raw arguments and formats observations before the role filter, while observations_images become USER messages and bypass it; deterministic probes reproduced both raw-data access and an image marker leaking into the parent summary. Six focused tests and Ruff lint pass, but make quality fails formatting. Re-review only after redaction moves before rendering with argument-serialization and image regressions."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -291,8 +295,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4772078666",
-      "next_action": "Watch the unbounded sandbox brace-expansion finding and re-review after expansion is capped with regression coverage."
+      "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4849693821",
+      "next_action": "The original expansion DoS is fixed on b965c14b, but {{a,b}}.py disagrees between sandbox and shared backends and the Windows test expects backslashes despite production POSIX normalization; that assertion is the sole real hosted failure. GitHub denied a formal changes-requested review without explicit repository access, so a proof-backed COMMENT review was submitted. Re-review after both regressions change."
     },
     {
       "id": "sgl-project-sglang-32344-review",
@@ -357,11 +361,11 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#pullrequestreview-4779294175",
       "expected_check_failures": [
         "Vercel"
       ],
-      "next_action": "The mocked-usage regression is fixed on a7a4a718; GPT-5.4 cached pricing remains unresolved, so re-review after pricing data and a default-model regression are added."
+      "review_url": "https://github.com/confident-ai/deepeval/pull/2950#discussion_r3708697090",
+      "next_action": "Re-tested exact head a2758d42 and replied in the existing unresolved thread. Standard cached rates are fixed, but fully cached 300K-token GPT-5.4 input returns $0.075 instead of the documented $0.15 because the >272K long-context multiplier is absent; the same reproduces on current main and 52 affected tests pass without a boundary regression. Wait for a substantive fix; lint is current-main drift and Vercel needs team authorization."
     },
     {
       "id": "traceloop-openllmetry-4375-review",
@@ -405,7 +409,8 @@
       "tier": "anchor",
       "started_at": "2026-07-26",
       "review_url": "https://github.com/agno-agi/agno/pull/9174#pullrequestreview-4781165073",
-      "next_action": "The cache optimization is independently verified and approved on head 140bd1d; watch the non-blocking concurrent cold-start wording and formatter cleanup, then re-review only after a new head or concrete reply."
+      "attention_acknowledged_at": "2026-08-01T12:57:23Z",
+      "next_action": "Closed as superseded after #9210 landed the same cache on main. The author acknowledged the independent validation and asked no question; no reply or re-review is warranted."
     },
     {
       "id": "omnigent-ai-omnigent-3304-review",
@@ -460,8 +465,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-29",
-      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4803949886",
-      "next_action": "The author removed both incompatible sole-node-group shortcuts on head f2398efc and added caller-level regressions for InferenceService and LLMInferenceService. Independent race tests, adjusted-call-site compilation, and diff validation pass; the original finding is resolved. Wait for maintainer action, a changed head, or a concrete question without posting another comment."
+      "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4849628354",
+      "next_action": "Re-reviewed exact head 4c1d4529 after the RBAC and generated-manifest update: controller-gen, Helm, Kustomize, all 12 quick-install outputs, 21 validators, race tests, compile/vet, chart lint, and diff checks pass. GitHub denied a formal approval because the account lacks explicit repository access, so a proof-backed COMMENT review was submitted; wait for maintainers to authorize the remaining action_required workflows."
     },
     {
       "id": "oam-dev-cluster-gateway-170-issue",
@@ -481,7 +486,7 @@
       "role": "author",
       "tier": "legacy",
       "started_at": "2026-06-10",
-      "next_action": "The issue is assigned to @nullure and has no unanswered maintainer reply; wait for implementation or a concrete question."
+      "next_action": "Resolved upstream by merged competing PR #190, which added cache clearing directly. The issue remains open and assigned elsewhere, but no implementation or reply is owed from this contributor."
     },
     {
       "id": "plastic-labs-honcho-790-issue",
@@ -541,7 +546,7 @@
       "role": "participant",
       "tier": "legacy",
       "started_at": "2026-04-16",
-      "next_action": "No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane."
+      "next_action": "Maintainer PR #27469 implements this lane. Its current head has older approvals and green completed checks but is now dirty and review-required; preserve the prior report, do not compete, and do not comment unless a maintainer asks a concrete question."
     },
     {
       "id": "argoproj-argo-cd-12273-issue",
@@ -551,7 +556,92 @@
       "role": "participant",
       "tier": "legacy",
       "started_at": "2026-04-16",
-      "next_action": "No author or maintainer reply followed the prior comment; retain as a watch-only legacy lane."
+      "next_action": "Our implementation PR #27415 was self-closed and later competing attempts also closed. Keep this as watch-only legacy context; do not revive it without fresh maintainer intent and current reproduction."
+    },
+    {
+      "id": "nousresearch-hermes-agent-10695-issue",
+      "kind": "issue",
+      "repository": "NousResearch/hermes-agent",
+      "number": 10695,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "attention_acknowledged_at": "2026-05-16T08:25:38Z",
+      "next_action": "Closed after alternative PR #26830 merged. The maintainer explicitly credited this contributor's audit; no reply or replacement work is needed."
+    },
+    {
+      "id": "meshery-meshery-18739-issue",
+      "kind": "issue",
+      "repository": "meshery/meshery",
+      "number": 18739,
+      "role": "assignee",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "attention_acknowledged_at": "2026-05-13T03:49:35Z",
+      "next_action": "Closed after maintainer PR #19306 merged and credited this contributor's initial PR #18770. No reply or competing implementation is needed."
+    },
+    {
+      "id": "akuity-kargo-6021-issue",
+      "kind": "issue",
+      "repository": "akuity/kargo",
+      "number": 6021,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "attention_acknowledged_at": "2026-05-14T11:07:46Z",
+      "next_action": "Closed after maintainer PR #6262 merged; this contributor's earlier PR #6101 was self-closed. No follow-up is needed."
+    },
+    {
+      "id": "kitops-ml-kitops-1138-issue",
+      "kind": "issue",
+      "repository": "kitops-ml/kitops",
+      "number": 1138,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "Closed after competing PR #1139 merged on 2026-05-11; this contributor's PR #1164 must remain closed and no reply is needed."
+    },
+    {
+      "id": "memorilabs-memori-590-issue",
+      "kind": "issue",
+      "repository": "MemoriLabs/Memori",
+      "number": 590,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "attention_acknowledged_at": "2026-06-11T06:19:41Z",
+      "next_action": "Closed after the current-version clarification. The later DevRel Discord invitation contains no technical question, so no public reply or issue revival is warranted."
+    },
+    {
+      "id": "basicmachines-basic-memory-944-issue",
+      "kind": "issue",
+      "repository": "basicmachines-co/basic-memory",
+      "number": 944,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "attention_acknowledged_at": "2026-06-10T15:57:46Z",
+      "next_action": "Closed after the maintainer confirmed the behavior is fixed in current releases. The precise reply is acknowledged and requires no follow-up."
+    },
+    {
+      "id": "kagent-dev-kagent-1037-issue",
+      "kind": "issue",
+      "repository": "kagent-dev/kagent",
+      "number": 1037,
+      "role": "participant",
+      "tier": "legacy",
+      "started_at": "2026-04-16",
+      "next_action": "Closed by the stale bot on 2026-06-23 without a maintainer response. Do not revive the old claim without current reproduction and renewed maintainer intent."
+    },
+    {
+      "id": "letta-ai-letta-3364-issue",
+      "kind": "issue",
+      "repository": "letta-ai/letta",
+      "number": 3364,
+      "role": "author",
+      "tier": "legacy",
+      "started_at": "2026-06-10",
+      "next_action": "Automatically closed and locked for missing the repository's required human-verification and AI-policy template. Do not reopen or repost without a fresh reproduction and full policy compliance."
     }
   ]
 }
