@@ -492,7 +492,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -1434,18 +1434,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 17,
-        "passing": 17,
+        "non_failing": 14,
+        "passing": 14,
         "pending": 0,
-        "skipped": 3,
+        "skipped": 0,
         "successful": 14,
-        "total": 17,
+        "total": 14,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T20:05:54Z",
-      "head_sha": "a740d28ca71f6bc4221f63ad01fd9faac0ea15d3",
+      "head_sha": "96047f1aab0d2fa60524fa7dd4b329cbc55d477a",
       "id": "modelcontextprotocol-typescript-sdk-2544-review",
       "kind": "review",
       "linked_issue": null,
@@ -1453,16 +1453,16 @@
       "next_action": "Watch the unresolved REDIRECT lifecycle finding on head a740d28c; re-review after the triggering request stays pending through finishAuth and retry with regression coverage.",
       "number": 2544,
       "own_review_count": 1,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "modelcontextprotocol/typescript-sdk",
       "review_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "Fix tests timing out during interactive OAuth flow (#2510)",
-      "updated_at": "2026-07-28T15:42:59Z",
+      "updated_at": "2026-08-04T11:09:46Z",
       "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544",
       "workflows": {
         "action_required": 0,
@@ -2943,5 +2943,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-04T01:43:26+00:00"
+  "state_changed_at": "2026-08-04T15:11:24+00:00"
 }
