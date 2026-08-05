@@ -1256,12 +1256,12 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 62,
-        "passing": 62,
+        "non_failing": 63,
+        "passing": 63,
         "pending": 0,
         "skipped": 18,
-        "successful": 44,
-        "total": 64,
+        "successful": 45,
+        "total": 65,
         "unexpected_failures": [
           "\u2705 CI Success",
           "\ud83e\uddea Test deepagents / Python 3.13 (windows-latest)"
@@ -1270,7 +1270,7 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T12:47:04Z",
-      "head_sha": "b965c14b087ffc701d95e98ad2cbb5fe3cce3ed1",
+      "head_sha": "7265710d2e49a30dbade8a6936bf3f4920a09419",
       "id": "langchain-ai-deepagents-5026-review",
       "kind": "review",
       "linked_issue": null,
@@ -1278,23 +1278,23 @@
       "next_action": "The original expansion DoS is fixed on b965c14b, but {{a,b}}.py disagrees between sandbox and shared backends and the Windows test expects backslashes despite production POSIX normalization; that assertion is the sole real hosted failure. GitHub denied a formal changes-requested review without explicit repository access, so a proof-backed COMMENT review was submitted. Re-review after both regressions change.",
       "number": 5026,
       "own_review_count": 2,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "langchain-ai/deepagents",
       "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4849693821",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix(sdk): make `BackendProtocol.glob` recursive for bare patterns",
-      "updated_at": "2026-08-04T01:01:06Z",
+      "updated_at": "2026-08-04T20:01:06Z",
       "url": "https://github.com/langchain-ai/deepagents/pull/5026",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
         "failure": 1,
         "pending": 0,
-        "success": 8
+        "success": 9
       }
     },
     {
@@ -1434,18 +1434,24 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 14,
-        "passing": 14,
+        "non_failing": 9,
+        "passing": 9,
         "pending": 0,
         "skipped": 0,
-        "successful": 14,
+        "successful": 9,
         "total": 14,
-        "unexpected_failures": []
+        "unexpected_failures": [
+          "examples (build + e2e)",
+          "test-e2e (24)",
+          "test-e2e (20)",
+          "test-e2e (22)",
+          "build"
+        ]
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T20:05:54Z",
-      "head_sha": "96047f1aab0d2fa60524fa7dd4b329cbc55d477a",
+      "head_sha": "4dbb8a0328af0f1e700daf0e235a75d0c632b585",
       "id": "modelcontextprotocol-typescript-sdk-2544-review",
       "kind": "review",
       "linked_issue": null,
@@ -1462,14 +1468,14 @@
       "state": "open",
       "tier": "anchor",
       "title": "Fix tests timing out during interactive OAuth flow (#2510)",
-      "updated_at": "2026-08-04T11:09:46Z",
+      "updated_at": "2026-08-05T06:55:45Z",
       "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 2,
         "pending": 0,
-        "success": 4
+        "success": 2
       }
     },
     {
@@ -1597,12 +1603,12 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 21,
-        "passing": 21,
+        "non_failing": 24,
+        "passing": 24,
         "pending": 0,
-        "skipped": 7,
+        "skipped": 10,
         "successful": 14,
-        "total": 21,
+        "total": 24,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1625,7 +1631,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(anthropic): preserve APIPromise helpers",
-      "updated_at": "2026-07-27T15:26:16Z",
+      "updated_at": "2026-08-04T16:36:51Z",
       "url": "https://github.com/Arize-ai/openinference/pull/3429",
       "workflows": {
         "action_required": 0,
@@ -2943,5 +2949,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-04T15:11:24+00:00"
+  "state_changed_at": "2026-08-05T15:05:46+00:00"
 }
