@@ -43,7 +43,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 300,
-      "next_action": "The CLI-only change is pushed in 9c8b1d9, its review thread is resolved, and all 15 checks are non-failing (13 passed, 2 skipped); wait for maintainer re-review."
+      "next_action": "Maintainer feedback on 9c8b1d9 required coverage in the active collector package. Rebased head 52cae0f now routes every Int64-backed collector counter through the shared precision policy, preserves the opt-out across normal and probe paths, and passes race tests, lint, Go 1.26 CI-equivalent gates, and live PostgreSQL 13.22/18.1 Docker scrapes. Wait for hosted CI and maintainer re-review without posting a status comment."
     },
     {
       "id": "prefecthq-fastmcp-4625",
@@ -128,7 +128,8 @@
       "tier": "legacy",
       "started_at": "2026-04-16",
       "linked_issue": 10809,
-      "next_action": "Rebased head 07246b88 onto current main and preserved the explicit 500-token cap through custom-provider async retry/fallback paths. All 277 expanded local tests pass, and all 38 hosted checks are non-failing (26 passed, 11 skipped, 1 neutral), including amd64 and arm64 Docker builds; wait for maintainer re-review without posting a status comment."
+      "attention_acknowledged_at": "2026-08-08T07:59:05Z",
+      "next_action": "PR #10852 closed unmerged after collaborator @kshitijk4poor salvaged the concise-prompt change through merged PR #81269. Default-branch commit e6b16885 preserves Gnani's authorship and all required Python, lint, attribution, supply-chain, and amd64/arm64 Docker checks passed. The maintainer intentionally omitted the token-cap plumbing to match project policy; the appreciative explanation asks no question, so no reply or follow-up is needed."
     },
     {
       "id": "prometheus-operator-8695-review",
@@ -263,7 +264,7 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
       "attention_acknowledged_at": "2026-08-01T15:16:18Z",
-      "next_action": "Changes requested on exact head 288b92ef: ActionStep still serializes raw arguments and formats observations before the role filter, while observations_images become USER messages and bypass it; deterministic probes reproduced both raw-data access and an image marker leaking into the parent summary. Six focused tests and Ruff lint pass, but make quality fails formatting. Re-review only after redaction moves before rendering with argument-serialization and image regressions."
+      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -274,7 +275,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4782383330",
-      "next_action": "The positive-integer validation fix is verified and approved on head 97c2b6e; wait for maintainer workflow authorization, review, or another head update."
+      "next_action": "Re-reviewed the substantive delta through head 0cdaaee7 with no code or documentation finding: 100 graph tests pass, the new queue-timeout test passed 100 repetitions, all execution-timeout combinations passed 100 repetitions, and Ruff/mypy are clean. Exact-head hosted jobs still await manual authorization, so keep the prior approval stale and re-approve only after the Windows matrix is green."
     },
     {
       "id": "openai-openai-python-3538-review",
@@ -351,7 +352,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162",
-      "next_action": "Watch the unresolved REDIRECT lifecycle finding on head a740d28c; re-review after the triggering request stays pending through finishAuth and retry with regression coverage."
+      "next_action": "Re-reviewed exact head 4dbb8a03. The successful REDIRECT path works and 81 focused tests pass, but an error-shaped OAuth callback rejects finishAuth while leaving the triggering request pending until close(); five required checks are also branch-caused. GitHub denied a formal changes-requested review without explicit access, so a proof-backed COMMENT review was submitted and the original P1 thread remains unresolved. Re-review only after failure-path settlement and CI fixes."
     },
     {
       "id": "confident-ai-deepeval-2950-review",
@@ -387,7 +388,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/Arize-ai/openinference/pull/3429#pullrequestreview-4787290072",
-      "next_action": "The consumed asResponse body finding is verified fixed and approved on head d4827bfb; all 16 package tests, type-check, build, lint, and format passed, and all 21 GitHub checks completed without failure. Wait for maintainer action or a changed head."
+      "next_action": "Merged on 2026-08-06 at default-branch commit 7ea68f72 after the consumed asResponse body finding was fixed and re-approved with all hosted checks non-failing. No reply or follow-up is needed."
     },
     {
       "id": "agentops-ai-agentops-1428-review",
@@ -433,7 +434,7 @@
       "tier": "anchor",
       "started_at": "2026-07-27",
       "review_url": "https://github.com/opensquilla/opensquilla/pull/815#pullrequestreview-4849838477",
-      "next_action": "Re-approved exact head ef0a52b3 after two main merges: the conflict resolution correctly moved cache-break eviction into the renamed evict_session_runtime_state hook before the generation-specific session_id guard while preserving finish and explicit history-deletion coverage. All 19 focused tests, Ruff on the four changed files, and mypy on both changed source files pass; GitHub reports 18 successful and 4 skipped checks. Wait for maintainer action or another substantive head."
+      "next_action": "Merged on 2026-08-06 at default-branch commit 0acd578e after the cache-break fix was re-approved with 19 focused tests, Ruff, mypy, and all hosted checks non-failing. No reply or follow-up is needed."
     },
     {
       "id": "agentscope-ai-agentscope-1874-review",
@@ -444,7 +445,7 @@
       "tier": "emerging",
       "started_at": "2026-07-28",
       "review_url": "https://github.com/agentscope-ai/agentscope/pull/1874#pullrequestreview-4792240922",
-      "next_action": "Two P2 findings are open on head ce2832e: preserve explicit pass_dimensions=False when Parameters uses defaults, and retain genuine multi-type anyOf schemas. Re-review only after an author update or concrete reply."
+      "next_action": "Approved exact head de155d7e after both P2 findings were fixed: explicit pass_dimensions precedence is preserved and genuine multi-type anyOf schemas remain intact. Twelve focused tests, the 33-test provider slice, all file-scoped hooks, and all six hosted checks pass. Wait for maintainer action or another substantive head."
     },
     {
       "id": "tma1-ai-tma1-73-review",
