@@ -185,12 +185,13 @@
     },
     {
       "attention": {
+        "acknowledged_at": "2026-08-07T20:19:23Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-24T19:06:21Z",
-        "latest_response_at": "2026-08-07T20:19:23Z",
-        "latest_response_url": "https://github.com/open-telemetry/otel-arrow/pull/3572#issuecomment-5221627882",
+        "latest_response_at": null,
+        "latest_response_url": null,
         "linked_issue_latest_own_activity_at": "2026-07-24T04:28:48Z",
-        "unanswered_direct_mentions": 1,
+        "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -233,7 +234,7 @@
       "repository": "open-telemetry/otel-arrow",
       "review_url": null,
       "role": "author",
-      "stage": "Maintainer response",
+      "stage": "PR open",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
@@ -1272,7 +1273,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "The original expansion DoS is fixed on b965c14b, but {{a,b}}.py disagrees between sandbox and shared backends and the Windows test expects backslashes despite production POSIX normalization; that assertion is the sole real hosted failure. GitHub denied a formal changes-requested review without explicit repository access, so a proof-backed COMMENT review was submitted. Re-review after both regressions change.",
+      "next_action": "Head f12a2ed only merges current main into the branch; no author response or substantive fix followed, and the existing {{a,b}}.py backend disagreement plus Windows path-normalization failure remain. The prior proof-backed COMMENT review still applies, so do not re-review until a substantive fix or concrete author question arrives.",
       "number": 5026,
       "own_review_count": 2,
       "own_review_on_head": false,
@@ -2946,5 +2947,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-11T15:44:10+00:00"
+  "state_changed_at": "2026-08-11T16:48:02+00:00"
 }

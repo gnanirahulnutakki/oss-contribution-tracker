@@ -75,6 +75,7 @@
       "expected_check_failures": [
         "EasyCLA"
       ],
+      "attention_acknowledged_at": "2026-08-07T20:19:23Z",
       "next_action": "Link and verify gnani.nutakki@gmail.com on GitHub, then complete EasyCLA; the PR is ready and twice approved with 73 passing and 5 skipped technical checks, but currently has no assignee. Do not post another routing comment before the legal gate is green."
     },
     {
@@ -297,7 +298,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4849693821",
-      "next_action": "The original expansion DoS is fixed on b965c14b, but {{a,b}}.py disagrees between sandbox and shared backends and the Windows test expects backslashes despite production POSIX normalization; that assertion is the sole real hosted failure. GitHub denied a formal changes-requested review without explicit repository access, so a proof-backed COMMENT review was submitted. Re-review after both regressions change."
+      "next_action": "Head f12a2ed only merges current main into the branch; no author response or substantive fix followed, and the existing {{a,b}}.py backend disagreement plus Windows path-normalization failure remain. The prior proof-backed COMMENT review still applies, so do not re-review until a substantive fix or concrete author question arrives."
     },
     {
       "id": "sgl-project-sglang-32344-review",
