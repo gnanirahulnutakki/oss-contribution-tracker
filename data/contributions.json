@@ -518,7 +518,7 @@
       "role": "assignee",
       "tier": "emerging",
       "started_at": "2026-07-23",
-      "next_action": "Assigned implementation is valid, but hold publication while the global authored-PR cap is exceeded; recheck for competing work before resuming."
+      "next_action": "A private, uncommitted implementation is fully qualified on exact main a8df2f95: controller-runtime serves pod-local health endpoints, startup/readiness verify the webhook TLS listener, liveness remains process-only, and Helm defaults/overrides/disablement are covered. Full race tests, Go lint, 151 chart tests, chart lint, generated docs, and strict manifest validation pass. Keep it unpublished at 6/4; recheck live assignment, competing work, main, and capacity before committing."
     },
     {
       "id": "kagent-dev-kagent-2303-issue",
