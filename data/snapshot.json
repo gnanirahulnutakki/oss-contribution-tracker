@@ -2075,6 +2075,59 @@
       }
     },
     {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-08-12T06:52:13Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "cadence_exempt": false,
+      "checks": {
+        "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 39,
+        "passing": 39,
+        "pending": 0,
+        "skipped": 5,
+        "successful": 34,
+        "total": 39,
+        "unexpected_failures": []
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-08-12T06:52:13Z",
+      "head_sha": "f41e21d6b41f2504d84fdc5b12d9faec7fa87ce9",
+      "id": "llm-d-llm-d-router-2310-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Wait for a substantive author response or changed head; re-review only after both startup and final-deletion contracts have regression coverage.",
+      "number": 2310,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "llm-d/llm-d-router",
+      "review_url": "https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-08-12",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(CrossReplicaSyncer): disentangle CrossReplicaSyncing interval from main ticket in PoolingDispatcher",
+      "updated_at": "2026-08-12T06:52:13Z",
+      "url": "https://github.com/llm-d/llm-d-router/pull/2310",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 8
+      }
+    },
+    {
       "assignees": [],
       "attention": {
         "changes_requested_by": [],
@@ -2977,7 +3030,7 @@
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 28,
+    "external_reviews": 29,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -2994,13 +3047,13 @@
   },
   "review_cadence": {
     "eligible_now": false,
-    "fresh_reviews_considered": 28,
-    "fresh_reviews_in_window": 1,
-    "latest_fresh_review_at": "2026-08-12T01:34:16Z",
+    "fresh_reviews_considered": 29,
+    "fresh_reviews_in_window": 2,
+    "latest_fresh_review_at": "2026-08-12T06:52:13Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": "2026-08-12T05:34:16Z",
+    "next_eligible_at": "2026-08-13T01:34:16Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-12T01:39:31+00:00"
+  "state_changed_at": "2026-08-12T06:58:22+00:00"
 }
