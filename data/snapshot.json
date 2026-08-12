@@ -2020,6 +2020,61 @@
       }
     },
     {
+      "attention": {
+        "changes_requested_by": [],
+        "latest_own_activity_at": "2026-08-12T01:34:16Z",
+        "latest_response_at": null,
+        "latest_response_url": null,
+        "linked_issue_latest_own_activity_at": null,
+        "unanswered_direct_mentions": 0,
+        "unanswered_linked_issue_responses": 0,
+        "unanswered_review_thread_replies": 0
+      },
+      "cadence_exempt": false,
+      "checks": {
+        "expected_gates": [],
+        "neutral": 0,
+        "non_failing": 22,
+        "passing": 22,
+        "pending": 0,
+        "skipped": 5,
+        "successful": 17,
+        "total": 23,
+        "unexpected_failures": [
+          "CLAAssistant"
+        ]
+      },
+      "draft": false,
+      "exclude_from_landing_rate": false,
+      "first_review_submitted_at": "2026-08-12T01:34:16Z",
+      "head_sha": "1f79ad89c2de673f2e25203dddf38e66ef46eea0",
+      "id": "arize-ai-openinference-3545-review",
+      "kind": "review",
+      "linked_issue": null,
+      "merged_at": null,
+      "next_action": "Requested changes on exact head 1f79ad89 after reproducing telemetry loss for unrelated Command, ParentCommand, and GraphInterrupt exception classes across chain, LLM, retriever, and tool callbacks (12/12): every span was marked OK with no exception event. Ruff, Mypy, and all 237 LangChain tests pass, confirming a missing provenance regression rather than a generally failing branch. Wait for a substantive author update and re-review only the changed head.",
+      "number": 3545,
+      "own_review_count": 1,
+      "own_review_on_head": true,
+      "repository": "Arize-ai/openinference",
+      "review_url": "https://github.com/Arize-ai/openinference/pull/3545#pullrequestreview-4912216885",
+      "role": "reviewer",
+      "stage": "Review submitted",
+      "started_at": "2026-08-12",
+      "state": "open",
+      "tier": "anchor",
+      "title": "fix(langchain): don't record exception events for control-flow signals",
+      "updated_at": "2026-08-12T01:34:16Z",
+      "url": "https://github.com/Arize-ai/openinference/pull/3545",
+      "workflows": {
+        "action_required": 0,
+        "expected_gates": 0,
+        "failure": 0,
+        "pending": 0,
+        "success": 7
+      }
+    },
+    {
       "assignees": [],
       "attention": {
         "changes_requested_by": [],
@@ -2922,7 +2977,7 @@
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 27,
+    "external_reviews": 28,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -2938,14 +2993,14 @@
     "window_start": "2026-07-23"
   },
   "review_cadence": {
-    "eligible_now": true,
-    "fresh_reviews_considered": 27,
-    "fresh_reviews_in_window": 0,
-    "latest_fresh_review_at": "2026-07-29T02:26:31Z",
+    "eligible_now": false,
+    "fresh_reviews_considered": 28,
+    "fresh_reviews_in_window": 1,
+    "latest_fresh_review_at": "2026-08-12T01:34:16Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": null,
+    "next_eligible_at": "2026-08-12T05:34:16Z",
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-12T00:27:35+00:00"
+  "state_changed_at": "2026-08-12T01:39:31+00:00"
 }

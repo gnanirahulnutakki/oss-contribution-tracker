@@ -471,6 +471,17 @@
       "next_action": "Re-reviewed exact head 4c1d4529 after the RBAC and generated-manifest update: controller-gen, Helm, Kustomize, all 12 quick-install outputs, 21 validators, race tests, compile/vet, chart lint, and diff checks pass. GitHub denied a formal approval because the account lacks explicit repository access, so a proof-backed COMMENT review was submitted; wait for maintainers to authorize the remaining action_required workflows."
     },
     {
+      "id": "arize-ai-openinference-3545-review",
+      "kind": "review",
+      "repository": "Arize-ai/openinference",
+      "number": 3545,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-08-12",
+      "review_url": "https://github.com/Arize-ai/openinference/pull/3545#pullrequestreview-4912216885",
+      "next_action": "Requested changes on exact head 1f79ad89 after reproducing telemetry loss for unrelated Command, ParentCommand, and GraphInterrupt exception classes across chain, LLM, retriever, and tool callbacks (12/12): every span was marked OK with no exception event. Ruff, Mypy, and all 237 LangChain tests pass, confirming a missing provenance regression rather than a generally failing branch. Wait for a substantive author update and re-review only the changed head."
+    },
+    {
       "id": "oam-dev-cluster-gateway-170-issue",
       "kind": "issue",
       "repository": "oam-dev/cluster-gateway",
