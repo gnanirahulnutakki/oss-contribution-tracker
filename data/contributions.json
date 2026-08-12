@@ -518,7 +518,7 @@
       "role": "assignee",
       "tier": "emerging",
       "started_at": "2026-07-23",
-      "next_action": "A private, uncommitted implementation is fully qualified on exact main a8df2f95: controller-runtime serves pod-local health endpoints, startup/readiness verify the webhook TLS listener, liveness remains process-only, and Helm defaults/overrides/disablement are covered. Full race tests, Go lint, 151 chart tests, chart lint, generated docs, and strict manifest validation pass. Keep it unpublished at 6/4; recheck live assignment, competing work, main, and capacity before committing."
+      "next_action": "A private, uncommitted implementation is fully qualified on base a8df2f95; current main d30e014 changes only an unrelated design document. In addition to full race tests, Go lint, 151 chart tests, chart lint, generated docs, and strict manifest validation, the exact built image sha256:eaab195d887f reached Ready in disposable kind v1.34: /healthz reported ping, /readyz reported webhook-server, both returned HTTP 200, restart count stayed zero, logs had no TLS-probe noise, read-only Freight/Stage cache RBAC was sufficient, and all 11 rolling-restart samples retained a ready Service endpoint. The cluster, TLS material, and image were removed. Keep it unpublished at 6/4; recheck live assignment, competing work, main, and capacity before committing."
     },
     {
       "id": "kagent-dev-kagent-2303-issue",
