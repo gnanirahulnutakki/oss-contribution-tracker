@@ -20,12 +20,12 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 |---|---:|---:|---|
 | Merged external pull requests | 0 | 24 | 0% |
 | Landing rate for decided PRs | — | 70% | No decided PRs yet |
-| External pull requests reviewed | 28 | 12 | Target met |
+| External pull requests reviewed | 29 | 12 | Target met |
 | Simultaneous open authored PRs | 6 | ≤ 4 | Over cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
-Fresh unsolicited review cadence: **paused until 2026-08-12 05:34 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
+Fresh unsolicited review cadence: **paused until 2026-08-13 01:34 UTC** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
 ## Tracked portfolio
 
@@ -68,6 +68,7 @@ Fresh unsolicited review cadence: **paused until 2026-08-12 05:34 UTC** (rolling
 | [tma1-ai/tma1#73](https://github.com/tma1-ai/tma1/pull/73#pullrequestreview-4801192177)<br>chore&#40;deps&#41;: Bump sharp and astro in /site | reviewer | **Review submitted** | 1 check passed | Exact head afa47ab builds on Node 22.12.0 and preserves the three localized page contracts, but the lockfile still installs sharp 0.34.5 and leaves GHSA-f88m-g3jw-g9cj present. One file-level finding is open; wait for a head update or concrete reply without duplicating it. |
 | [kserve/kserve#5917](https://github.com/kserve/kserve/pull/5917#pullrequestreview-4849628354)<br>fix: select compatible LocalModelNodeGroup instead of blindly picking &#91;0&#93; | reviewer | **Review submitted** | 5 checks passed · workflow approval needed | Re-reviewed exact head 4c1d4529 after the RBAC and generated-manifest update: controller-gen, Helm, Kustomize, all 12 quick-install outputs, 21 validators, race tests, compile/vet, chart lint, and diff checks pass. GitHub denied a formal approval because the account lacks explicit repository access, so a proof-backed COMMENT review was submitted; wait for maintainers to authorize the remaining action_required workflows. |
 | [Arize-ai/openinference#3545](https://github.com/Arize-ai/openinference/pull/3545#pullrequestreview-4912216885)<br>fix&#40;langchain&#41;: don&#x27;t record exception events for control-flow signals | reviewer | **Review submitted** | 22 non-failing checks &#40;17 passed, 5 skipped&#41; · 1 failing | Requested changes on exact head 1f79ad89 after reproducing telemetry loss for unrelated Command, ParentCommand, and GraphInterrupt exception classes across chain, LLM, retriever, and tool callbacks &#40;12/12&#41;: every span was marked OK with no exception event. Ruff, Mypy, and all 237 LangChain tests pass, confirming a missing provenance regression rather than a generally failing branch. Wait for a substantive author update and re-review only the changed head. |
+| [llm-d/llm-d-router#2310](https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718)<br>fix&#40;CrossReplicaSyncer&#41;: disentangle CrossReplicaSyncing interval from main ticket in PoolingDispatcher | reviewer | **Review submitted** | 39 non-failing checks &#40;34 passed, 5 skipped&#41; | Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state &#40;delete then set, final state present&#41;, and simply reordering removal and deletion is insufficient. Wait for a substantive author response or changed head; re-review only after both startup and final-deletion contracts have regression coverage. |
 | [oam-dev/cluster-gateway#170](https://github.com/oam-dev/cluster-gateway/issues/170)<br>Security: managed credential must override inbound Authorization on proxy requests | author | **Issue open** | unassigned | The linked implementation PR is green; wait for maintainer review without a status ping. |
 | [CaviraOSS/OpenMemory#186](https://github.com/CaviraOSS/OpenMemory/issues/186)<br>`delete_all` removes DB rows but not the in-process hsg query cache — deleted memories remain retrievable for the process lifetime | author | **Assigned elsewhere** | assigned to @nullure | Resolved upstream by merged competing PR #190, which added cache clearing directly. The issue remains open and assigned elsewhere, but no implementation or reply is owed from this contributor. |
 | [plastic-labs/honcho#790](https://github.com/plastic-labs/honcho/issues/790)<br>Deleted workspace&#x27;s search results keep being served from the redis cache until TTL; recreating the same workspace id resurrects them | author | **Issue open** | unassigned | No maintainer reply or assignment has landed; preserve the report and do not ping. |
@@ -86,7 +87,7 @@ Fresh unsolicited review cadence: **paused until 2026-08-12 05:34 UTC** (rolling
 | [kagent-dev/kagent#1037](https://github.com/kagent-dev/kagent/issues/1037)<br>feat: add support for Docker images and kmcp projects for local dev | participant | **Issue closed** | unassigned | Closed by the stale bot on 2026-06-23 without a maintainer response. Do not revive the old claim without current reproduction and renewed maintainer intent. |
 | [letta-ai/letta#3364](https://github.com/letta-ai/letta/issues/3364)<br>BYOK OpenAI-compatible provider: handle is generated under `openai-proxy/...` but validated against the provider name → 400, or unhandled `AssertionError` → opaque 500 | author | **Issue closed** | unassigned | Automatically closed and locked for missing the repository&#x27;s required human-verification and AI-policy template. Do not reopen or repost without a fresh reproduction and full policy compliance. |
 
-Last public state change recorded: **2026-08-12T01:39:31+00:00**.
+Last public state change recorded: **2026-08-12T06:58:22+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

@@ -482,6 +482,17 @@
       "next_action": "Requested changes on exact head 1f79ad89 after reproducing telemetry loss for unrelated Command, ParentCommand, and GraphInterrupt exception classes across chain, LLM, retriever, and tool callbacks (12/12): every span was marked OK with no exception event. Ruff, Mypy, and all 237 LangChain tests pass, confirming a missing provenance regression rather than a generally failing branch. Wait for a substantive author update and re-review only the changed head."
     },
     {
+      "id": "llm-d-llm-d-router-2310-review",
+      "kind": "review",
+      "repository": "llm-d/llm-d-router",
+      "number": 2310,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-08-12",
+      "review_url": "https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718",
+      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Wait for a substantive author response or changed head; re-review only after both startup and final-deletion contracts have regression coverage."
+    },
+    {
       "id": "oam-dev-cluster-gateway-170-issue",
       "kind": "issue",
       "repository": "oam-dev/cluster-gateway",
