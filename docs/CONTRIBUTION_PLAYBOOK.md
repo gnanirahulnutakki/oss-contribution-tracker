@@ -90,6 +90,11 @@ clear, locally reproduced finding.
 
 ## What the dashboard means
 
+- **Candidate** (role): a public issue has a private, locally verified patch or
+  reproduction, but this contributor has not claimed, commented on, committed,
+  or opened a pull request for it. Candidate lanes do not imply assignment or
+  public participation and remain unpublished while the authored-PR cap is
+  full.
 - **PR open**: implementation is public and awaiting normal review.
 - **Awaiting CI approval**: a first-time-contributor workflow needs a
   maintainer to authorize execution; this is not a test failure.
