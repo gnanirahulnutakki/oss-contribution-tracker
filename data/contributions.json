@@ -543,6 +543,17 @@
       "next_action": "A private, uncommitted implementation is fully qualified and now replayed byte-identically onto current main d30e014; the upstream deletion of an accidental 664-line design document is incorporated and will not be reintroduced. Focused race tests, all 151 chart assertions, chart lint, generated docs, and diff checks pass on that exact base. The exact built image sha256:eaab195d887f previously reached Ready in disposable kind v1.34: /healthz reported ping, /readyz reported webhook-server, both returned HTTP 200, restart count stayed zero, logs had no TLS-probe noise, read-only Freight/Stage cache RBAC was sufficient, and all 11 rolling-restart samples retained a ready Service endpoint. The cluster, TLS material, and image were removed. Keep it unpublished at 6/4. A new authored PR is permitted only when the pre-publication count is 3 or fewer, preserving the hard cap of 4; then recheck live assignment, competing work, main, and contribution policy before committing."
     },
     {
+      "id": "warpdotdev-warp-8759-issue",
+      "kind": "issue",
+      "repository": "warpdotdev/warp",
+      "number": 8759,
+      "role": "participant",
+      "tier": "emerging",
+      "started_at": "2026-08-12",
+      "attention_acknowledged_at": "2026-08-13T09:31:15Z",
+      "next_action": "Wait for a Warp maintainer to answer the client-side Codex app-server architecture and ready-to-spec question. The 2026-08-13 reply from unaffiliated participant @okocsis recommends an alternative WarpOss build but cannot make the requested repository architecture decision, so it is acknowledged without a reply. Do not prepare a spec, implementation, or follow-up ping unless a maintainer accepts the boundary or asks a concrete question."
+    },
+    {
       "id": "kagent-dev-kagent-2303-issue",
       "kind": "issue",
       "repository": "kagent-dev/kagent",
