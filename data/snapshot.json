@@ -75,7 +75,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -3046,14 +3046,14 @@
     "window_start": "2026-07-23"
   },
   "review_cadence": {
-    "eligible_now": false,
+    "eligible_now": true,
     "fresh_reviews_considered": 29,
-    "fresh_reviews_in_window": 2,
+    "fresh_reviews_in_window": 1,
     "latest_fresh_review_at": "2026-08-12T06:52:13Z",
     "max_fresh_reviews": 2,
     "min_spacing_hours": 4,
-    "next_eligible_at": "2026-08-13T01:34:16Z",
+    "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-12T06:58:22+00:00"
+  "state_changed_at": "2026-08-13T01:37:48+00:00"
 }
