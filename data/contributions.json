@@ -264,8 +264,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
-      "attention_acknowledged_at": "2026-08-01T15:16:18Z",
-      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
+      "attention_acknowledged_at": "2026-08-13T15:21:31Z",
+      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-13 maintainer-directed nudge cites this approval but asks no question and follows no head change, so no reviewer reply is warranted. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -541,6 +541,16 @@
       "tier": "emerging",
       "started_at": "2026-07-23",
       "next_action": "A private, uncommitted implementation is fully qualified and now replayed byte-identically onto current main d30e014; the upstream deletion of an accidental 664-line design document is incorporated and will not be reintroduced. Focused race tests, all 151 chart assertions, chart lint, generated docs, and diff checks pass on that exact base. The exact built image sha256:eaab195d887f previously reached Ready in disposable kind v1.34: /healthz reported ping, /readyz reported webhook-server, both returned HTTP 200, restart count stayed zero, logs had no TLS-probe noise, read-only Freight/Stage cache RBAC was sufficient, and all 11 rolling-restart samples retained a ready Service endpoint. The cluster, TLS material, and image were removed. Keep it unpublished at 6/4. A new authored PR is permitted only when the pre-publication count is 3 or fewer, preserving the hard cap of 4; then recheck live assignment, competing work, main, and contribution policy before committing."
+    },
+    {
+      "id": "nvidia-aicr-2144-issue",
+      "kind": "issue",
+      "repository": "NVIDIA/aicr",
+      "number": 2144,
+      "role": "candidate",
+      "tier": "emerging",
+      "started_at": "2026-08-13",
+      "next_action": "A private, uncommitted two-file patch is replayed onto current main 11c9901c and fixes the fast MDX checker's CommonMark handling for fences indented by up to three spaces, delimiter-only closers, and CRLF. Clean main falsely reports fenced <br> content while the patch returns zero; the full checker regression script, exact-head lint (including 52-file MDX parsing and zero golangci-lint issues), API-diff, tuning, supply-chain gates, and all 24 no-cluster Chainsaw suites pass. The parallel race gate passed every changed-path and other reported package but twice exceeded an unrelated Homebrew timeout wall-clock assertion (5.77s and 4.78s versus 4s); the identical test/script objects pass the exact subtest 5/5 on both clean main and the patch. Keep this lane unpublished at 6/4. When the pre-publication count is 3 or fewer, recheck issue ownership, competing work, current main, and contribution policy, then rerun the full race gate under controlled load before committing."
     },
     {
       "id": "warpdotdev-warp-8759-issue",
