@@ -880,19 +880,19 @@
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
-        "neutral": 1,
-        "non_failing": 65,
-        "passing": 65,
+        "neutral": 2,
+        "non_failing": 63,
+        "passing": 63,
         "pending": 0,
-        "skipped": 16,
-        "successful": 48,
-        "total": 65,
+        "skipped": 11,
+        "successful": 50,
+        "total": 63,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T07:02:11Z",
-      "head_sha": "a51fa5e7cb64d6a172fd08e0a874a0f2814135e5",
+      "head_sha": "af25baf8347f7a9c321fc31e741106d6c10da85f",
       "id": "pydantic-pydantic-ai-6706-review",
       "kind": "review",
       "linked_issue": null,
@@ -909,7 +909,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "Validate native tool IDs per capability layer",
-      "updated_at": "2026-08-02T08:42:01Z",
+      "updated_at": "2026-08-14T07:18:47Z",
       "url": "https://github.com/pydantic/pydantic-ai/pull/6706",
       "workflows": {
         "action_required": 0,
@@ -3160,5 +3160,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-13T16:19:11+00:00"
+  "state_changed_at": "2026-08-14T14:40:03+00:00"
 }
