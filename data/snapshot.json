@@ -3135,7 +3135,7 @@
     "authored_pull_requests": 5,
     "decided_pull_requests": 0,
     "excluded_administrative_gates": 1,
-    "external_reviews": 29,
+    "external_reviews": 30,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3160,5 +3160,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-14T14:40:03+00:00"
+  "state_changed_at": "2026-08-16T03:58:53+00:00"
 }
