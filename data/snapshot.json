@@ -1084,10 +1084,10 @@
         "acknowledged_at": "2026-08-13T15:21:31Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-11T15:22:05Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-08-16T14:29:25Z",
+        "latest_response_url": "https://github.com/huggingface/smolagents/pull/2565#issuecomment-5307927848",
         "linked_issue_latest_own_activity_at": null,
-        "unanswered_direct_mentions": 0,
+        "unanswered_direct_mentions": 1,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -1118,12 +1118,12 @@
       "repository": "huggingface/smolagents",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-08-13T15:21:31Z",
+      "updated_at": "2026-08-16T14:29:25Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 2,
@@ -1148,13 +1148,15 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 7,
-        "passing": 7,
-        "pending": 3,
-        "skipped": 1,
-        "successful": 6,
-        "total": 10,
-        "unexpected_failures": []
+        "non_failing": 30,
+        "passing": 30,
+        "pending": 2,
+        "skipped": 5,
+        "successful": 25,
+        "total": 33,
+        "unexpected_failures": [
+          "Run integration tests"
+        ]
       },
       "draft": false,
       "exclude_from_landing_rate": false,
@@ -1179,11 +1181,11 @@
       "updated_at": "2026-08-11T14:23:58Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
-        "action_required": 3,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -1254,25 +1256,22 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 80,
-        "passing": 80,
+        "non_failing": 91,
+        "passing": 91,
         "pending": 0,
-        "skipped": 27,
-        "successful": 53,
-        "total": 82,
-        "unexpected_failures": [
-          "\u2705 CI Success",
-          "\ud83e\uddea Test deepagents / Python 3.13 (windows-latest)"
-        ]
+        "skipped": 5,
+        "successful": 86,
+        "total": 91,
+        "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T12:47:04Z",
-      "head_sha": "f12a2ed02e41335a2c8eec1aa27795b13f83b2d7",
+      "head_sha": "edaca6415aa21ffa529d7c3f6314781a3e6f7c37",
       "id": "langchain-ai-deepagents-5026-review",
       "kind": "review",
       "linked_issue": null,
-      "merged_at": null,
+      "merged_at": "2026-08-17T23:23:15Z",
       "next_action": "Head f12a2ed only merges current main into the branch; no author response or substantive fix followed, and the existing {{a,b}}.py backend disagreement plus Windows path-normalization failure remain. The prior proof-backed COMMENT review still applies, so do not re-review until a substantive fix or concrete author question arrives.",
       "number": 5026,
       "own_review_count": 2,
@@ -1280,19 +1279,19 @@
       "repository": "langchain-ai/deepagents",
       "review_url": "https://github.com/langchain-ai/deepagents/pull/5026#pullrequestreview-4849693821",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review landed",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(sdk): make `BackendProtocol.glob` recursive for bare patterns",
-      "updated_at": "2026-08-07T17:29:29Z",
+      "updated_at": "2026-08-17T23:23:17Z",
       "url": "https://github.com/langchain-ai/deepagents/pull/5026",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 2,
+        "failure": 0,
         "pending": 0,
-        "success": 16
+        "success": 10
       }
     },
     {
@@ -3160,5 +3159,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-16T03:58:53+00:00"
+  "state_changed_at": "2026-08-18T14:32:06+00:00"
 }
