@@ -2011,7 +2011,7 @@
       "updated_at": "2026-08-04T00:45:13Z",
       "url": "https://github.com/kserve/kserve/pull/5917",
       "workflows": {
-        "action_required": 18,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -3159,5 +3159,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-18T14:32:06+00:00"
+  "state_changed_at": "2026-08-19T14:31:25+00:00"
 }
