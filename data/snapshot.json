@@ -1684,7 +1684,7 @@
       "updated_at": "2026-07-26T01:03:01Z",
       "url": "https://github.com/AgentOps-AI/agentops/pull/1428",
       "workflows": {
-        "action_required": 3,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -2011,7 +2011,7 @@
       "updated_at": "2026-08-04T00:45:13Z",
       "url": "https://github.com/kserve/kserve/pull/5917",
       "workflows": {
-        "action_required": 0,
+        "action_required": 18,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -2077,12 +2077,12 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-12T06:52:13Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-08-19T21:03:28Z",
+        "latest_response_url": "https://github.com/llm-d/llm-d-router/pull/2310#discussion_r3816698613",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 1
       },
       "cadence_exempt": false,
       "checks": {
@@ -2111,12 +2111,12 @@
       "repository": "llm-d/llm-d-router",
       "review_url": "https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-08-12",
       "state": "open",
       "tier": "anchor",
       "title": "fix(CrossReplicaSyncer): disentangle CrossReplicaSyncing interval from main ticket in PoolingDispatcher",
-      "updated_at": "2026-08-12T06:52:13Z",
+      "updated_at": "2026-08-19T21:38:50Z",
       "url": "https://github.com/llm-d/llm-d-router/pull/2310",
       "workflows": {
         "action_required": 0,
@@ -3159,5 +3159,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-19T14:31:25+00:00"
+  "state_changed_at": "2026-08-20T14:32:25+00:00"
 }
