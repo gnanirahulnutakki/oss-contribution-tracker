@@ -322,7 +322,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -361,7 +361,7 @@
       "state": "open",
       "tier": "legacy",
       "title": "fix(proxy): enforce managed credential precedence",
-      "updated_at": "2026-07-13T01:45:56Z",
+      "updated_at": "2026-08-09T12:30:19Z",
       "url": "https://github.com/oam-dev/cluster-gateway/pull/171",
       "workflows": {
         "action_required": 0,
@@ -3159,5 +3159,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-20T14:32:25+00:00"
+  "state_changed_at": "2026-08-21T14:32:05+00:00"
 }
