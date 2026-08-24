@@ -63,9 +63,7 @@
     },
     {
       "attention": {
-        "changes_requested_by": [
-          "SuperQ"
-        ],
+        "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-24T16:18:19Z",
         "latest_response_at": null,
         "latest_response_url": null,
@@ -74,20 +72,16 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
-      "base_drift": {
-        "behind": false,
-        "update_required": false
-      },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 9,
-        "passing": 9,
-        "pending": 4,
-        "skipped": 0,
-        "successful": 9,
-        "total": 13,
+        "non_failing": 15,
+        "passing": 15,
+        "pending": 0,
+        "skipped": 2,
+        "successful": 13,
+        "total": 15,
         "unexpected_failures": []
       },
       "draft": false,
@@ -99,29 +93,29 @@
       "linked_issue": {
         "assignees": [],
         "number": 300,
-        "state": "open"
+        "state": "closed"
       },
-      "merged_at": null,
-      "next_action": "Maintainer feedback was addressed on rebased head 61cc12f: the precision policy now flows through the refactored config/runtime into legacy, normal, and probe collectors, and the changelog warning is locked to the exact 2^53 + 1,234,567 regression case. Go 1.26 CI-equivalent gates, lint, race-enabled integration tests on PostgreSQL 13.22 through 18.1, and a differential live scrape pass. One proof-backed response is posted at issuecomment-5398082365; wait for workflow approval and maintainer re-review without another status comment.",
+      "merged_at": "2026-08-24T16:26:35Z",
+      "next_action": "Merged into upstream master as 31385354 at 2026-08-24T16:26:35Z after maintainer approval, 13 successful reporting checks, DCO, and two expected publish-job skips. The merge commit is verified reachable from live origin/master and contains both the upgrade warning and exact regression case. No follow-up comment is needed.",
       "number": 1351,
       "own_review_count": 0,
       "own_review_on_head": false,
       "repository": "prometheus-community/postgres_exporter",
       "review_url": null,
       "role": "author",
-      "stage": "Changes requested",
+      "stage": "Merged",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix: preserve precision for large counters",
-      "updated_at": "2026-08-24T16:18:24Z",
+      "updated_at": "2026-08-24T16:27:41Z",
       "url": "https://github.com/prometheus-community/postgres_exporter/pull/1351",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
-        "pending": 1,
-        "success": 2
+        "pending": 0,
+        "success": 3
       }
     },
     {
@@ -3130,7 +3124,7 @@
   ],
   "profile": {
     "authored_pull_requests": 5,
-    "decided_pull_requests": 0,
+    "decided_pull_requests": 1,
     "excluded_administrative_gates": 1,
     "external_reviews": 30,
     "goals": {
@@ -3139,9 +3133,9 @@
       "max_open_pull_requests": 4,
       "merged_pull_requests": 24
     },
-    "landing_rate_percent": null,
-    "merged_pull_requests": 0,
-    "open_pull_requests": 6,
+    "landing_rate_percent": 100,
+    "merged_pull_requests": 1,
+    "open_pull_requests": 5,
     "username": "gnanirahulnutakki",
     "window_days": 90,
     "window_end": "2026-10-20",
@@ -3157,5 +3151,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T16:25:10+00:00"
+  "state_changed_at": "2026-08-24T16:31:38+00:00"
 }

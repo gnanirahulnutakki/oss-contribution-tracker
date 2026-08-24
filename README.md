@@ -18,10 +18,10 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 
 | Outcome | Current | Target | Progress |
 |---|---:|---:|---|
-| Merged external pull requests | 0 | 24 | 0% |
-| Landing rate for decided PRs | — | 70% | No decided PRs yet |
+| Merged external pull requests | 1 | 24 | 4% |
+| Landing rate for decided PRs | 100% | 70% | Target met |
 | External pull requests reviewed | 30 | 12 | Target met |
-| Simultaneous open authored PRs | 6 | ≤ 4 | Over cap |
+| Simultaneous open authored PRs | 5 | ≤ 4 | Over cap |
 
 Authored external PRs opened in this window: **5**. Administrative gates excluded from landing-rate decisions: **1**.
 
@@ -32,7 +32,7 @@ Fresh unsolicited review cadence: **eligible under the automated guardrail** (ro
 | Contribution | Role | Stage | Verification signals | Next action |
 |---|---|---|---|---|
 | [prometheus/alertmanager#5402](https://github.com/prometheus/alertmanager/pull/5402)<br>victorops: use Splunk On-Call branding | author | **PR open** | 2 checks passed · base advanced &#40;update optional&#41; | Wait for maintainer workflow approval; do not ping prematurely. |
-| [prometheus-community/postgres_exporter#1351](https://github.com/prometheus-community/postgres_exporter/pull/1351)<br>fix: preserve precision for large counters | author | **Changes requested** | 1 active change request · 9 checks passed · 5 pending | Maintainer feedback was addressed on rebased head 61cc12f: the precision policy now flows through the refactored config/runtime into legacy, normal, and probe collectors, and the changelog warning is locked to the exact 2^53 + 1,234,567 regression case. Go 1.26 CI-equivalent gates, lint, race-enabled integration tests on PostgreSQL 13.22 through 18.1, and a differential live scrape pass. One proof-backed response is posted at issuecomment-5398082365; wait for workflow approval and maintainer re-review without another status comment. |
+| [prometheus-community/postgres_exporter#1351](https://github.com/prometheus-community/postgres_exporter/pull/1351)<br>fix: preserve precision for large counters | author | **Merged** | 15 non-failing checks &#40;13 passed, 2 skipped&#41; | Merged into upstream master as 31385354 at 2026-08-24T16:26:35Z after maintainer approval, 13 successful reporting checks, DCO, and two expected publish-job skips. The merge commit is verified reachable from live origin/master and contains both the upgrade warning and exact regression case. No follow-up comment is needed. |
 | [PrefectHQ/fastmcp#4625](https://github.com/PrefectHQ/fastmcp/pull/4625)<br>fix: use Python field name for structured task results | author | **Closed** | 10 non-failing checks &#40;9 passed, 1 skipped&#41; · expected CI gate | Issue #4616 was closed by merged maintainer PR #4657; this administrative pull request remains closed. No follow-up is needed. |
 | [open-telemetry/otel-arrow#3572](https://github.com/open-telemetry/otel-arrow/pull/3572)<br>fix&#40;filter&#41;: reject unknown config fields | author | **PR open** | 78 non-failing checks &#40;73 passed, 5 skipped&#41; · expected CI gate · base advanced &#40;update optional&#41; | Link and verify gnani.nutakki@gmail.com on GitHub, then complete EasyCLA; the PR is ready and twice approved with 73 passing and 5 skipped technical checks, but currently has no assignee. Do not post another routing comment before the legal gate is green. |
 | [envoyproxy/gateway#9574](https://github.com/envoyproxy/gateway/pull/9574)<br>docs: explain backend protocol selection | author | **PR open** | 28 non-failing checks &#40;14 passed, 11 skipped, 3 neutral&#41; · base advanced &#40;update optional&#41; | Ready on unchanged head 12202063 after all 28 checks completed non-failing and Codex found no major issues. GitHub denied the fork author&#x27;s Copilot review request for lack of repository permission; wait for human review or a concrete request without pinging. |
@@ -89,7 +89,7 @@ Fresh unsolicited review cadence: **eligible under the automated guardrail** (ro
 | [kagent-dev/kagent#1037](https://github.com/kagent-dev/kagent/issues/1037)<br>feat: add support for Docker images and kmcp projects for local dev | participant | **Issue closed** | unassigned | Closed by the stale bot on 2026-06-23 without a maintainer response. Do not revive the old claim without current reproduction and renewed maintainer intent. |
 | [letta-ai/letta#3364](https://github.com/letta-ai/letta/issues/3364)<br>BYOK OpenAI-compatible provider: handle is generated under `openai-proxy/...` but validated against the provider name → 400, or unhandled `AssertionError` → opaque 500 | author | **Issue closed** | unassigned | Automatically closed and locked for missing the repository&#x27;s required human-verification and AI-policy template. Do not reopen or repost without a fresh reproduction and full policy compliance. |
 
-Last public state change recorded: **2026-08-24T16:25:10+00:00**.
+Last public state change recorded: **2026-08-24T16:31:38+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->

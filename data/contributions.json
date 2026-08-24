@@ -43,7 +43,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 300,
-      "next_action": "Maintainer feedback was addressed on rebased head 61cc12f: the precision policy now flows through the refactored config/runtime into legacy, normal, and probe collectors, and the changelog warning is locked to the exact 2^53 + 1,234,567 regression case. Go 1.26 CI-equivalent gates, lint, race-enabled integration tests on PostgreSQL 13.22 through 18.1, and a differential live scrape pass. One proof-backed response is posted at issuecomment-5398082365; wait for workflow approval and maintainer re-review without another status comment."
+      "next_action": "Merged into upstream master as 31385354 at 2026-08-24T16:26:35Z after maintainer approval, 13 successful reporting checks, DCO, and two expected publish-job skips. The merge commit is verified reachable from live origin/master and contains both the upgrade warning and exact regression case. No follow-up comment is needed."
     },
     {
       "id": "prefecthq-fastmcp-4625",
