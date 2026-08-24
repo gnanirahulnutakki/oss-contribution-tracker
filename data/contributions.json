@@ -264,8 +264,8 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
-      "attention_acknowledged_at": "2026-08-13T15:21:31Z",
-      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-13 maintainer-directed nudge cites this approval but asks no question and follows no head change, so no reviewer reply is warranted. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
+      "attention_acknowledged_at": "2026-08-16T14:29:25Z",
+      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-16 maintainer-directed merge request cites this approval but asks no question and follows no head change; it was inspected and acknowledged without a reviewer reply. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
     },
     {
       "id": "strands-agents-harness-sdk-3448-review",
@@ -490,7 +490,8 @@
       "tier": "anchor",
       "started_at": "2026-08-12",
       "review_url": "https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718",
-      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Wait for a substantive author response or changed head; re-review only after both startup and final-deletion contracts have regression coverage."
+      "attention_acknowledged_at": "2026-08-19T21:03:28Z",
+      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Collaborator @ahg-g endorsed the startup finding with '+1; pls address' to the PR author on 2026-08-19; the reply was acknowledged without adding another comment. Wait for an author fix or changed head, then re-review only after both startup and final-deletion contracts have regression coverage."
     },
     {
       "id": "oam-dev-cluster-gateway-170-issue",

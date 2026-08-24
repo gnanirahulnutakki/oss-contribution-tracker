@@ -1075,13 +1075,13 @@
     },
     {
       "attention": {
-        "acknowledged_at": "2026-08-13T15:21:31Z",
+        "acknowledged_at": "2026-08-16T14:29:25Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-11T15:22:05Z",
-        "latest_response_at": "2026-08-16T14:29:25Z",
-        "latest_response_url": "https://github.com/huggingface/smolagents/pull/2565#issuecomment-5307927848",
+        "latest_response_at": null,
+        "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
-        "unanswered_direct_mentions": 1,
+        "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -1105,14 +1105,14 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-13 maintainer-directed nudge cites this approval but asks no question and follows no head change, so no reviewer reply is warranted. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head.",
+      "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-16 maintainer-directed merge request cites this approval but asks no question and follows no head change; it was inspected and acknowledged without a reviewer reply. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head.",
       "number": 2565,
       "own_review_count": 5,
       "own_review_on_head": true,
       "repository": "huggingface/smolagents",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
       "role": "reviewer",
-      "stage": "Response available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
@@ -2067,14 +2067,15 @@
     },
     {
       "attention": {
+        "acknowledged_at": "2026-08-19T21:03:28Z",
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-12T06:52:13Z",
-        "latest_response_at": "2026-08-19T21:03:28Z",
-        "latest_response_url": "https://github.com/llm-d/llm-d-router/pull/2310#discussion_r3816698613",
+        "latest_response_at": null,
+        "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 1
+        "unanswered_review_thread_replies": 0
       },
       "cadence_exempt": false,
       "checks": {
@@ -2096,14 +2097,14 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Wait for a substantive author response or changed head; re-review only after both startup and final-deletion contracts have regression coverage.",
+      "next_action": "Requested changes on exact head f41e21d6 after two independent lifecycle regressions were reproduced. File-discovery mode calls Configure without Runtime.Start, so the moved cross-replica loop never launches; a base/head differential with one real polling source failed only on the PR head. A deterministic blocking-syncer race test also proved ReleaseEndpoint can complete Delete before an in-flight Set recreates the removed endpoint state (delete then set, final state present), and simply reordering removal and deletion is insufficient. Collaborator @ahg-g endorsed the startup finding with '+1; pls address' to the PR author on 2026-08-19; the reply was acknowledged without adding another comment. Wait for an author fix or changed head, then re-review only after both startup and final-deletion contracts have regression coverage.",
       "number": 2310,
       "own_review_count": 1,
       "own_review_on_head": true,
       "repository": "llm-d/llm-d-router",
       "review_url": "https://github.com/llm-d/llm-d-router/pull/2310#pullrequestreview-4913754718",
       "role": "reviewer",
-      "stage": "Response available",
+      "stage": "Review submitted",
       "started_at": "2026-08-12",
       "state": "open",
       "tier": "anchor",
@@ -3151,5 +3152,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T19:26:59+00:00"
+  "state_changed_at": "2026-08-24T19:40:47+00:00"
 }
