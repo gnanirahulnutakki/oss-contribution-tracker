@@ -12,25 +12,25 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": true,
+        "behind": false,
         "update_required": false
       },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 2,
-        "passing": 2,
-        "pending": 0,
+        "non_failing": 1,
+        "passing": 1,
+        "pending": 1,
         "skipped": 0,
-        "successful": 2,
+        "successful": 1,
         "total": 2,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": null,
-      "head_sha": "ecd5483c3442ce7efc11e213241a36bae37e8ba2",
+      "head_sha": "7c54cbc43cc980e6e1d37ac5cc9412e7e654cc33",
       "id": "prometheus-alertmanager-5402",
       "kind": "pull_request",
       "linked_issue": {
@@ -39,22 +39,22 @@
         "state": "open"
       },
       "merged_at": null,
-      "next_action": "Wait for maintainer workflow approval; do not ping prematurely.",
+      "next_action": "Head 7c54cbc is rebased onto upstream main 5082b067 with exact Go 1.27 builder proof: style, license, yamllint, golangci-lint v2.13.1 (0 issues), and race tests for config plus notify/victorops all pass. DCO is green; wait for hosted workflow approval and maintainer re-review without posting a generic ping.",
       "number": 5402,
       "own_review_count": 0,
       "own_review_on_head": false,
       "repository": "prometheus/alertmanager",
       "review_url": null,
       "role": "author",
-      "stage": "PR open",
+      "stage": "Awaiting CI approval",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "victorops: use Splunk On-Call branding",
-      "updated_at": "2026-07-24T03:18:04Z",
+      "updated_at": "2026-08-24T17:43:48Z",
       "url": "https://github.com/prometheus/alertmanager/pull/5402",
       "workflows": {
-        "action_required": 0,
+        "action_required": 1,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -3151,5 +3151,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T16:31:38+00:00"
+  "state_changed_at": "2026-08-24T17:49:51+00:00"
 }
