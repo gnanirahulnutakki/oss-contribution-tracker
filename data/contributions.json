@@ -219,7 +219,7 @@
       "started_at": "2026-07-24",
       "review_url": "https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242",
       "attention_acknowledged_at": "2026-08-01T16:10:52Z",
-      "next_action": "Exact head a51fa5e7 still rejects conflicting native tools returned by a factory inside CombinedCapability even though the same tools override as separate run-level entries. Seven focused and 417 full agent tests pass, but the validation-boundary contract remains unresolved; GitHub returned 'User is blocked' when the proof-backed follow-up was submitted, so do not retry through another channel unless access changes or a maintainer contacts us."
+      "next_action": "Exact head af25baf matches issue #6705's narrow validation-layer contract: each resolved top-level run capability is validated separately, while conflicting native tools returned by one capability remain an error. All 17 native-tool tests pass, Ruff check and format are clean, Pyright reports zero issues, and all 63 hosted checks are non-failing. A prior proof-backed follow-up returned 'User is blocked'; do not retry through another channel unless access changes or a maintainer contacts us."
     },
     {
       "id": "microsoft-agent-framework-7292-review",

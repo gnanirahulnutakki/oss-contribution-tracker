@@ -891,7 +891,7 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Exact head a51fa5e7 still rejects conflicting native tools returned by a factory inside CombinedCapability even though the same tools override as separate run-level entries. Seven focused and 417 full agent tests pass, but the validation-boundary contract remains unresolved; GitHub returned 'User is blocked' when the proof-backed follow-up was submitted, so do not retry through another channel unless access changes or a maintainer contacts us.",
+      "next_action": "Exact head af25baf matches issue #6705's narrow validation-layer contract: each resolved top-level run capability is validated separately, while conflicting native tools returned by one capability remain an error. All 17 native-tool tests pass, Ruff check and format are clean, Pyright reports zero issues, and all 63 hosted checks are non-failing. A prior proof-backed follow-up returned 'User is blocked'; do not retry through another channel unless access changes or a maintainer contacts us.",
       "number": 6706,
       "own_review_count": 1,
       "own_review_on_head": false,
@@ -3152,5 +3152,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T19:40:47+00:00"
+  "state_changed_at": "2026-08-24T23:22:07+00:00"
 }
