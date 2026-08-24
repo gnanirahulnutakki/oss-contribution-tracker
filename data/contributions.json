@@ -108,7 +108,7 @@
       "role": "author",
       "tier": "legacy",
       "started_at": "2026-04-16",
-      "next_action": "Head ce1cd22 is rebased onto current main, bounds reuse to >=3.11,<3.14, preserves UV_PYTHON repinning, and passes 41 shell-installer plus 13 contributor-mapping tests. The review thread is resolved and all 27 reporting CI checks pass; wait for maintainer re-review without pinging."
+      "next_action": "Head 3ee7c709 is rebased onto upstream main a0795acc and updates both POSIX and PowerShell installers to reuse supported Python >=3.11,<3.14 before downloading 3.11. Exact-base negative controls fail; 91 focused local tests pass with one skip, and all 35 hosted checks are non-failing (23 passed, 11 skipped, 1 neutral), including Windows-only, PowerShell installer, both Docker architectures, Nix, supply-chain, and the final required-check gate. GitHub reports CLEAN and MERGEABLE with no unresolved thread or maintainer reply; wait for review without pinging. The external authored-PR portfolio remains 5/4, so do not publish another PR."
     },
     {
       "id": "nousresearch-hermes-agent-10828",

@@ -377,30 +377,30 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": true,
+        "behind": false,
         "update_required": false
       },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "neutral": 1,
-        "non_failing": 38,
-        "passing": 38,
+        "non_failing": 35,
+        "passing": 35,
         "pending": 0,
-        "skipped": 10,
-        "successful": 27,
-        "total": 38,
+        "skipped": 11,
+        "successful": 23,
+        "total": 35,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": null,
-      "head_sha": "ce1cd22bc1353523ceb25e9833d9d7ea0b17b2c0",
+      "head_sha": "3ee7c709738b40b84683c6d03b8f73e2b1d5f0fd",
       "id": "nousresearch-hermes-agent-10824",
       "kind": "pull_request",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Head ce1cd22 is rebased onto current main, bounds reuse to >=3.11,<3.14, preserves UV_PYTHON repinning, and passes 41 shell-installer plus 13 contributor-mapping tests. The review thread is resolved and all 27 reporting CI checks pass; wait for maintainer re-review without pinging.",
+      "next_action": "Head 3ee7c709 is rebased onto upstream main a0795acc and updates both POSIX and PowerShell installers to reuse supported Python >=3.11,<3.14 before downloading 3.11. Exact-base negative controls fail; 91 focused local tests pass with one skip, and all 35 hosted checks are non-failing (23 passed, 11 skipped, 1 neutral), including Windows-only, PowerShell installer, both Docker architectures, Nix, supply-chain, and the final required-check gate. GitHub reports CLEAN and MERGEABLE with no unresolved thread or maintainer reply; wait for review without pinging. The external authored-PR portfolio remains 5/4, so do not publish another PR.",
       "number": 10824,
       "own_review_count": 0,
       "own_review_on_head": false,
@@ -412,14 +412,14 @@
       "state": "open",
       "tier": "legacy",
       "title": "fix(installer): reuse existing newer Python before downloading 3.11",
-      "updated_at": "2026-07-27T22:28:34Z",
+      "updated_at": "2026-08-24T18:40:30Z",
       "url": "https://github.com/NousResearch/hermes-agent/pull/10824",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 1
+        "success": 3
       }
     },
     {
@@ -3151,5 +3151,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T17:55:48+00:00"
+  "state_changed_at": "2026-08-24T18:54:29+00:00"
 }
