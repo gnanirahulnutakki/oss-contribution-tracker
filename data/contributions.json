@@ -275,8 +275,8 @@
       "role": "reviewer",
       "tier": "anchor",
       "started_at": "2026-07-24",
-      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4782383330",
-      "next_action": "Re-reviewed the substantive delta through head 0cdaaee7 with no code or documentation finding: 100 graph tests pass, the new queue-timeout test passed 100 repetitions, all execution-timeout combinations passed 100 repetitions, and Ruff/mypy are clean. Exact-head hosted jobs still await manual authorization, so keep the prior approval stale and re-approve only after the Windows matrix is green."
+      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-5011682549",
+      "next_action": "Requested changes on exact head 14f0b335 after the real batch scheduler reproduced the remaining session-resume ordering bug 3/3 times: a non-suspending first entry point serialized its sibling as PENDING with frontier [right, join], and restore silently ran join twice while returning COMPLETED. Moving the EXECUTING transition before task creation passed the same control 3/3 with frontier [right] and one join call. The complete graph module passes 100 tests and Ruff plus targeted mypy are clean, proving the current sleep-based assertion misses this boundary. Wait for a substantive author update with end-to-end serialize/deserialize coverage before re-reviewing."
     },
     {
       "id": "openai-openai-python-3538-review",

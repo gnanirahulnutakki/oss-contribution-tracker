@@ -377,7 +377,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -1130,7 +1130,7 @@
     {
       "attention": {
         "changes_requested_by": [],
-        "latest_own_activity_at": "2026-07-26T18:58:31Z",
+        "latest_own_activity_at": "2026-08-24T19:20:25Z",
         "latest_response_at": null,
         "latest_response_url": null,
         "linked_issue_latest_own_activity_at": null,
@@ -1158,19 +1158,19 @@
       "kind": "review",
       "linked_issue": null,
       "merged_at": null,
-      "next_action": "Re-reviewed the substantive delta through head 0cdaaee7 with no code or documentation finding: 100 graph tests pass, the new queue-timeout test passed 100 repetitions, all execution-timeout combinations passed 100 repetitions, and Ruff/mypy are clean. Exact-head hosted jobs still await manual authorization, so keep the prior approval stale and re-approve only after the Windows matrix is green.",
+      "next_action": "Requested changes on exact head 14f0b335 after the real batch scheduler reproduced the remaining session-resume ordering bug 3/3 times: a non-suspending first entry point serialized its sibling as PENDING with frontier [right, join], and restore silently ran join twice while returning COMPLETED. Moving the EXECUTING transition before task creation passed the same control 3/3 with frontier [right] and one join call. The complete graph module passes 100 tests and Ruff plus targeted mypy are clean, proving the current sleep-based assertion misses this boundary. Wait for a substantive author update with end-to-end serialize/deserialize coverage before re-reviewing.",
       "number": 3448,
-      "own_review_count": 3,
-      "own_review_on_head": false,
+      "own_review_count": 4,
+      "own_review_on_head": true,
       "repository": "strands-agents/harness-sdk",
-      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-4782383330",
+      "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-5011682549",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review submitted",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "feat(graph): add Python concurrency limit",
-      "updated_at": "2026-08-23T12:41:23Z",
+      "updated_at": "2026-08-24T19:20:25Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
         "action_required": 3,
@@ -3151,5 +3151,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-24T18:54:29+00:00"
+  "state_changed_at": "2026-08-24T19:26:59+00:00"
 }
