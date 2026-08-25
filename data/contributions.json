@@ -32,7 +32,7 @@
       "tier": "anchor",
       "started_at": "2026-07-24",
       "linked_issue": 3539,
-      "next_action": "Head 7c54cbc is rebased onto upstream main 5082b067 with exact Go 1.27 builder proof: style, license, yamllint, golangci-lint v2.13.1 (0 issues), and race tests for config plus notify/victorops all pass. DCO and CodeRabbit are green; wait for hosted workflow approval and maintainer re-review without posting a generic ping."
+      "next_action": "Head 8a859d71 addresses SoloJacobs' exact-head review: validation errors and unrelated wording changes were reverted, the compatibility note now covers metrics, logs, traces, and errors, and the release-process changelog entry was removed. Both official Splunk documentation links returned HTTP 200. Exact-head race tests pass for config and notify/victorops; wait for hosted workflow authorization and maintainer re-review without another ping."
     },
     {
       "id": "prometheus-community-postgres-exporter-1351",
