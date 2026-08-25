@@ -268,6 +268,17 @@
       "next_action": "Approved exact head 2d0a0317 after the author removed ActionStep serialization from managed summaries: raw tool arguments, observations, and images are never accessed, an adversarial raising-object probe passed, all eight focused regressions pass, and make quality is clean. The author's 2026-08-16 maintainer-directed merge request cites this approval but asks no question and follows no head change; it was inspected and acknowledged without a reviewer reply. Hosted workflows still await repository authorization; wait for maintainer action or another substantive head."
     },
     {
+      "id": "huggingface-smolagents-2618-review",
+      "kind": "review",
+      "repository": "huggingface/smolagents",
+      "number": 2618,
+      "role": "reviewer",
+      "tier": "anchor",
+      "started_at": "2026-08-15",
+      "review_url": "https://github.com/huggingface/smolagents/pull/2618#pullrequestreview-4944850317",
+      "next_action": "Requested changes on exact head 523434df after reproducing a class-body ast.Attribute bypass: indirect target.__del__ assignment installs the forbidden lifecycle hook, and host gc.collect() fires it after LocalPythonExecutor has returned. All six added regressions and the full executor test file (403 passed, 2 skipped) pass, proving a missing target-shape regression rather than a generally failing branch. Wait for a substantive author update; re-review only after both Assign and AnnAssign attribute targets are blocked with host-GC coverage."
+    },
+    {
       "id": "strands-agents-harness-sdk-3448-review",
       "kind": "review",
       "repository": "strands-agents/harness-sdk",
@@ -541,7 +552,17 @@
       "role": "assignee",
       "tier": "emerging",
       "started_at": "2026-07-23",
-      "next_action": "A private, uncommitted implementation is fully qualified and now replayed byte-identically onto current main d30e014; the upstream deletion of an accidental 664-line design document is incorporated and will not be reintroduced. Focused race tests, all 151 chart assertions, chart lint, generated docs, and diff checks pass on that exact base. The exact built image sha256:eaab195d887f previously reached Ready in disposable kind v1.34: /healthz reported ping, /readyz reported webhook-server, both returned HTTP 200, restart count stayed zero, logs had no TLS-probe noise, read-only Freight/Stage cache RBAC was sufficient, and all 11 rolling-restart samples retained a ready Service endpoint. The cluster, TLS material, and image were removed. Keep it unpublished at 6/4. A new authored PR is permitted only when the pre-publication count is 3 or fewer, preserving the hard cap of 4; then recheck live assignment, competing work, main, and contribution policy before committing."
+      "next_action": "A private, uncommitted implementation is requalified on exact upstream main 5e90b3f with stable patch ID 6cc0f513 and unchanged focused-test SHA-256 87e17fa1. Focused race, vet, golangci-lint v2.10.1, all 48 chart suites and 158 tests, chart lint, generated docs, and diff checks pass. A fresh Kind v1.34 run using exact image sha256:be6c4ffc included the new PromotionRequest CRD/webhook: health and readiness returned HTTP 200, the pod was Ready with zero restarts, least-privilege cache RBAC held, and all 13 rolling-restart samples retained a ready endpoint. Keep it unpublished at 5/4; publish only when the live pre-publication count is 3 or fewer, after rechecking assignment, competitors, current main, policy, and focused gates."
+    },
+    {
+      "id": "ome-projects-ome-627-issue",
+      "kind": "issue",
+      "repository": "ome-projects/ome",
+      "number": 627,
+      "role": "candidate",
+      "tier": "emerging",
+      "started_at": "2026-08-13",
+      "next_action": "A private two-file BestFit fix is requalified on exact upstream main 5e4857e. Current-main negative control reproduces the nil-pointer panic when optional constraints are omitted; normalizing nil constraints at the scoring boundary makes omitted and empty constraints equivalent. The full selector package, 20 repeated regressions, vet, targeted race, and diff checks pass. Repository generation and manifests pass, but the broad no-Xet command group remains blocked by current-main linker flags requiring absent libxet, so do not claim a green full-repository gate. Keep it unpublished at 5/4; when the live pre-publication count is 3 or fewer, recheck issue ownership, competitors, current main, policy, README, and supported validation before one DCO-signed PR."
     },
     {
       "id": "nvidia-aicr-2144-issue",
