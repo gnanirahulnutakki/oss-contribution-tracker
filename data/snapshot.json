@@ -12,7 +12,7 @@
         "unanswered_review_thread_replies": 0
       },
       "base_drift": {
-        "behind": false,
+        "behind": true,
         "update_required": false
       },
       "cadence_exempt": false,
@@ -51,7 +51,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "victorops: use Splunk On-Call branding",
-      "updated_at": "2026-08-24T17:47:26Z",
+      "updated_at": "2026-08-24T18:00:20Z",
       "url": "https://github.com/prometheus/alertmanager/pull/5402",
       "workflows": {
         "action_required": 1,
@@ -3257,5 +3257,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-25T02:43:27+00:00"
+  "state_changed_at": "2026-08-25T08:42:51+00:00"
 }
