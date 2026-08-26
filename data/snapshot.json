@@ -6,12 +6,12 @@
           "SoloJacobs"
         ],
         "latest_own_activity_at": "2026-08-25T14:47:55Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-08-25T15:50:48Z",
+        "latest_response_url": "https://github.com/prometheus/alertmanager/pull/5402#discussion_r3854753155",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 1
       },
       "base_drift": {
         "behind": true,
@@ -53,7 +53,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "victorops: use Splunk On-Call branding",
-      "updated_at": "2026-08-25T14:50:18Z",
+      "updated_at": "2026-08-25T15:50:48Z",
       "url": "https://github.com/prometheus/alertmanager/pull/5402",
       "workflows": {
         "action_required": 1,
@@ -1186,23 +1186,23 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-24T19:20:25Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-08-26T12:59:32Z",
+        "latest_response_url": "https://github.com/strands-agents/harness-sdk/pull/3448#discussion_r3862943918",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 1
       },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 7,
-        "passing": 7,
+        "non_failing": 32,
+        "passing": 32,
         "pending": 3,
-        "skipped": 1,
-        "successful": 6,
-        "total": 10,
+        "skipped": 4,
+        "successful": 28,
+        "total": 35,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1220,19 +1220,19 @@
       "repository": "strands-agents/harness-sdk",
       "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-5011682549",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "feat(graph): add Python concurrency limit",
-      "updated_at": "2026-08-24T19:20:25Z",
+      "updated_at": "2026-08-26T13:00:15Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
-        "action_required": 3,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -3261,5 +3261,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-25T14:58:32+00:00"
+  "state_changed_at": "2026-08-26T14:34:34+00:00"
 }
