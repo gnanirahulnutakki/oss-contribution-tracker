@@ -854,7 +854,7 @@
       "updated_at": "2026-07-28T00:10:51Z",
       "url": "https://github.com/google/adk-python/pull/6460",
       "workflows": {
-        "action_required": 2,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -1199,16 +1199,18 @@
         "neutral": 0,
         "non_failing": 32,
         "passing": 32,
-        "pending": 3,
+        "pending": 1,
         "skipped": 4,
         "successful": 28,
-        "total": 35,
-        "unexpected_failures": []
+        "total": 34,
+        "unexpected_failures": [
+          "Run integration tests - Python 3.10 - all"
+        ]
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T09:07:16Z",
-      "head_sha": "14f0b3355dd082f937ecaea538a370cab71ad4f8",
+      "head_sha": "f518ad713bdd4f6817446fff3c814193ba0fbf58",
       "id": "strands-agents-harness-sdk-3448-review",
       "kind": "review",
       "linked_issue": null,
@@ -1216,16 +1218,16 @@
       "next_action": "Requested changes on exact head 14f0b335 after the real batch scheduler reproduced the remaining session-resume ordering bug 3/3 times: a non-suspending first entry point serialized its sibling as PENDING with frontier [right, join], and restore silently ran join twice while returning COMPLETED. Moving the EXECUTING transition before task creation passed the same control 3/3 with frontier [right] and one join call. The complete graph module passes 100 tests and Ruff plus targeted mypy are clean, proving the current sleep-based assertion misses this boundary. Wait for a substantive author update with end-to-end serialize/deserialize coverage before re-reviewing.",
       "number": 3448,
       "own_review_count": 4,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "strands-agents/harness-sdk",
       "review_url": "https://github.com/strands-agents/harness-sdk/pull/3448#pullrequestreview-5011682549",
       "role": "reviewer",
-      "stage": "Response available",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "feat(graph): add Python concurrency limit",
-      "updated_at": "2026-08-26T13:00:15Z",
+      "updated_at": "2026-08-26T19:47:25Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
         "action_required": 0,
@@ -2493,7 +2495,9 @@
       }
     },
     {
-      "assignees": [],
+      "assignees": [
+        "varmesh"
+      ],
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": null,
@@ -2529,12 +2533,12 @@
       "repository": "NVIDIA/aicr",
       "review_url": null,
       "role": "candidate",
-      "stage": "Issue open",
+      "stage": "Issue closed",
       "started_at": "2026-08-13",
-      "state": "open",
+      "state": "closed",
       "tier": "emerging",
       "title": "check-docs-mdx: close residual CommonMark gaps and duplicate diagnostics",
-      "updated_at": "2026-08-10T12:38:23Z",
+      "updated_at": "2026-08-27T10:33:48Z",
       "url": "https://github.com/NVIDIA/aicr/issues/2144",
       "workflows": {
         "action_required": 0,
@@ -3261,5 +3265,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-26T14:34:34+00:00"
+  "state_changed_at": "2026-08-27T18:02:51+00:00"
 }
