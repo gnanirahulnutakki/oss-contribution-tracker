@@ -2060,9 +2060,9 @@
       "updated_at": "2026-08-04T00:45:13Z",
       "url": "https://github.com/kserve/kserve/pull/5917",
       "workflows": {
-        "action_required": 18,
+        "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 18,
         "pending": 0,
         "success": 0
       }
@@ -2275,7 +2275,7 @@
       "tier": "legacy",
       "title": "`delete_all` removes DB rows but not the in-process hsg query cache \u2014 deleted memories remain retrievable for the process lifetime",
       "updated_at": "2026-06-22T16:30:53Z",
-      "url": "https://github.com/CaviraOSS/OpenMemory/issues/186",
+      "url": "https://github.com/CaviraOSS/LongMemory/issues/186",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
@@ -3265,5 +3265,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-27T18:02:51+00:00"
+  "state_changed_at": "2026-08-31T14:31:35+00:00"
 }
