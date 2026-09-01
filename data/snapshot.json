@@ -2029,18 +2029,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 5,
-        "passing": 5,
+        "non_failing": 7,
+        "passing": 7,
         "pending": 0,
         "skipped": 0,
-        "successful": 5,
-        "total": 5,
+        "successful": 7,
+        "total": 7,
         "unexpected_failures": []
       },
-      "draft": false,
+      "draft": true,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-29T02:26:31Z",
-      "head_sha": "4c1d45298bf9f85543a535c940c18b8de04e44ec",
+      "head_sha": "2280a40e73fead1bfe43d4f319d6ef29228a64ff",
       "id": "kserve-kserve-5917-review",
       "kind": "review",
       "linked_issue": null,
@@ -2048,21 +2048,21 @@
       "next_action": "Re-reviewed exact head 4c1d4529 after the RBAC and generated-manifest update: controller-gen, Helm, Kustomize, all 12 quick-install outputs, 21 validators, race tests, compile/vet, chart lint, and diff checks pass. GitHub denied a formal approval because the account lacks explicit repository access, so a proof-backed COMMENT review was submitted; wait for maintainers to authorize the remaining action_required workflows.",
       "number": 5917,
       "own_review_count": 3,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "kserve/kserve",
       "review_url": "https://github.com/kserve/kserve/pull/5917#pullrequestreview-4849628354",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-29",
       "state": "open",
       "tier": "anchor",
       "title": "fix: select compatible LocalModelNodeGroup instead of blindly picking [0]",
-      "updated_at": "2026-08-04T00:45:13Z",
+      "updated_at": "2026-08-31T15:40:42Z",
       "url": "https://github.com/kserve/kserve/pull/5917",
       "workflows": {
-        "action_required": 0,
+        "action_required": 19,
         "expected_gates": 0,
-        "failure": 18,
+        "failure": 0,
         "pending": 0,
         "success": 0
       }
@@ -2138,20 +2138,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 45,
-        "passing": 45,
+        "non_failing": 38,
+        "passing": 38,
         "pending": 0,
         "skipped": 5,
-        "successful": 40,
-        "total": 46,
-        "unexpected_failures": [
-          "add-label"
-        ]
+        "successful": 33,
+        "total": 38,
+        "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-08-12T06:52:13Z",
-      "head_sha": "3d1955985c54ac7d76d5055548a9681288dab6d4",
+      "head_sha": "8d8efab504c9555ba774ec5fc524f063a1c20dcf",
       "id": "llm-d-llm-d-router-2310-review",
       "kind": "review",
       "linked_issue": null,
@@ -2168,14 +2166,14 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(CrossReplicaSyncer): disentangle CrossReplicaSyncing interval from main ticket in PoolingDispatcher",
-      "updated_at": "2026-08-25T13:11:28Z",
+      "updated_at": "2026-09-01T09:15:27Z",
       "url": "https://github.com/llm-d/llm-d-router/pull/2310",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 1,
+        "failure": 0,
         "pending": 0,
-        "success": 10
+        "success": 8
       }
     },
     {
@@ -3237,10 +3235,10 @@
     }
   ],
   "profile": {
-    "authored_pull_requests": 5,
-    "decided_pull_requests": 1,
+    "authored_pull_requests": 6,
+    "decided_pull_requests": 2,
     "excluded_administrative_gates": 1,
-    "external_reviews": 30,
+    "external_reviews": 28,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3248,7 +3246,7 @@
       "merged_pull_requests": 24
     },
     "landing_rate_percent": 100,
-    "merged_pull_requests": 1,
+    "merged_pull_requests": 2,
     "open_pull_requests": 5,
     "username": "gnanirahulnutakki",
     "window_days": 90,
@@ -3265,5 +3263,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-08-31T14:31:35+00:00"
+  "state_changed_at": "2026-09-01T14:30:49+00:00"
 }
