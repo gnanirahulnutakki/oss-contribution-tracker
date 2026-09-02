@@ -2149,7 +2149,7 @@
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-08-12T06:52:13Z",
-      "head_sha": "8d8efab504c9555ba774ec5fc524f063a1c20dcf",
+      "head_sha": "f277bec69c4f83e0f87a4d7a29979cf0e61ce04d",
       "id": "llm-d-llm-d-router-2310-review",
       "kind": "review",
       "linked_issue": null,
@@ -2166,7 +2166,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(CrossReplicaSyncer): disentangle CrossReplicaSyncing interval from main ticket in PoolingDispatcher",
-      "updated_at": "2026-09-01T09:15:27Z",
+      "updated_at": "2026-09-02T14:04:05Z",
       "url": "https://github.com/llm-d/llm-d-router/pull/2310",
       "workflows": {
         "action_required": 0,
@@ -3238,7 +3238,7 @@
     "authored_pull_requests": 6,
     "decided_pull_requests": 2,
     "excluded_administrative_gates": 1,
-    "external_reviews": 28,
+    "external_reviews": 30,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3263,5 +3263,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-01T14:30:49+00:00"
+  "state_changed_at": "2026-09-02T14:31:37+00:00"
 }
