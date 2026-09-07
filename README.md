@@ -18,12 +18,12 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 
 | Outcome | Current | Target | Progress |
 |---|---:|---:|---|
-| Merged external pull requests | 2 | 24 | 8% |
-| Landing rate for decided PRs | 67% | 70% | 96% |
+| Merged external pull requests | 4 | 24 | 17% |
+| Landing rate for decided PRs | 80% | 70% | Target met |
 | External pull requests reviewed | 30 | 12 | Target met |
 | Simultaneous open authored PRs | 4 | ≤ 4 | Within cap |
 
-Authored external PRs opened in this window: **6**. Administrative gates excluded from landing-rate decisions: **1**.
+Authored external PRs opened in this window: **8**. Administrative gates excluded from landing-rate decisions: **1**.
 
 Fresh unsolicited review cadence: **eligible under the automated guardrail** (rolling 24-hour cap: 2; minimum spacing: 4 hours). Requested follow-ups remain evidence-driven and exempt.
 
@@ -91,7 +91,7 @@ Fresh unsolicited review cadence: **eligible under the automated guardrail** (ro
 | [kagent-dev/kagent#1037](https://github.com/kagent-dev/kagent/issues/1037)<br>feat: add support for Docker images and kmcp projects for local dev | participant | **Issue closed** | unassigned | Closed by the stale bot on 2026-06-23 without a maintainer response. Do not revive the old claim without current reproduction and renewed maintainer intent. |
 | [letta-ai/letta#3364](https://github.com/letta-ai/letta/issues/3364)<br>BYOK OpenAI-compatible provider: handle is generated under `openai-proxy/...` but validated against the provider name → 400, or unhandled `AssertionError` → opaque 500 | author | **Issue closed** | unassigned | Automatically closed and locked for missing the repository&#x27;s required human-verification and AI-policy template. Do not reopen or repost without a fresh reproduction and full policy compliance. |
 
-Last public state change recorded: **2026-09-04T14:29:25+00:00**.
+Last public state change recorded: **2026-09-07T14:31:29+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
