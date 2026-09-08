@@ -3231,8 +3231,8 @@
     }
   ],
   "profile": {
-    "authored_pull_requests": 8,
-    "decided_pull_requests": 5,
+    "authored_pull_requests": 11,
+    "decided_pull_requests": 8,
     "excluded_administrative_gates": 1,
     "external_reviews": 30,
     "goals": {
@@ -3241,8 +3241,8 @@
       "max_open_pull_requests": 4,
       "merged_pull_requests": 24
     },
-    "landing_rate_percent": 80,
-    "merged_pull_requests": 4,
+    "landing_rate_percent": 88,
+    "merged_pull_requests": 7,
     "open_pull_requests": 4,
     "username": "gnanirahulnutakki",
     "window_days": 90,
@@ -3259,5 +3259,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-07T14:31:29+00:00"
+  "state_changed_at": "2026-09-08T14:31:50+00:00"
 }
