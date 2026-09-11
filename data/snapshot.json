@@ -1115,10 +1115,10 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-09-02T15:49:31Z",
+      "updated_at": "2026-09-07T14:51:48Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
-        "action_required": 2,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -1171,9 +1171,9 @@
       "updated_at": "2026-08-15T22:32:48Z",
       "url": "https://github.com/huggingface/smolagents/pull/2618",
       "workflows": {
-        "action_required": 2,
+        "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 2,
         "pending": 0,
         "success": 0
       }
@@ -3259,5 +3259,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-10T14:29:39+00:00"
+  "state_changed_at": "2026-09-11T14:31:38+00:00"
 }
