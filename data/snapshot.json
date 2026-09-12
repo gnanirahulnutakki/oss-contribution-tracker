@@ -367,10 +367,10 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-27T22:21:31Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-09-12T14:01:19Z",
+        "latest_response_url": "https://github.com/NousResearch/hermes-agent/pull/10824#issuecomment-5646344900",
         "linked_issue_latest_own_activity_at": null,
-        "unanswered_direct_mentions": 0,
+        "unanswered_direct_mentions": 1,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -405,12 +405,12 @@
       "repository": "NousResearch/hermes-agent",
       "review_url": null,
       "role": "author",
-      "stage": "PR open",
+      "stage": "Maintainer response",
       "started_at": "2026-04-16",
       "state": "open",
       "tier": "legacy",
       "title": "fix(installer): reuse existing newer Python before downloading 3.11",
-      "updated_at": "2026-08-24T18:40:30Z",
+      "updated_at": "2026-09-12T14:01:20Z",
       "url": "https://github.com/NousResearch/hermes-agent/pull/10824",
       "workflows": {
         "action_required": 0,
@@ -1118,7 +1118,7 @@
       "updated_at": "2026-09-07T14:51:48Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
-        "action_required": 0,
+        "action_required": 2,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -2279,7 +2279,9 @@
       }
     },
     {
-      "assignees": [],
+      "assignees": [
+        "akattelu"
+      ],
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": null,
@@ -2315,12 +2317,12 @@
       "repository": "plastic-labs/honcho",
       "review_url": null,
       "role": "author",
-      "stage": "Issue open",
+      "stage": "Assigned elsewhere",
       "started_at": "2026-06-10",
       "state": "open",
       "tier": "legacy",
       "title": "Deleted workspace's search results keep being served from the redis cache until TTL; recreating the same workspace id resurrects them",
-      "updated_at": "2026-06-10T07:12:21Z",
+      "updated_at": "2026-09-11T18:40:57Z",
       "url": "https://github.com/plastic-labs/honcho/issues/790",
       "workflows": {
         "action_required": 0,
@@ -3259,5 +3261,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-11T14:31:38+00:00"
+  "state_changed_at": "2026-09-12T14:28:03+00:00"
 }
