@@ -1029,12 +1029,12 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 1,
-        "passing": 1,
+        "non_failing": 2,
+        "passing": 2,
         "pending": 0,
         "skipped": 0,
-        "successful": 1,
-        "total": 1,
+        "successful": 2,
+        "total": 2,
         "unexpected_failures": []
       },
       "draft": false,
@@ -1052,17 +1052,17 @@
       "repository": "crewAIInc/crewAI",
       "review_url": "https://github.com/crewAIInc/crewAI/pull/6625#pullrequestreview-4771496651",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(reasoning): use flexible regex to detect READY state to prevent agent deadlocks",
-      "updated_at": "2026-07-24T08:22:38Z",
+      "updated_at": "2026-09-17T06:06:22Z",
       "url": "https://github.com/crewAIInc/crewAI/pull/6625",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 1,
         "pending": 0,
         "success": 0
       }
@@ -3255,5 +3255,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-16T14:31:03+00:00"
+  "state_changed_at": "2026-09-17T14:32:48+00:00"
 }
