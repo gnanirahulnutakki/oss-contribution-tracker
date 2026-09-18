@@ -584,12 +584,12 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-07-24T03:25:04Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-09-17T20:01:52Z",
+        "latest_response_url": "https://github.com/prometheus/client_golang/pull/2062#discussion_r4040955365",
         "linked_issue_latest_own_activity_at": null,
         "unanswered_direct_mentions": 0,
         "unanswered_linked_issue_responses": 0,
-        "unanswered_review_thread_replies": 0
+        "unanswered_review_thread_replies": 1
       },
       "cadence_exempt": false,
       "checks": {
@@ -618,12 +618,12 @@
       "repository": "prometheus/client_golang",
       "review_url": "https://github.com/prometheus/client_golang/pull/2062#pullrequestreview-4769888408",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "api: return HTTP status on non-JSON API error bodies",
-      "updated_at": "2026-07-24T03:25:05Z",
+      "updated_at": "2026-09-17T20:01:52Z",
       "url": "https://github.com/prometheus/client_golang/pull/2062",
       "workflows": {
         "action_required": 0,
@@ -3255,5 +3255,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-17T14:32:48+00:00"
+  "state_changed_at": "2026-09-18T14:30:20+00:00"
 }
