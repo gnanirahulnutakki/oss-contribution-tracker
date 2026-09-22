@@ -1004,10 +1004,10 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(autogen-ext): skip LangChain callback-manager (run_manager) when inferring tool args schema",
-      "updated_at": "2026-08-04T00:24:20Z",
+      "updated_at": "2026-09-10T10:06:19Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
-        "action_required": 7,
+        "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -1452,7 +1452,7 @@
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 3
+        "success": 0
       }
     },
     {
@@ -3255,5 +3255,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-18T14:30:20+00:00"
+  "state_changed_at": "2026-09-22T14:31:58+00:00"
 }
