@@ -1007,7 +1007,7 @@
       "updated_at": "2026-09-10T10:06:19Z",
       "url": "https://github.com/microsoft/autogen/pull/7994",
       "workflows": {
-        "action_required": 0,
+        "action_required": 7,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -1169,7 +1169,7 @@
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 2,
+        "failure": 0,
         "pending": 0,
         "success": 0
       }
@@ -1189,18 +1189,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 0,
-        "passing": 0,
-        "pending": 0,
-        "skipped": 0,
-        "successful": 0,
-        "total": 0,
+        "non_failing": 7,
+        "passing": 7,
+        "pending": 5,
+        "skipped": 1,
+        "successful": 6,
+        "total": 12,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T09:07:16Z",
-      "head_sha": "5aa47493cd2e2f5d5d0935a8e1a5ffab4a272970",
+      "head_sha": "ec9bd31e7ccf743e1a2f5656e3eb00b7d03591e7",
       "id": "strands-agents-harness-sdk-3448-review",
       "kind": "review",
       "linked_issue": null,
@@ -1217,10 +1217,10 @@
       "state": "open",
       "tier": "anchor",
       "title": "feat(graph): add Python concurrency limit",
-      "updated_at": "2026-09-13T08:51:01Z",
+      "updated_at": "2026-09-22T17:04:39Z",
       "url": "https://github.com/strands-agents/harness-sdk/pull/3448",
       "workflows": {
-        "action_required": 0,
+        "action_required": 3,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -1452,7 +1452,7 @@
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -3255,5 +3255,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-22T14:31:58+00:00"
+  "state_changed_at": "2026-09-23T14:32:27+00:00"
 }
