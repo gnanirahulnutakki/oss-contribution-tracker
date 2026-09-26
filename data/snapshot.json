@@ -13,34 +13,30 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 1
       },
-      "base_drift": {
-        "behind": true,
-        "update_required": false
-      },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 2,
-        "passing": 2,
+        "non_failing": 7,
+        "passing": 7,
         "pending": 0,
         "skipped": 0,
-        "successful": 2,
-        "total": 2,
+        "successful": 7,
+        "total": 7,
         "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": null,
-      "head_sha": "8a859d71f261e8a263d0804b61665b4df9f14fc1",
+      "head_sha": "c262b725da0eb83cd4dc9087095b6d426eebfb68",
       "id": "prometheus-alertmanager-5402",
       "kind": "pull_request",
       "linked_issue": {
         "assignees": [],
         "number": 3539,
-        "state": "open"
+        "state": "closed"
       },
-      "merged_at": null,
+      "merged_at": "2026-09-26T09:54:52Z",
       "next_action": "Head 8a859d71 addresses SoloJacobs' exact-head review: validation errors and unrelated wording changes were reverted, the compatibility note now covers metrics, logs, traces, and errors, and the release-process changelog entry was removed. Both official Splunk documentation links returned HTTP 200. Exact-head race tests pass for config and notify/victorops; wait for hosted workflow authorization and maintainer re-review without another ping.",
       "number": 5402,
       "own_review_count": 0,
@@ -48,19 +44,19 @@
       "repository": "prometheus/alertmanager",
       "review_url": null,
       "role": "author",
-      "stage": "Changes requested",
+      "stage": "Merged",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "victorops: use Splunk On-Call branding",
-      "updated_at": "2026-08-25T15:50:48Z",
+      "updated_at": "2026-09-26T09:54:52Z",
       "url": "https://github.com/prometheus/alertmanager/pull/5402",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 1,
+        "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 1
       }
     },
     {
@@ -1114,7 +1110,7 @@
       "updated_at": "2026-09-23T16:32:32Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
-        "action_required": 0,
+        "action_required": 2,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
@@ -3228,7 +3224,7 @@
   ],
   "profile": {
     "authored_pull_requests": 12,
-    "decided_pull_requests": 8,
+    "decided_pull_requests": 9,
     "excluded_administrative_gates": 1,
     "external_reviews": 30,
     "goals": {
@@ -3237,9 +3233,9 @@
       "max_open_pull_requests": 4,
       "merged_pull_requests": 24
     },
-    "landing_rate_percent": 88,
-    "merged_pull_requests": 7,
-    "open_pull_requests": 4,
+    "landing_rate_percent": 89,
+    "merged_pull_requests": 8,
+    "open_pull_requests": 3,
     "username": "gnanirahulnutakki",
     "window_days": 90,
     "window_end": "2026-10-20",
@@ -3255,5 +3251,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-25T14:32:53+00:00"
+  "state_changed_at": "2026-09-26T14:28:08+00:00"
 }
