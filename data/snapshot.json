@@ -1562,9 +1562,9 @@
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 1,
         "pending": 0,
-        "success": 0
+        "success": 5
       }
     },
     {
@@ -3251,5 +3251,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-28T14:35:38+00:00"
+  "state_changed_at": "2026-09-29T14:33:12+00:00"
 }
