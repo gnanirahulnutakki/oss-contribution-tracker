@@ -187,10 +187,6 @@
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
-      "base_drift": {
-        "behind": true,
-        "update_required": false
-      },
       "cadence_exempt": false,
       "checks": {
         "expected_gates": [
@@ -226,12 +222,12 @@
       "repository": "open-telemetry/otel-arrow",
       "review_url": null,
       "role": "author",
-      "stage": "PR open",
+      "stage": "Closed",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(filter): reject unknown config fields",
-      "updated_at": "2026-08-07T20:20:36Z",
+      "updated_at": "2026-09-29T17:25:19Z",
       "url": "https://github.com/open-telemetry/otel-arrow/pull/3572",
       "workflows": {
         "action_required": 0,
@@ -733,7 +729,7 @@
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 1
+        "success": 0
       }
     },
     {
@@ -3225,7 +3221,7 @@
   "profile": {
     "authored_pull_requests": 12,
     "decided_pull_requests": 9,
-    "excluded_administrative_gates": 1,
+    "excluded_administrative_gates": 2,
     "external_reviews": 30,
     "goals": {
       "external_reviews": 12,
@@ -3235,7 +3231,7 @@
     },
     "landing_rate_percent": 89,
     "merged_pull_requests": 8,
-    "open_pull_requests": 3,
+    "open_pull_requests": 2,
     "username": "gnanirahulnutakki",
     "window_days": 90,
     "window_end": "2026-10-20",
@@ -3251,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-09-29T14:33:12+00:00"
+  "state_changed_at": "2026-09-30T14:36:03+00:00"
 }
