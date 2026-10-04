@@ -2620,12 +2620,12 @@
       "repository": "kagent-dev/kagent",
       "review_url": null,
       "role": "participant",
-      "stage": "Issue open",
+      "stage": "Issue closed",
       "started_at": "2026-07-23",
-      "state": "open",
+      "state": "closed",
       "tier": "emerging",
       "title": "A2A: report turn-total token usage on the terminal status update",
-      "updated_at": "2026-07-28T14:23:33Z",
+      "updated_at": "2026-10-04T11:21:41Z",
       "url": "https://github.com/kagent-dev/kagent/issues/2303",
       "workflows": {
         "action_required": 0,
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-10-02T19:24:45+00:00"
+  "state_changed_at": "2026-10-04T18:14:18+00:00"
 }
