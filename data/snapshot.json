@@ -2536,11 +2536,11 @@
         "acknowledged_at": "2026-08-13T09:31:15Z",
         "changes_requested_by": [],
         "latest_own_activity_at": null,
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-10-06T06:30:06Z",
+        "latest_response_url": "https://github.com/warpdotdev/warp/issues/8759#issuecomment-6010734683",
         "linked_issue_latest_own_activity_at": "2026-08-12T20:56:55Z",
         "unanswered_direct_mentions": 0,
-        "unanswered_linked_issue_responses": 0,
+        "unanswered_linked_issue_responses": 1,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -2568,12 +2568,12 @@
       "repository": "warpdotdev/warp",
       "review_url": null,
       "role": "participant",
-      "stage": "Issue open",
+      "stage": "Issue closed",
       "started_at": "2026-08-12",
-      "state": "open",
+      "state": "closed",
       "tier": "emerging",
       "title": "OAuth Support for ChatGPT Plus/Pro (Bypass BYOK API Costs)",
-      "updated_at": "2026-08-13T09:31:15Z",
+      "updated_at": "2026-10-06T07:49:51Z",
       "url": "https://github.com/warpdotdev/warp/issues/8759",
       "workflows": {
         "action_required": 0,
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-10-04T18:14:18+00:00"
+  "state_changed_at": "2026-10-06T19:38:03+00:00"
 }
