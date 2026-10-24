@@ -1384,12 +1384,12 @@
       "repository": "sgl-project/sglang",
       "review_url": "https://github.com/sgl-project/sglang/pull/32344#pullrequestreview-4776140668",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "[Bugfix] Emit cached token metric before first cache hit",
-      "updated_at": "2026-07-24T19:26:24Z",
+      "updated_at": "2026-10-24T01:22:04Z",
       "url": "https://github.com/sgl-project/sglang/pull/32344",
       "workflows": {
         "action_required": 0,
@@ -3227,7 +3227,7 @@
     "authored_pull_requests": 10,
     "decided_pull_requests": 5,
     "excluded_administrative_gates": 2,
-    "external_reviews": 30,
+    "external_reviews": 29,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3252,5 +3252,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-10-22T18:36:27+00:00"
+  "state_changed_at": "2026-10-24T17:30:35+00:00"
 }
