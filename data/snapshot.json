@@ -2645,11 +2645,11 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": null,
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-10-29T20:58:55Z",
+        "latest_response_url": "https://github.com/PrefectHQ/fastmcp/issues/2879#issuecomment-6508182393",
         "linked_issue_latest_own_activity_at": "2026-04-17T20:07:52Z",
         "unanswered_direct_mentions": 0,
-        "unanswered_linked_issue_responses": 0,
+        "unanswered_linked_issue_responses": 1,
         "unanswered_review_thread_replies": 0
       },
       "checks": {
@@ -2677,12 +2677,12 @@
       "repository": "PrefectHQ/fastmcp",
       "review_url": null,
       "role": "participant",
-      "stage": "Issue open",
+      "stage": "Issue closed",
       "started_at": "2026-04-17",
-      "state": "open",
+      "state": "closed",
       "tier": "legacy",
       "title": "Background job does not produce valid CreateTaskResult",
-      "updated_at": "2026-04-17T20:07:52Z",
+      "updated_at": "2026-10-29T20:59:04Z",
       "url": "https://github.com/PrefectHQ/fastmcp/issues/2879",
       "workflows": {
         "action_required": 0,
@@ -3252,5 +3252,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-10-24T17:30:35+00:00"
+  "state_changed_at": "2026-10-30T19:29:40+00:00"
 }
