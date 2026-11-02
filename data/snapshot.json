@@ -828,12 +828,12 @@
       "repository": "google/adk-python",
       "review_url": "https://github.com/google/adk-python/pull/6460#pullrequestreview-4776004279",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(litellm): strip embedded thought_signature from tool call id",
-      "updated_at": "2026-07-28T00:10:51Z",
+      "updated_at": "2026-11-02T16:53:19Z",
       "url": "https://github.com/google/adk-python/pull/6460",
       "workflows": {
         "action_required": 0,
@@ -3227,7 +3227,7 @@
     "authored_pull_requests": 10,
     "decided_pull_requests": 5,
     "excluded_administrative_gates": 2,
-    "external_reviews": 27,
+    "external_reviews": 26,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3252,5 +3252,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-01T19:45:32+00:00"
+  "state_changed_at": "2026-11-02T23:10:01+00:00"
 }
