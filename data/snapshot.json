@@ -882,12 +882,12 @@
       "repository": "pydantic/pydantic-ai",
       "review_url": "https://github.com/pydantic/pydantic-ai/pull/6706#pullrequestreview-4770938242",
       "role": "reviewer",
-      "stage": "Review update available",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "Validate native tool IDs per capability layer",
-      "updated_at": "2026-08-14T07:18:47Z",
+      "updated_at": "2026-11-05T18:23:26Z",
       "url": "https://github.com/pydantic/pydantic-ai/pull/6706",
       "workflows": {
         "action_required": 0,
@@ -1456,10 +1456,10 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-11T15:32:59Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-11-05T07:42:17Z",
+        "latest_response_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#issuecomment-6652564203",
         "linked_issue_latest_own_activity_at": null,
-        "unanswered_direct_mentions": 0,
+        "unanswered_direct_mentions": 1,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -1467,24 +1467,18 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 10,
-        "passing": 10,
+        "non_failing": 14,
+        "passing": 14,
         "pending": 0,
-        "skipped": 1,
-        "successful": 9,
-        "total": 15,
-        "unexpected_failures": [
-          "examples (build + e2e)",
-          "test-e2e (24)",
-          "test-e2e (20)",
-          "test-e2e (22)",
-          "build"
-        ]
+        "skipped": 0,
+        "successful": 14,
+        "total": 14,
+        "unexpected_failures": []
       },
       "draft": false,
       "exclude_from_landing_rate": false,
       "first_review_submitted_at": "2026-07-24T20:05:54Z",
-      "head_sha": "4dbb8a0328af0f1e700daf0e235a75d0c632b585",
+      "head_sha": "b0a36baf9b0035c6acd00be7abc5a6920150a1a5",
       "id": "modelcontextprotocol-typescript-sdk-2544-review",
       "kind": "review",
       "linked_issue": null,
@@ -1492,23 +1486,23 @@
       "next_action": "Re-reviewed exact head 4dbb8a03. The successful REDIRECT path works and 81 focused tests pass, but an error-shaped OAuth callback rejects finishAuth while leaving the triggering request pending until close(); five required checks are also branch-caused. GitHub denied a formal changes-requested review without explicit access, so a proof-backed COMMENT review was submitted and the original P1 thread remains unresolved. Re-review only after failure-path settlement and CI fixes.",
       "number": 2544,
       "own_review_count": 2,
-      "own_review_on_head": true,
+      "own_review_on_head": false,
       "repository": "modelcontextprotocol/typescript-sdk",
       "review_url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544#pullrequestreview-4776312162",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review update available",
       "started_at": "2026-07-24",
       "state": "open",
       "tier": "anchor",
       "title": "Fix tests timing out during interactive OAuth flow (#2510)",
-      "updated_at": "2026-08-11T15:32:59Z",
+      "updated_at": "2026-11-05T17:31:39Z",
       "url": "https://github.com/modelcontextprotocol/typescript-sdk/pull/2544",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
-        "failure": 2,
+        "failure": 0,
         "pending": 0,
-        "success": 2
+        "success": 4
       }
     },
     {
@@ -2074,8 +2068,9 @@
         "pending": 0,
         "skipped": 8,
         "successful": 18,
-        "total": 27,
+        "total": 28,
         "unexpected_failures": [
+          "CLAAssistant",
           "CLAAssistant"
         ]
       },
@@ -2099,7 +2094,7 @@
       "state": "open",
       "tier": "anchor",
       "title": "fix(langchain): don't record exception events for control-flow signals",
-      "updated_at": "2026-10-31T23:21:24Z",
+      "updated_at": "2026-11-05T19:02:05Z",
       "url": "https://github.com/Arize-ai/openinference/pull/3545",
       "workflows": {
         "action_required": 0,
@@ -3227,7 +3222,7 @@
     "authored_pull_requests": 10,
     "decided_pull_requests": 5,
     "excluded_administrative_gates": 2,
-    "external_reviews": 26,
+    "external_reviews": 25,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3252,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-02T23:10:01+00:00"
+  "state_changed_at": "2026-11-05T21:30:38+00:00"
 }
