@@ -1104,9 +1104,9 @@
       "updated_at": "2026-10-08T11:53:14Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
-        "action_required": 2,
+        "action_required": 0,
         "expected_gates": 0,
-        "failure": 0,
+        "failure": 2,
         "pending": 0,
         "success": 0
       }
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-05T21:30:38+00:00"
+  "state_changed_at": "2026-11-07T19:29:40+00:00"
 }
