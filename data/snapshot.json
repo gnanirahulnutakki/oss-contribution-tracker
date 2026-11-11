@@ -210,7 +210,7 @@
       "linked_issue": {
         "assignees": [],
         "number": 3568,
-        "state": "open"
+        "state": "closed"
       },
       "merged_at": null,
       "next_action": "Link and verify gnani.nutakki@gmail.com on GitHub, then complete EasyCLA; the PR is ready and twice approved with 73 passing and 5 skipped technical checks, but currently has no assignee. Do not post another routing comment before the legal gate is green.",
@@ -220,7 +220,7 @@
       "repository": "open-telemetry/otel-arrow",
       "review_url": null,
       "role": "author",
-      "stage": "Awaiting assignment",
+      "stage": "Closed",
       "started_at": "2026-07-24",
       "state": "closed",
       "tier": "anchor",
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-07T19:29:40+00:00"
+  "state_changed_at": "2026-11-11T22:02:03+00:00"
 }
