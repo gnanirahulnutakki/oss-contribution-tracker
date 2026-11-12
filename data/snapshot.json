@@ -2052,10 +2052,10 @@
       "attention": {
         "changes_requested_by": [],
         "latest_own_activity_at": "2026-08-12T01:34:16Z",
-        "latest_response_at": null,
-        "latest_response_url": null,
+        "latest_response_at": "2026-11-12T05:23:12Z",
+        "latest_response_url": "https://github.com/Arize-ai/openinference/pull/3545#issuecomment-6815452356",
         "linked_issue_latest_own_activity_at": null,
-        "unanswered_direct_mentions": 0,
+        "unanswered_direct_mentions": 1,
         "unanswered_linked_issue_responses": 0,
         "unanswered_review_thread_replies": 0
       },
@@ -2063,12 +2063,12 @@
       "checks": {
         "expected_gates": [],
         "neutral": 0,
-        "non_failing": 26,
-        "passing": 26,
+        "non_failing": 27,
+        "passing": 27,
         "pending": 0,
-        "skipped": 8,
+        "skipped": 9,
         "successful": 18,
-        "total": 28,
+        "total": 29,
         "unexpected_failures": [
           "CLAAssistant",
           "CLAAssistant"
@@ -2089,12 +2089,12 @@
       "repository": "Arize-ai/openinference",
       "review_url": "https://github.com/Arize-ai/openinference/pull/3545#pullrequestreview-4912216885",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Response available",
       "started_at": "2026-08-12",
       "state": "open",
       "tier": "anchor",
       "title": "fix(langchain): don't record exception events for control-flow signals",
-      "updated_at": "2026-11-05T19:02:05Z",
+      "updated_at": "2026-11-12T07:49:49Z",
       "url": "https://github.com/Arize-ai/openinference/pull/3545",
       "workflows": {
         "action_required": 0,
@@ -3220,7 +3220,7 @@
   ],
   "profile": {
     "authored_pull_requests": 10,
-    "decided_pull_requests": 5,
+    "decided_pull_requests": 6,
     "excluded_administrative_gates": 2,
     "external_reviews": 25,
     "goals": {
@@ -3229,9 +3229,9 @@
       "max_open_pull_requests": 4,
       "merged_pull_requests": 24
     },
-    "landing_rate_percent": 80,
+    "landing_rate_percent": 67,
     "merged_pull_requests": 4,
-    "open_pull_requests": 4,
+    "open_pull_requests": 3,
     "username": "gnanirahulnutakki",
     "window_days": 90,
     "window_end": "2026-10-20",
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-11T22:02:03+00:00"
+  "state_changed_at": "2026-11-12T21:53:58+00:00"
 }
