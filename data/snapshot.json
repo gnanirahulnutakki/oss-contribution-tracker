@@ -666,14 +666,14 @@
       "state": "closed",
       "tier": "anchor",
       "title": "fix(scripts): add cache-busting to Helm version checks",
-      "updated_at": "2026-07-28T21:30:38Z",
+      "updated_at": "2026-08-12T23:17:45Z",
       "url": "https://github.com/helm/helm/pull/32339",
       "workflows": {
         "action_required": 0,
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 3
+        "success": 0
       }
     },
     {
@@ -1393,10 +1393,10 @@
       "url": "https://github.com/sgl-project/sglang/pull/32344",
       "workflows": {
         "action_required": 0,
-        "expected_gates": 10,
+        "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 2
+        "success": 0
       }
     },
     {
@@ -3220,7 +3220,7 @@
   ],
   "profile": {
     "authored_pull_requests": 10,
-    "decided_pull_requests": 6,
+    "decided_pull_requests": 7,
     "excluded_administrative_gates": 2,
     "external_reviews": 25,
     "goals": {
@@ -3229,9 +3229,9 @@
       "max_open_pull_requests": 4,
       "merged_pull_requests": 24
     },
-    "landing_rate_percent": 67,
+    "landing_rate_percent": 57,
     "merged_pull_requests": 4,
-    "open_pull_requests": 3,
+    "open_pull_requests": 2,
     "username": "gnanirahulnutakki",
     "window_days": 90,
     "window_end": "2026-10-20",
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-12T21:53:58+00:00"
+  "state_changed_at": "2026-11-13T21:28:59+00:00"
 }

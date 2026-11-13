@@ -19,9 +19,9 @@ Program window: **2026-07-23 through 2026-10-20** (90 days). Outcome metrics inc
 | Outcome | Current | Target | Progress |
 |---|---:|---:|---|
 | Merged external pull requests | 4 | 24 | 17% |
-| Landing rate for decided PRs | 67% | 70% | 96% |
+| Landing rate for decided PRs | 57% | 70% | 81% |
 | External pull requests reviewed | 25 | 12 | Target met |
-| Simultaneous open authored PRs | 3 | ≤ 4 | Within cap |
+| Simultaneous open authored PRs | 2 | ≤ 4 | Within cap |
 
 Authored external PRs opened in this window: **10**. Administrative gates excluded from landing-rate decisions: **2**.
 
@@ -91,7 +91,7 @@ Fresh unsolicited review cadence: **eligible under the automated guardrail** (ro
 | [kagent-dev/kagent#1037](https://github.com/kagent-dev/kagent/issues/1037)<br>feat: add support for Docker images and kmcp projects for local dev | participant | **Issue closed** | unassigned | Closed by the stale bot on 2026-06-23 without a maintainer response. Do not revive the old claim without current reproduction and renewed maintainer intent. |
 | [letta-ai/letta#3364](https://github.com/letta-ai/letta/issues/3364)<br>BYOK OpenAI-compatible provider: handle is generated under `openai-proxy/...` but validated against the provider name → 400, or unhandled `AssertionError` → opaque 500 | author | **Issue closed** | unassigned | Automatically closed and locked for missing the repository&#x27;s required human-verification and AI-policy template. Do not reopen or repost without a fresh reproduction and full policy compliance. |
 
-Last public state change recorded: **2026-11-12T21:53:58+00:00**.
+Last public state change recorded: **2026-11-13T21:28:59+00:00**.
 
 _The scheduled job still checks daily. It commits only when these public facts change._
 <!-- TRACKER:END -->
