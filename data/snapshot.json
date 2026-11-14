@@ -673,7 +673,7 @@
         "expected_gates": 0,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 3
       }
     },
     {
@@ -1393,10 +1393,10 @@
       "url": "https://github.com/sgl-project/sglang/pull/32344",
       "workflows": {
         "action_required": 0,
-        "expected_gates": 0,
+        "expected_gates": 10,
         "failure": 0,
         "pending": 0,
-        "success": 0
+        "success": 2
       }
     },
     {
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-13T21:28:59+00:00"
+  "state_changed_at": "2026-11-14T19:58:54+00:00"
 }
