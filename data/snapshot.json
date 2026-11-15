@@ -1096,12 +1096,12 @@
       "repository": "huggingface/smolagents",
       "review_url": "https://github.com/huggingface/smolagents/pull/2565#pullrequestreview-4849687654",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review complete",
       "started_at": "2026-07-24",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix: filter TOOL_CALL and TOOL_RESPONSE messages from managed-agent summary",
-      "updated_at": "2026-10-08T11:53:14Z",
+      "updated_at": "2026-11-15T12:45:00Z",
       "url": "https://github.com/huggingface/smolagents/pull/2565",
       "workflows": {
         "action_required": 0,
@@ -1149,12 +1149,12 @@
       "repository": "huggingface/smolagents",
       "review_url": "https://github.com/huggingface/smolagents/pull/2618#pullrequestreview-4944850317",
       "role": "reviewer",
-      "stage": "Review submitted",
+      "stage": "Review complete",
       "started_at": "2026-08-15",
-      "state": "open",
+      "state": "closed",
       "tier": "anchor",
       "title": "fix(executor): reject host-triggered dunder methods",
-      "updated_at": "2026-08-15T22:32:48Z",
+      "updated_at": "2026-11-15T12:50:49Z",
       "url": "https://github.com/huggingface/smolagents/pull/2618",
       "workflows": {
         "action_required": 0,
@@ -3222,7 +3222,7 @@
     "authored_pull_requests": 10,
     "decided_pull_requests": 7,
     "excluded_administrative_gates": 2,
-    "external_reviews": 25,
+    "external_reviews": 23,
     "goals": {
       "external_reviews": 12,
       "landing_rate_percent": 70,
@@ -3247,5 +3247,5 @@
     "next_eligible_at": null,
     "window_hours": 24
   },
-  "state_changed_at": "2026-11-14T19:58:54+00:00"
+  "state_changed_at": "2026-11-15T20:26:48+00:00"
 }
